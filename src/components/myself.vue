@@ -4,20 +4,20 @@ section.myself
     h1(ref="h1_ref") Building APIs and Open-source #[b solutions] since more than #[b 6 years]
     span
       | Years of programming experience that can #[b serve you]. #[br]
-      | Highly skilled CTO with #[b proven field experience], I write #[a(src="https://nodejs.org/en/about/", target="_blank") Node.js] and
-      | #[a(src="https://graphql.org/", target="_blank") GraphQL]
+      | Highly skilled CTO with #[b proven field experience], I write #[a(href="https://nodejs.org/en/about/", target="_blank") Node.js] and
+      | #[a(href="https://graphql.org/", target="_blank") GraphQL]
       | APIs to provide tech companies with an efficient and #[b outstanding growth].
       | Through a self-taught background i spent thousand of hours perfectionning my
       | skills to #[b help you] gain an unfair advantage over your concurrents.#[br]#[br]
-      | I manage projects from #[a(src="https://en.wikipedia.org/wiki/Proof_of_concept", target="_blank") POC] to production release and handle the whole
-      | conception of services including #[a(src="https://v3.vuejs.org/", target="_blank") Vue.js] applications,
-      | #[a(src="https://www.docker.com/", target="_blank") containerization], #[a(src="https://www.mongodb.com/", target="_blank") NoSql]
-      | or in memory database like #[a(src="https://oss.redislabs.com/redisgraph/", target="_blank") Redisgraph]
-      | or #[a(src="https://neo4j.com/", target="_blank") Neo4J], #[a(src="https://caddyserver.com/v2", target="_blank") web servers] or
-      | #[a(src="https://www.netlify.com/", target="_blank") CDNs], #[a(src="https://kubernetes.io/", target="_blank") Kubernetes] schedulers
-      | with tools like #[a(src="https://github.com/roboll/helmfile", target="_blank") Helmfile] and
-      | #[a(src="https://git-scm.com/", target="_blank") Git] automated workflows.#[br]#[br]
-      | You can find many of my own JavaScript libraries and open source tools on my #[a(src="https://github.com/Sceat", target="_blank") GitHub profile]
+      | I manage projects from #[a(href="https://en.wikipedia.org/wiki/Proof_of_concept", target="_blank") POC] to production release and handle the whole
+      | conception of services including #[a(href="https://v3.vuejs.org/", target="_blank") Vue.js] applications,
+      | #[a(href="https://www.docker.com/", target="_blank") containerization], #[a(href="https://www.mongodb.com/", target="_blank") NoSql]
+      | or in memory database like #[a(href="https://oss.redislabs.com/redisgraph/", target="_blank") Redisgraph]
+      | or #[a(href="https://neo4j.com/", target="_blank") Neo4J], #[a(href="https://caddyserver.com/v2", target="_blank") web servers] or
+      | #[a(href="https://www.netlify.com/", target="_blank") CDNs], #[a(href="https://kubernetes.io/", target="_blank") Kubernetes] schedulers
+      | with tools like #[a(href="https://github.com/roboll/helmfile", target="_blank") Helmfile] and
+      | #[a(href="https://git-scm.com/", target="_blank") Git] automated workflows.#[br]#[br]
+      | You can find many of my own JavaScript libraries and open source tools on my #[a(href="https://github.com/Sceat", target="_blank") GitHub profile]
     .skills
       .commits 5000+ Commits
       .issues 330+ Issues created
