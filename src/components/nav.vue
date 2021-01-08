@@ -1,38 +1,98 @@
 <template lang="pug">
-nav
-  .title__box
+mixin nav
+  span.self(@click="scroll_to_section(1)" :class="selected(1)") About me
+  span.work(@click="scroll_to_section(2)" :class="selected(2)") Portfolio
+
+transition(name="appear")
+  nav.side(v-if="state.hidden")
+    span.home(@click="scroll_to_section(0)" :class="selected(0)") Home
+    +nav
+nav.top
+  .title__box(@click="scroll_to_section(0)")
     span.title Sceat.xyz
-  span.self My self
-  span.work My work
+  +nav
   span.contact Hire me
 </template>
 
 <script>
+import { onMounted, onBeforeUnmount, reactive } from 'vue'
+
 export default {
   name: 'Nav',
-  props: {
-    msg: String
-  },
-  data() {
-    return {
-      count: 0
+  setup() {
+    const state = reactive({ hidden: false, selected: 0 })
+    const scroll = top => window.scrollTo({ top, behavior: 'smooth' })
+    const on_scroll = () => {
+      const { scrollY } = window
+      if(state.hidden && scrollY < 100) state.hidden = false
+      else if (!state.hidden && scrollY > 100) state.hidden = true
+
+      const section = Math.round(window.scrollY / window.innerHeight)
+      if(state.selected !== section) state.selected = section
     }
-  }
+    onMounted(() => window.addEventListener('scroll', on_scroll, { passive: true }))
+    onBeforeUnmount(() => window.removeEventListener('scroll', on_scroll))
+    return {
+      scroll_to_section: num => scroll(window.innerHeight * num),
+      state,
+      selected: index => ({ selected: index === state.selected }),
+    }
+  },
 }
 </script>
 
 <style lang="stylus" scoped>
-nav
-  width 100vw
-  // height 70px
+nav.side
+  user-select none
+  position fixed
+  top 50%
+  left 1.5em
+  transform translateY(-50%)
+  display flex
+  flex-flow column nowrap
+  z-index 5
+  mix-blend-mode difference
+  filter hue-rotate(190deg)
+  color yellow
+
+  &.appear-enter-active,
+  &.appear-leave-active
+    transition transform 0.5s ease
+
+  &.appear-enter-from,
+  &.appear-leave-to
+    transform translateY(-50%) translateX(-150%)
+  span
+    cursor pointer
+    position relative
+    font-weight 300
+    font-size .75em
+    text-transform uppercase
+    margin-top .5em
+    will-change opacity
+  span.selected::before
+    content ''
+    position absolute
+    top 50%
+    transform translateY(-50%)
+    left -2.5em
+    width 20px
+    height 3px
+    border-radius 50px
+    background yellow
+
+nav.top
+  width 100%
+  overflow hidden
   display grid
   grid "link void self work contact" 40px / max-content 1fr max-content max-content max-content
   padding 2em 200px
+  z-index 5
 
   .title__box
     filter drop-shadow(0 3px 3px rgba(0, 0, 0, .6))
     grid-area link
-    cursor default
+    cursor pointer
 
   span
     padding-right 1em
@@ -44,7 +104,7 @@ nav
     &.title
       color white
       align-items flex-start
-      cursor default
+      cursor pointer
       min-height 40px
       text-transform uppercase
       font-size .7em
@@ -60,7 +120,7 @@ nav
       grid-area contact
       background #1565C0
       color white
-      border-radius 50px
+      border-radius 2px
       font-weight 400
       padding .5em 1.5em
       box-shadow 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24)

@@ -2,26 +2,28 @@
 main
   Snav
   Shero
+  Smyself
+  Smywork
 </template>
 
 <script>
 import Snav from './components/nav.vue'
 import Shero from './components/hero.vue'
+import Smyself from './components/myself.vue'
+import Smywork from './components/mywork.vue'
 
 export default {
   name: 'App',
   components: {
     Snav,
     Shero,
+    Smyself,
+    Smywork
   }
 }
 </script>
 
 <style lang="stylus">
-@font-face
-  font-family 'sweet-retro'
-  src url('~./assets/sweet-retro.ttf')
-
 sc-reset()
     margin 0
     padding 0
@@ -37,6 +39,7 @@ sc-disableScollBar()
 
 *
   sc-reset()
+  sc-disableScollBar()
   font-family 'Raleway', sans-serif
   outline none
   scroll-behavior smooth
@@ -53,4 +56,8 @@ sc-disableScollBar()
     :active
       color #e1c79b
       fill #e1c79b
+
+.midnightHeader.light {
+  color white
+}
 </style>
