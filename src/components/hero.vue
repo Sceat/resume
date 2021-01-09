@@ -11,14 +11,16 @@ section.hero
       a(href="https://stackoverflow.com/users/10632388/sceat", target="_blank")
         fa.fa(icon="stack-overflow", type="fab", size="lg")
   .right
-    #anim.iam #[span I] #[span am] #[b C]#[b y]#[b r]#[b i]#[b l],
+    #anim.iam #[h1 H]#[h1 e]#[h1 l]#[h1 l]#[h1 o] #[span I] #[span am] #[b C]#[b y]#[b r]#[b i]#[b l],
     #sub.iam.lighter Senior fullstack engineer and CTO
     .sub
       .bar
       #catch.ido I write #[span infrastructures] and #[span web applications]
     #cta.cta Let's Talk
   img(src="/src/assets/resume.png")
-  fa.icon.bounce(@click.native="scroll_down()", icon="long-arrow-alt-down")
+  .bounce(@click.native="scroll_down()")
+    span Explore
+    fa.icon(icon="long-arrow-alt-down")
 </template>
 
 <script>
@@ -82,6 +84,10 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
+h1
+  font-family "nimbus-sans", sans-serif
+
 #anim
   >*
     display inline-block
@@ -104,8 +110,6 @@ export default {
 
 .bounce
   animation bounce 7s ease-in infinite
-
-.icon
   width 15px
   position absolute
   opacity .7
@@ -114,6 +118,14 @@ export default {
   left 50%
   transform translateX(-50%)
   cursor pointer
+  display flex
+  justify-content center
+  align-items center
+  flex-flow column nowrap
+  span
+    font-family 'Caveat'
+    font-size 1.5em
+
 
 .bar
   height 140px
@@ -178,6 +190,7 @@ section.hero
       display inline-block
       font-size 4em
       font-weight 300
+      cursor default
 
       &.lighter
         font-size 2.5em
@@ -185,6 +198,8 @@ section.hero
       b
         font-size 1.2em
         color #1565C0
+      h1
+        font-size 1.2em
 
     .sub
       display flex
@@ -192,6 +207,7 @@ section.hero
       margin-top 4em
       height 50px
       align-items center
+      cursor default
 
       .bar
         height 100%

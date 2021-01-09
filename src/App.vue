@@ -12,6 +12,9 @@ import Shero from './components/hero.vue'
 import Smyself from './components/myself.vue'
 import Smywork from './components/mywork.vue'
 
+import smooth from 'smooth-parallax'
+import { onMounted } from 'vue'
+
 export default {
   name: 'App',
   components: {
@@ -19,6 +22,12 @@ export default {
     Shero,
     Smyself,
     Smywork
+  },
+  setup() {
+    onMounted(() => {
+      console.log('init')
+      smooth.init()
+    })
   }
 }
 </script>
