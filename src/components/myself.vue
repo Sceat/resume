@@ -171,6 +171,7 @@ section.myself
   flex-flow row nowrap
   color #eee
   position relative
+  z-index 5
   overflow hidden
   clip-path polygon(0 0, 100% 0, 100% 95%, 0 100%)
 

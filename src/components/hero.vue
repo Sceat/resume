@@ -52,7 +52,7 @@ export default {
 
       anime({
         targets: ['#sub'],
-        translateX: [40, 0],
+        translateX: [-40, 0],
         opacity: [0, 1],
         delay: 500,
         duration: 800,
@@ -61,7 +61,7 @@ export default {
 
       anime({
         targets: ['#catch'],
-        translateX: [40, 0],
+        translateX: [-40, 0],
         opacity: [0, 1],
         delay: 800,
         duration: 800,
@@ -70,10 +70,11 @@ export default {
 
       anime({
         targets: ['#cta'],
-        translateY: [60, 0],
+        translateX: [-40, 0],
         opacity: [0, 1],
         delay: 1200,
-        duration: 1500,
+        duration: 1000,
+        easing: 'easeOutCirc'
       });
 
     });
@@ -175,6 +176,7 @@ section.hero
       border-radius 1px
       background #1565C0
       width 200px
+      opacity 0
       text-align center
       align-self center
       color white
@@ -250,6 +252,8 @@ section.hero
       margin 130px 0
       white-space nowrap
       cursor pointer
+      &:hover
+        text-decoration underline
 
     .icons
       display flex
