@@ -1,18 +1,18 @@
 <template lang="pug">
 section.myself
   .text__box
-    h1(ref="h1_ref") Building APIs and open-source #[b solutions] since more than 6 years
+    h1(ref="h1_ref") Building APIs and open-source #[b solutions] for more than 6 years
     span
       | Years of programming experience that can #[b serve you]. #[br]
       | Highly skilled CTO with #[b proven field experience], I write #[a(href="https://nodejs.org/en/about/", target="_blank") Node.js] and
       |          #[a(href="https://graphql.org/", target="_blank") GraphQL]
       | APIs to provide tech companies with an efficient and #[b outstanding growth].
-      | Through a self-taught background i spent thousand of hours perfectionning my
-      | skills to #[b help you] gain an unfair advantage over your concurrents.#[br]#[br]
+      | Through a self-taught background, I spent a thousand of hours perfecting my
+      | skills to #[b help you] gain an unfair advantage over your competitors.#[br]#[br]
       | I manage projects from #[a(href="https://en.wikipedia.org/wiki/Proof_of_concept", target="_blank") POC] to production release and handle the whole
       | conception of services including #[a(href="https://v3.vuejs.org/", target="_blank") Vue.js] applications,
-      |          #[a(href="https://www.docker.com/", target="_blank") containerization], #[a(href="https://www.mongodb.com/", target="_blank") NoSql]
-      | or in memory database like #[a(href="https://oss.redislabs.com/redisgraph/", target="_blank") Redisgraph]
+      |          #[a(href="https://www.docker.com/", target="_blank") containerization], #[a(href="https://www.mongodb.com/", target="_blank") NoSQL]
+      | or in memory database like #[a(href="https://oss.redislabs.com/redisgraph/", target="_blank") RedisGraph]
       | or #[a(href="https://neo4j.com/", target="_blank") Neo4J], #[a(href="https://caddyserver.com/v2", target="_blank") web servers] or
       |          #[a(href="https://www.netlify.com/", target="_blank") CDNs], #[a(href="https://kubernetes.io/", target="_blank") Kubernetes] schedulers
       | with tools like #[a(href="https://github.com/roboll/helmfile", target="_blank") Helmfile] and
