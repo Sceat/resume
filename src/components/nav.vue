@@ -34,7 +34,7 @@ export default {
     onMounted(() => {
       window.addEventListener("scroll", on_scroll, { passive: true });
       anime({
-        targets: [".top > #enter"],
+        targets: [".top #enter"],
         translateX: [-40, 0],
         opacity: [0, 1],
         delay: anime.stagger(100, { start: 400 }),
