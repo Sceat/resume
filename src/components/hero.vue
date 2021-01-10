@@ -4,7 +4,7 @@ section.hero
   .left
     Sorb.orb
     .bar
-    span Download My CV
+    a.pdf(target="_blank" href="/src/assets/cv.pdf" download="Cyril Morlet CV.pdf") Download My CV
     .icons
       a(href="https://github.com/sceat", target="_blank")
         fa.fa(icon="github-alt", type="fab", size="lg")
@@ -250,15 +250,15 @@ section.hero
     a
       cursor pointer
       color black
-
-    span
-      transform rotateZ(-90deg)
-      letter-spacing 3px
-      margin 130px 0
-      white-space nowrap
-      cursor pointer
-      &:hover
-        text-decoration underline
+      &.pdf
+        text-decoration none
+        transform rotateZ(-90deg)
+        letter-spacing 3px
+        margin 130px 0
+        white-space nowrap
+        cursor pointer
+        &:hover
+          text-decoration underline
 
     .icons
       display flex
