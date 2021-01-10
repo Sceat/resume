@@ -103,53 +103,11 @@ export default [
           link: 'https://github.com/HydreIO/whooks'
         },
         {
-          title: "UsainBot",
-          desc: "A dofus 1.29 powerful bot",
-          lang: 'Java',
-          color: '#C2185B',
-          link: 'https://github.com/HydreIO/UsainBot'
-        },
-        {
-          title: "Tofumanchou",
-          desc: "A dofus 1.29 client library",
-          lang: 'Java',
-          color: '#C2185B',
-          link: 'https://github.com/HydreIO/Tofumanchou'
-        },
-        {
-          title: "dofus-protocol-1.29",
-          desc: "A dofus 1.29 protocol library",
-          lang: 'Java',
-          color: '#C2185B',
-          link: 'https://github.com/HydreIO/dofus-protocol-1.29'
-        },
-        {
-          title: "aresrpg-map-colors",
-          desc: "Minecraft map item colors utility",
-          lang: 'Javascript',
-          color: '#FDD835',
-          link: 'https://github.com/aresrpg/aresrpg-map-colors'
-        },
-        {
-          title: "aresrpg-world",
-          desc: "Minecraft worlds dead-simple caching with spiral nearby chunks.",
-          lang: 'Javascript',
-          color: '#FDD835',
-          link: 'https://github.com/aresrpg/aresrpg-world'
-        },
-        {
           title: "shimio-graphql-explorer",
           desc: "A minimalist Graphql playground for @hydre/shimio-graphql",
           lang: 'Vue.JS',
           color: '#1976D2',
           link: 'https://github.com/usidy/shimio-graphql-explorer'
-        },
-        {
-          title: "resume",
-          desc: "This website 😌",
-          lang: 'Vue.JS',
-          color: '#1976D2',
-          link: 'https://github.com/Sceat/resume'
         },
         {
           title: "sceatorio",

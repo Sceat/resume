@@ -160,6 +160,9 @@ section.hero
     position absolute
     bottom 0
     right 0
+    transition all 600ms ease-in-out
+    @media screen and (max-width: 1300px)
+      right -200px
 
   .right
     width 100%
@@ -193,8 +196,10 @@ section.hero
       font-size 4em
       font-weight 300
       cursor default
+      width max-content
 
       &.lighter
+        width auto
         font-size 2.5em
 
       b

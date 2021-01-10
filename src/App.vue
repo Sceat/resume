@@ -34,18 +34,21 @@ export default {
       desktop: [1051], // min-width: 601px
     });
 
-    return {
-      breakpoints,
-    };
     onMounted(() => {
-      console.log('init')
       smooth.init()
     })
+
+    return {
+      breakpoints,
+    }
   }
 }
 </script>
 
 <style lang="stylus">
+@font-face
+  font-family "nimbus-sans"
+  src url("src/assets/nimbus-sans.bold.otf") format("otf");
 
 main.sm
   section.soon
