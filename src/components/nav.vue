@@ -30,6 +30,7 @@ export default {
 
       const section = Math.round(window.scrollY / window.innerHeight);
       if (state.selected !== section) state.selected = section;
+      if(scrollY > window.innerHeight * 2.5) state.selected = 2
     };
     onMounted(() => {
       window.addEventListener("scroll", on_scroll, { passive: true });
