@@ -123,4 +123,11 @@ export default [
           color: '#C2185B',
           link: 'https://github.com/Sceat/utxo-tool'
         },
+        {
+          title: "Wants more ?",
+          desc: "Visit my github page !",
+          lang: 'Over 3500 contributions in the last year',
+          color: '#8E24AA',
+          link: 'https://github.com/Sceat/'
+        },
       ]

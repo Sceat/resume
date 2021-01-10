@@ -29,6 +29,7 @@ export default {
   background #212121
   padding 1em
   padding-bottom 0
+  font-size .9rem
   border-radius 5px
   color white
   cursor pointer

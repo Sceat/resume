@@ -4,6 +4,7 @@ section.mywork
     h1 #[b My] Libraries
     .repos
       github_card(v-for="project in projects", :project="project")
+    h1 #[b My] Projects
   .visuals
     //- h1 A more #[b visual] experience
     h1 Website is under construction
@@ -96,6 +97,7 @@ section.mywork
 
     .repos
       padding 1em
+      margin-bottom 100px
       width 100%
       padding 50px 0 0 50px
       display grid
