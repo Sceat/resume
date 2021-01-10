@@ -7,7 +7,7 @@ section.myself
       | Highly skilled CTO with #[b proven field experience], I write #[a(href="https://nodejs.org/en/about/", target="_blank") Node.js] and
       |          #[a(href="https://graphql.org/", target="_blank") GraphQL]
       | APIs to provide tech companies with an efficient and #[b outstanding growth].
-      | Through a self-taught background, I spent a thousand of hours perfecting my
+      | Through a self-taught background, I spent thousands of hours perfecting my
       | skills to #[b help you] gain an unfair advantage over your competitors.#[br]#[br]
       | I manage projects from #[a(href="https://en.wikipedia.org/wiki/Proof_of_concept", target="_blank") POC] to production release and handle the whole
       | conception of services including #[a(href="https://v3.vuejs.org/", target="_blank") Vue.js] applications,
