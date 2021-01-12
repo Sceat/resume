@@ -48,7 +48,7 @@ export default {
 <style lang="stylus">
 @font-face
   font-family "nimbus-sans"
-  src url("src/assets/nimbus-sans.bold.otf") format("otf");
+  src url("assets/nimbus-sans.bold.otf") format("otf");
 
 main.sm
   section.soon
