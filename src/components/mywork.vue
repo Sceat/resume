@@ -1,10 +1,10 @@
 <template lang="pug">
 section.mywork
   .libs
-    h1 #[b My] Libraries
+    h1(v-anchor="'libs'") #[b My] Libraries
     .repos
       github_card(v-for="project in projects", :project="project")
-    h1 #[b My] Projects
+    h1(v-anchor="'projects'") #[b My] Projects
   .visuals
     //- h1 A more #[b visual] experience
     h1 Website is under construction
@@ -17,6 +17,7 @@ section.mywork
 <script>
 import github_card from "./github_card.vue";
 import projects from "./projects.js";
+import { onBeforeMount, onBeforeUnmount, ref } from 'vue'
 
 export default {
   components: {
@@ -24,9 +25,9 @@ export default {
   },
   setup() {
     return {
-      projects,
-    };
-  },
+      projects
+    }
+  }
 };
 </script>
 

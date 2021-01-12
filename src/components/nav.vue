@@ -1,37 +1,37 @@
 <template lang="pug">
 mixin nav
-  span#enter.self(@click="scroll_to_section(1)", :class="selected(1)") About me
-  span#enter.work(@click="scroll_to_section(2.5)", :class="selected(2)") Portfolio
+  span#enter.self(v-scroll-to-anchor="'about'" :class="selected('about')") About me
+  span#enter.work(v-scroll-to-anchor="'libs'" :class="selected('libs')") Libraries
+  span#enter.projects(v-scroll-to-anchor="'projects'" :class="selected('projects')") Projects
 
 transition(name="appear")
   nav.side(v-if="state.hidden")
-    span.home(@click="scroll_to_section(0)", :class="selected(0)") Home
+    span.home(@click="scroll_to_top()") Home
     +nav
 nav.top
-  .title__box(@click="scroll_to_section(0)")
+  .title__box
     span#enter.title Sceat.xyz
   +nav
-  span#enter.contact Hire me
+  a#enter.contact(href="mailto:fetch@sceat.xyz") Hire me
 </template>
 
 <script>
 import { onMounted, onBeforeUnmount, reactive } from "vue";
 import anime from "animejs";
+import { emitter } from '../util/anchors.js'
 
 export default {
   name: "Nav",
   setup() {
     const state = reactive({ hidden: false, selected: 0 });
-    const scroll = (top) => window.scrollTo({ top, behavior: "smooth" });
     const on_scroll = () => {
       const { scrollY } = window;
       if (state.hidden && scrollY < 100) state.hidden = false;
       else if (!state.hidden && scrollY > 100) state.hidden = true;
-
-      const section = Math.round(window.scrollY / window.innerHeight);
-      if (state.selected !== section) state.selected = section;
-      if(scrollY > window.innerHeight * 2.5) state.selected = 2
     };
+
+    const on_anchor = anchor => state.selected = anchor
+
     onMounted(() => {
       window.addEventListener("scroll", on_scroll, { passive: true });
       anime({
@@ -42,12 +42,16 @@ export default {
         easing: "easeOutCirc",
         duration: 600,
       });
+      emitter.on('anchor', on_anchor)
     });
-    onBeforeUnmount(() => window.removeEventListener("scroll", on_scroll));
+    onBeforeUnmount(() => {
+      window.removeEventListener("scroll", on_scroll)
+      emitter.off('anchor', on_anchor)
+    });
     return {
-      scroll_to_section: (num) => scroll(window.innerHeight * num),
+      scroll_to_top: () => window.scrollTo({ top: 0, behavior: "smooth" }),
       state,
-      selected: (index) => ({ selected: index === state.selected }),
+      selected: anchor => ({ selected: anchor === state.selected }),
     };
   },
 };
@@ -78,6 +82,7 @@ nav.side
     transform translateY(-50%) translateX(-150%)
 
   span
+    color inherit
     cursor pointer
     position relative
     font-weight 300
@@ -85,6 +90,7 @@ nav.side
     text-transform uppercase
     margin-top .5em
     will-change opacity
+    text-decoration none
 
   span.selected::before
     content ''
@@ -101,7 +107,7 @@ nav.top
   width 100%
   overflow hidden
   display grid
-  grid 'link void self work contact' 40px / max-content 1fr max-content max-content max-content
+  grid 'link void self work projects contact' 40px / max-content 1fr max-content max-content max-content
   padding 2em 200px
   z-index 5
 
@@ -110,13 +116,15 @@ nav.top
     grid-area link
     cursor pointer
 
-  span
+  span,a
     padding-right 1em
     cursor pointer
     font-weight 300
     display flex
     justify-content center
     align-items center
+    text-decoration none
+    color #212121
 
     &.title
       color white
@@ -135,6 +143,9 @@ nav.top
 
     &.work
       grid-area work
+
+    &.projects
+      grid-area projects
 
     &.contact
       grid-area contact

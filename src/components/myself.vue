@@ -1,7 +1,7 @@
 <template lang="pug">
 section.myself
   .text__box
-    h1(ref="h1_ref") Building APIs and open-source #[b solutions] for more than 6 years
+    h1(v-anchor="'about'" ref="h1_ref") Building APIs and open-source #[b solutions] for more than 6 years
     span
       | Years of programming experience that can #[b serve you]. #[br]
       | Highly skilled CTO with #[b proven field experience], I write #[a(href="https://nodejs.org/en/about/", target="_blank") Node.js] and

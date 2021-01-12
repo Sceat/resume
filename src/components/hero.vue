@@ -16,7 +16,7 @@ section.hero
     .sub
       .bar
       #catch.ido I write #[span infrastructures] and #[span web applications]
-    #cta.cta Let's Talk
+    a#cta.cta(href="mailto:fetch@sceat.xyz") Let's Talk
   img(src="/src/assets/resume.png")
   .bounce(@click.native="scroll_down()")
     span Explore
@@ -174,6 +174,7 @@ section.hero
     margin-right 180px
 
     .cta
+      text-decoration none
       padding 1em 2em
       margin-top 4em
       border-radius 1px
