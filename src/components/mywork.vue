@@ -5,9 +5,11 @@ section.mywork
     .repos
       github_card(v-for="project in projects", :project="project")
     h1(v-anchor="'projects'") #[b My] Projects
-  .visuals
-    //- h1 A more #[b visual] experience
-    h1 Website is under construction
+    sidy
+    utake
+    panorama
+    hydre
+    xbl
   .abstract
     .headlines
       h1 Minimal
@@ -19,9 +21,20 @@ import github_card from "./github_card.vue";
 import projects from "./projects.js";
 import { onBeforeMount, onBeforeUnmount, ref } from 'vue'
 
+import hydre from './projects/hydre.vue'
+import panorama from './projects/panorama.vue'
+import sidy from './projects/sidy.vue'
+import utake from './projects/utake.vue'
+import xbl from './projects/xbl.vue'
+
 export default {
   components: {
     github_card,
+    hydre,
+    panorama,
+    sidy,
+    utake,
+    xbl
   },
   setup() {
     return {
