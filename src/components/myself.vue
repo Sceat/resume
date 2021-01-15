@@ -65,6 +65,7 @@ section.myself
 <script>
 import { onMounted, onBeforeUnmount, ref, reactive } from "vue";
 import anime from "animejs";
+import smooth from 'smooth-parallax'
 import TWEEN from "@tweenjs/tween.js";
 
 export default {
@@ -139,6 +140,7 @@ export default {
     );
 
     onMounted(() => {
+      smooth.init()
       observer.observe(h1_ref.value)
       tween_observer.observe(tween_ref.value)
     });

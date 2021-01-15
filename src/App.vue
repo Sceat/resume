@@ -3,16 +3,8 @@ router-view
 </template>
 
 <script>
-import smooth from 'smooth-parallax'
-import { onMounted } from 'vue'
-
 export default {
   name: 'App',
-  setup() {
-    onMounted(() => {
-      smooth.init()
-    })
-  }
 }
 </script>
 
