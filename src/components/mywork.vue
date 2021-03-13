@@ -10,6 +10,7 @@ section.mywork
     panorama
     hydre
     xbl
+    mana
   .abstract
     .headlines
       h1 Minimal
@@ -26,6 +27,7 @@ import panorama from './projects/panorama.vue'
 import sidy from './projects/sidy.vue'
 import utake from './projects/utake.vue'
 import xbl from './projects/xbl.vue'
+import mana from './projects/mana.vue'
 
 export default {
   components: {
@@ -34,7 +36,8 @@ export default {
     panorama,
     sidy,
     utake,
-    xbl
+    xbl,
+    mana
   },
   setup() {
     return {
