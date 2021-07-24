@@ -7,6 +7,7 @@ section.mywork
     h1(v-anchor="'projects'") #[b My] Projects
     sidy
     utake
+    kryzos
     panorama
     hydre
     xbl
@@ -28,6 +29,7 @@ import sidy from './projects/sidy.vue'
 import utake from './projects/utake.vue'
 import xbl from './projects/xbl.vue'
 import mana from './projects/mana.vue'
+import kryzos from './projects/kryzos.vue'
 
 export default {
   components: {
@@ -37,7 +39,8 @@ export default {
     sidy,
     utake,
     xbl,
-    mana
+    mana,
+    kryzos
   },
   setup() {
     return {
