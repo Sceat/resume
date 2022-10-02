@@ -16,45 +16,45 @@ nav.top
 </template>
 
 <script>
-import { onMounted, onBeforeUnmount, reactive } from "vue";
-import anime from "animejs";
+import { onMounted, onBeforeUnmount, reactive } from 'vue'
+import anime from 'animejs'
 import { emitter } from '../util/anchors.js'
 
 export default {
-  name: "Nav",
+  name: 'Nav',
   setup() {
-    const state = reactive({ hidden: false, selected: 0 });
+    const state = reactive({ hidden: false, selected: 0 })
     const on_scroll = () => {
-      const { scrollY } = window;
-      if (state.hidden && scrollY < 100) state.hidden = false;
-      else if (!state.hidden && scrollY > 100) state.hidden = true;
-    };
+      const { scrollY } = window
+      if (state.hidden && scrollY < 100) state.hidden = false
+      else if (!state.hidden && scrollY > 100) state.hidden = true
+    }
 
-    const on_anchor = anchor => state.selected = anchor
+    const on_anchor = anchor => (state.selected = anchor)
 
     onMounted(() => {
-      window.addEventListener("scroll", on_scroll, { passive: true });
+      window.addEventListener('scroll', on_scroll, { passive: true })
       anime({
-        targets: [".top #enter"],
+        targets: ['.top #enter'],
         translateX: [-40, 0],
         opacity: [0, 1],
         delay: anime.stagger(100, { start: 400 }),
-        easing: "easeOutCirc",
+        easing: 'easeOutCirc',
         duration: 600,
-      });
+      })
       emitter.on('anchor', on_anchor)
-    });
+    })
     onBeforeUnmount(() => {
-      window.removeEventListener("scroll", on_scroll)
+      window.removeEventListener('scroll', on_scroll)
       emitter.off('anchor', on_anchor)
-    });
+    })
     return {
-      scroll_to_top: () => window.scrollTo({ top: 0, behavior: "smooth" }),
+      scroll_to_top: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
       state,
       selected: anchor => ({ selected: anchor === state.selected }),
-    };
+    }
   },
-};
+}
 </script>
 
 <style lang="stylus" scoped>

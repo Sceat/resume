@@ -1,7 +1,7 @@
 <template lang="pug">
 section.myself
   .text__box
-    h1(v-anchor="'about'" ref="h1_ref") Building APIs and open-source #[b solutions] for more than 6 years
+    h1(v-anchor="'about'" ref="h1_ref") Building APIs and open-source #[b solutions] for more than 7 years
     span
       | Years of programming experience that can #[b serve you]. #[br]
       | Highly skilled CTO with #[b proven field experience], I write #[a(href="https://nodejs.org/en/about/", target="_blank") Node.js] and
@@ -18,6 +18,7 @@ section.myself
       | with tools like #[a(href="https://github.com/roboll/helmfile", target="_blank") Helmfile] and
       |          #[a(href="https://git-scm.com/", target="_blank") Git] automated workflows.#[br]#[br]
       | You can find many of my own JavaScript libraries and open source tools on my #[a(href="https://github.com/Sceat", target="_blank") GitHub profile]
+    span.nft I also create smart-contract and front-end dApp for your DeFi or NFT projects
     .skills
       .commits
         .icon(ref="tween_ref")
@@ -51,119 +52,110 @@ section.myself
     .dots
       while n++ < 100
         .dot
-    .small__dots(
-      smooth-parallax="",
-      start-position-y="1.2",
-      end-position-y="-0.5",
-      start-position-x="0.01",
-      end-position-x="-0.01"
-    )
+    .small__dots
       while z++ < 100
         .dot
 </template>
 
-<script>
-import { onMounted, onBeforeUnmount, ref, reactive } from "vue";
-import anime from "animejs";
-import smooth from 'smooth-parallax'
-import TWEEN from "@tweenjs/tween.js";
+<script setup>
+import { onMounted, onBeforeUnmount, ref, reactive } from 'vue'
+import anime from 'animejs'
+import TWEEN from '@tweenjs/tween.js'
 
-export default {
-  setup() {
-    let frame_handler;
+let frame_handler
 
-    const h1_ref = ref(null);
-    const tween_ref = ref(null);
-    const trigerred = ref(false);
-    const tween_trigerred = ref(false)
-    const offset = ref(0);
-    const numbers = reactive({
-      commits: 0,
-      issues: 0,
-      prs: 0,
-      reviews: 0,
-    });
-    const tweened = new TWEEN.Tween(numbers)
-      .to(
-        {
-          commits: 7000,
-          issues: 330,
-          prs: 80,
-          reviews: 50,
-        },
-        1500
-      )
-      .easing(TWEEN.Easing.Quadratic.InOut)
-      .onComplete(() => cancelAnimationFrame(frame_handler))
-    const animate = function (currentTime) {
-      TWEEN.update(currentTime);
-      frame_handler = requestAnimationFrame(animate);
-    };
+const h1_ref = ref(null)
+const tween_ref = ref(null)
+const trigerred = ref(false)
+const tween_trigerred = ref(false)
+const offset = ref(0)
+const numbers = reactive({
+  commits: 0,
+  issues: 0,
+  prs: 0,
+  reviews: 0,
+})
+const tweened = new TWEEN.Tween(numbers)
+  .to(
+    {
+      commits: 7200,
+      issues: 330,
+      prs: 120,
+      reviews: 70,
+    },
+    1500
+  )
+  .easing(TWEEN.Easing.Quadratic.InOut)
+  .onComplete(() => cancelAnimationFrame(frame_handler))
+const animate = function (currentTime) {
+  TWEEN.update(currentTime)
+  frame_handler = requestAnimationFrame(animate)
+}
 
-    const observer = new IntersectionObserver(
-      ([entries]) => {
-        if (trigerred.value) return;
-        if (entries.isIntersecting) {
-          trigerred.value = true;
-          anime({
-            targets: [".text__box h1"],
-            translateX: [40, 0],
-            opacity: [0, 0.8],
-            delay: anime.stagger(50, { start: 200 }),
-            duration: 500,
-            easing: "easeOutCirc",
-          });
-          anime({
-            targets: [".text__box span"],
-            translateX: [40, 0],
-            opacity: [0, 0.8],
-            delay: anime.stagger(50, { start: 200 }),
-            duration: 500,
-            easing: "easeOutCirc",
-          });
-        }
-      },
-      { threshold: [0] }
-    );
-
-    const tween_observer = new IntersectionObserver(
-      ([entries]) => {
-        if (tween_trigerred.value) return;
-        if (entries.isIntersecting) {
-          tween_trigerred.value = true;
-
-          tweened.start();
-          frame_handler = requestAnimationFrame(animate)
-        }
-      },
-      { threshold: [0] }
-    );
-
-    onMounted(() => {
-      smooth.init()
-      observer.observe(h1_ref.value)
-      tween_observer.observe(tween_ref.value)
-    });
-    onBeforeUnmount(() => {
-      observer.disconnect()
-      tween_observer.disconnect()
-    });
-
-    return {
-      h1_ref,
-      tween_ref,
-      numbers,
-    };
+const observer = new IntersectionObserver(
+  ([entries]) => {
+    if (trigerred.value) return
+    if (entries.isIntersecting) {
+      trigerred.value = true
+      anime({
+        targets: ['.text__box h1'],
+        translateX: [40, 0],
+        opacity: [0, 0.8],
+        delay: 200,
+        duration: 500,
+        easing: 'easeOutCirc',
+      })
+      anime({
+        targets: ['.text__box span'],
+        translateX: [40, 0],
+        opacity: [0, 0.8],
+        delay: 600,
+        duration: 500,
+        easing: 'easeOutCirc',
+      })
+    }
   },
-};
+  { threshold: [0] }
+)
+
+const tween_observer = new IntersectionObserver(
+  ([entries]) => {
+    if (tween_trigerred.value) return
+    if (entries.isIntersecting) {
+      tween_trigerred.value = true
+
+      tweened.start()
+      frame_handler = requestAnimationFrame(animate)
+    }
+  },
+  { threshold: [0] }
+)
+
+const handle_scroll = () => {}
+
+onMounted(() => {
+  observer.observe(h1_ref.value)
+  tween_observer.observe(tween_ref.value)
+  document.addEventListener('scroll', handle_scroll)
+})
+onBeforeUnmount(() => {
+  observer.disconnect()
+  tween_observer.disconnect()
+  document.removeEventListener('scroll', handle_scroll)
+})
 </script>
 
 <style lang="stylus" scoped>
 a
   color #eee
-  text-decoration none
   font-weight 400
   font-family 'nimbus-sans', sans-serif
+
+span.nft
+  color #EC407A
+  font-weight 900
+  text-shadow 1px 2px 3px black
+  padding .25em !important
 
 section.myself
   width 100%

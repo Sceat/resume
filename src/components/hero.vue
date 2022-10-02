@@ -15,7 +15,7 @@ section.hero
     #sub.iam.lighter Senior fullstack engineer and CTO
     .sub
       .bar
-      #catch.ido I write #[span infrastructures] and #[span web applications]
+      .ido(ref="ido")
     a#cta.cta(href="mailto:fetch@sceat.xyz") Let's Talk
   img(src="/src/assets/resume.png")
   .bounce(@click.native="scroll_down()")
@@ -23,65 +23,76 @@ section.hero
     fa.icon(icon="long-arrow-alt-down")
 </template>
 
-<script>
-import Sorb from "./orb.vue";
-import { onMounted } from "vue";
-import anime from "animejs";
+<script setup>
+import { onMounted, ref } from 'vue'
+import anime from 'animejs'
+import Typewriter from 'typewriter-effect/dist/core'
 
-export default {
-  components: {
-    Sorb,
-  },
-  setup() {
-    const scroll_down = () => {
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: "smooth",
-      });
-    };
+import Sorb from './orb.vue'
 
-    onMounted(() => {
-      anime({
-        targets: ['#anim *'],
-        rotate: ['-90deg', 0],
-        opacity: [0, 1],
-        delay: anime.stagger(50, { start: 200 }),
-        duration: 300,
-        easing: 'easeOutCirc'
-      });
+const ido = ref()
 
-      anime({
-        targets: ['#sub'],
-        translateX: [-40, 0],
-        opacity: [0, 1],
-        delay: 500,
-        duration: 800,
-        easing: 'easeOutCirc'
-      });
+onMounted(() => {
+  anime({
+    targets: ['#anim *'],
+    rotate: ['-90deg', 0],
+    opacity: [0, 1],
+    delay: anime.stagger(50, { start: 200 }),
+    duration: 300,
+    easing: 'easeOutCirc',
+  })
 
-      anime({
-        targets: ['#catch'],
-        translateX: [-40, 0],
-        opacity: [0, 1],
-        delay: 800,
-        duration: 800,
-        easing: 'easeOutCirc'
-      });
+  anime({
+    targets: ['#sub'],
+    translateX: [-40, 0],
+    opacity: [0, 1],
+    delay: 500,
+    duration: 800,
+    easing: 'easeOutCirc',
+  })
 
-      anime({
-        targets: ['#cta'],
-        translateX: [-40, 0],
-        opacity: [0, 1],
-        delay: 1200,
-        duration: 1000,
-        easing: 'easeOutCirc'
-      });
+  anime({
+    targets: ['#cta'],
+    translateX: [-40, 0],
+    opacity: [0, 1],
+    delay: 1200,
+    duration: 1000,
+    easing: 'easeOutCirc',
+  })
 
-    });
+  const typewriter = new Typewriter(ido.value, {
+    loop: true,
+    delay: 1,
+    deleteSpeed: 1,
+  })
 
-    return { scroll_down };
-  },
-};
+  typewriter
+    .typeString(
+      'I create <strong style="color: #D32F2F;">Node.JS</strong> services and <strong style="color: #388E3C;">Docker</strong> infrastructures'
+    )
+    .pauseFor(2000)
+    .deleteChars('Docker infrastructures'.length)
+    .typeString(
+      '<strong style="color: #8E24AA;">Solidity</strong> Smart contracts'
+    )
+    .pauseFor(2000)
+    .deleteChars('Solidity Smart contracts'.length)
+    .typeString(
+      '<strong style="color: #3949AB;">Web2</strong>/<strong style="color: #FFB300;">Web3</strong> applications'
+    )
+    .pauseFor(2000)
+    // .typeString(
+    //   '<strong>only <span style="color: #27ae60;">5kb</span> Gzipped!</strong>'
+    // )
+    .start()
+})
+
+const scroll_down = () => {
+  window.scrollTo({
+    top: window.innerHeight,
+    behavior: 'smooth',
+  })
+}
 </script>
 
 <style lang="stylus" scoped>
@@ -223,12 +234,15 @@ section.hero
 
       .ido
         font-size 1.2em
-        max-width 500px
+        max-width 700px
         padding-left 2.5em
         font-weight 300
 
         span
           font-weight 500
+          // color white
+          // background gold
+          // box-shadow 1px 2px 3px black
 
   .bg
     position absolute
@@ -236,7 +250,7 @@ section.hero
     left 0
     width 100vw
     height 100vh
-    background url('~../../../assets/curve.png') center / cover
+    background url('/curve_2.png') center / cover
     opacity .4
 
   .left

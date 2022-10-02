@@ -19,8 +19,8 @@ section.mywork
 </template>
 
 <script>
-import github_card from "./github_card.vue";
-import projects from "./projects.js";
+import github_card from './github_card.vue'
+import projects from './projects.js'
 import { onBeforeMount, onBeforeUnmount, ref } from 'vue'
 
 import hydre from './projects/hydre.vue'
@@ -40,14 +40,14 @@ export default {
     utake,
     xbl,
     mana,
-    kryzos
+    kryzos,
   },
   setup() {
     return {
-      projects
+      projects,
     }
-  }
-};
+  },
+}
 </script>
 
 <style lang="stylus" scoped>

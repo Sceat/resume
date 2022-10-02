@@ -11,13 +11,13 @@
 <script>
 export default {
   props: {
-    project: Object
+    project: Object,
   },
   setup({ project }) {
     return {
-      open_link: () => window.open(project.link, '_blank')
+      open_link: () => window.open(project.link, '_blank'),
     }
-  }
+  },
 }
 </script>
 

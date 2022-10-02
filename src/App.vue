@@ -45,5 +45,4 @@ sc-disableScollBar()
     :active
       color #e1c79b
       fill #e1c79b
-
 </style>

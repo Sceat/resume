@@ -18,7 +18,7 @@ import Smyself from '../components/myself.vue'
 import Smywork from '../components/mywork.vue'
 import Sfooter from '../components/footer.vue'
 
-import useBreakpoints from "vue-next-breakpoints"
+import useBreakpoints from 'vue-next-breakpoints'
 export default {
   name: 'Home',
   components: {
@@ -26,18 +26,18 @@ export default {
     Shero,
     Smyself,
     Smywork,
-    Sfooter
+    Sfooter,
   },
   setup() {
     const breakpoints = useBreakpoints({
       mobile: 1050, // max-width: 600px
       desktop: [1051], // min-width: 601px
-    });
+    })
 
     return {
       breakpoints,
     }
-  }
+  },
 }
 </script>
 
@@ -77,5 +77,4 @@ main.sm
       font-weight 300
       font-size .6em
       align-self flex-start
-
 </style>

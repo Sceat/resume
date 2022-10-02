@@ -11,7 +11,7 @@ $total: 300; // total particles
 $orb-size: 400px;
 $particle-size: 2px;
 $time: 50s;
-$base-hue: 255; // change for diff colors (180 is nice)
+$base-hue: 180; // change for diff colors (180 is nice)
 
 .wrap {
   width: 0;
@@ -39,15 +39,16 @@ $base-hue: 255; // change for diff colors (180 is nice)
 @for $i from 1 through $total {
   $z: (random(360) * 1deg); // random angle to rotateZ
   $y: (random(360) * 1deg); // random to rotateX
-  $hue: ((40/$total * $i) + $base-hue); // set hue
+  $hue: ((40 / $total * $i) + $base-hue); // set hue
 
-  .c:nth-child(#{$i}){ // grab the nth particle
+  .c:nth-child(#{$i}) {
+    // grab the nth particle
     animation: orbit#{$i} $time infinite;
-    animation-delay: ($i * .01s);
+    animation-delay: ($i * 0.01s);
     background-color: hsla($hue, 100%, 0%, 1);
   }
 
-  @keyframes orbit#{$i}{
+  @keyframes orbit#{$i} {
     20% {
       opacity: 1; // fade in
     }
@@ -59,7 +60,8 @@ $base-hue: 255; // change for diff colors (180 is nice)
       opacity: 1; // hold opacity 20-80
     }
     100% {
-       transform: rotateZ(-$z) rotateY($y) translateX( ($orb-size * 3) ) rotateZ($z); // translateX * 3
+      transform: rotateZ(-$z) rotateY($y) translateX(($orb-size * 3))
+        rotateZ($z); // translateX * 3
     }
   }
 }

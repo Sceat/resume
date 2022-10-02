@@ -1,0 +1,31 @@
+{
+  "extends": ["standard", "prettier"],
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@babel/eslint-parser",
+    "requireConfigFile": false,
+    "sourceType": "module",
+    "ecmaVersion": 2022,
+    "babelOptions": {
+      "plugins": [
+        "@babel/plugin-syntax-import-assertions"
+      ]
+    }
+  },
+  "rules": {
+    "camelcase": "off",
+    "no-var": "error",
+    "no-undef": 0,
+    "object-shorthand": "error",
+    "prefer-const": ["error", { "destructuring": "any" }],
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-object-spread": "error",
+    "prefer-destructuring": "error",
+    "prefer-numeric-literals": "error",
+    "import/order": ["error", { "newlines-between": "always" }],
+    "no-unused-vars": 0,// <script setup>
+    "node/no-callback-literal": 0,
+    "no-throw-literal": 0
+  }
+}
