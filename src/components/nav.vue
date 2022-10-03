@@ -9,52 +9,46 @@ transition(name="appear")
     span.home(@click="scroll_to_top()") Home
     +nav
 nav.top
+  img(src="../assets/ukraine.png")
   .title__box
     span#enter.title Sceat.xyz
   +nav
   a#enter.contact(href="mailto:fetch@sceat.xyz") Hire me
 </template>
 
-<script>
+<script setup>
 import { onMounted, onBeforeUnmount, reactive } from 'vue'
 import anime from 'animejs'
+
 import { emitter } from '../util/anchors.js'
 
-export default {
-  name: 'Nav',
-  setup() {
-    const state = reactive({ hidden: false, selected: 0 })
-    const on_scroll = () => {
-      const { scrollY } = window
-      if (state.hidden && scrollY < 100) state.hidden = false
-      else if (!state.hidden && scrollY > 100) state.hidden = true
-    }
-
-    const on_anchor = anchor => (state.selected = anchor)
-
-    onMounted(() => {
-      window.addEventListener('scroll', on_scroll, { passive: true })
-      anime({
-        targets: ['.top #enter'],
-        translateX: [-40, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(100, { start: 400 }),
-        easing: 'easeOutCirc',
-        duration: 600,
-      })
-      emitter.on('anchor', on_anchor)
-    })
-    onBeforeUnmount(() => {
-      window.removeEventListener('scroll', on_scroll)
-      emitter.off('anchor', on_anchor)
-    })
-    return {
-      scroll_to_top: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
-      state,
-      selected: anchor => ({ selected: anchor === state.selected }),
-    }
-  },
+const state = reactive({ hidden: false, selected: 0 })
+const on_scroll = () => {
+  const { scrollY } = window
+  if (state.hidden && scrollY < 100) state.hidden = false
+  else if (!state.hidden && scrollY > 100) state.hidden = true
 }
+
+const on_anchor = anchor => (state.selected = anchor)
+
+onMounted(() => {
+  window.addEventListener('scroll', on_scroll, { passive: true })
+  anime({
+    targets: ['.top #enter'],
+    translateX: [-40, 0],
+    opacity: [0, 1],
+    delay: anime.stagger(100, { start: 400 }),
+    easing: 'easeOutCirc',
+    duration: 600,
+  })
+  emitter.on('anchor', on_anchor)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', on_scroll)
+  emitter.off('anchor', on_anchor)
+})
+const selected = anchor => ({ selected: anchor === state.selected })
+const scroll_to_top = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 </script>
 
 <style lang="stylus" scoped>
@@ -111,10 +105,19 @@ nav.top
   padding 2em 200px
   z-index 5
 
+  img
+    position absolute
+    z-index 1
+    transform rotate(90deg) scale(1.2)
+    top 0
+    left 0
+    // opacity .5
+
   .title__box
     filter drop-shadow(0 3px 3px rgba(0, 0, 0, .6))
     grid-area link
     cursor pointer
+    z-index 2
 
   span,a
     padding-right 1em
@@ -127,7 +130,7 @@ nav.top
     color #212121
 
     &.title
-      color white
+      color #1565C0
       align-items flex-start
       cursor pointer
       min-height 40px
@@ -135,7 +138,7 @@ nav.top
       font-size .7em
       font-weight 900
       padding .25em .5em
-      background #1565C0
+      background white
       clip-path polygon(0 0, 100% 0, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0 75%)
 
     &.self

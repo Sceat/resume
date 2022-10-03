@@ -1,6 +1,6 @@
 <template lang="pug">
 footer
-  span From #[b Tahiti]
+  span Based in #[b Ukraine]
   span Speaking #[b French] & #[b English]
   span Made by #[b me] using #[a(href="https://v3.vuejs.org/") Vue.JS 3]
 </template>

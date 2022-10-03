@@ -3,51 +3,82 @@ section.mywork
   .libs
     h1(v-anchor="'libs'") #[b My] Libraries
     .repos
-      github_card(v-for="project in projects", :project="project")
-    h1(v-anchor="'projects'") #[b My] Projects
-    sidy
-    utake
-    kryzos
-    panorama
-    hydre
-    xbl
-    mana
+      github_card(v-for="lib in libs", :lib="lib")
+    h1(v-anchor="'projects'") #[b My] Portfolio
+    project(
+      name="Sidy"
+      description="A real estate management ecosystem, with a stack made of Kubernetes & Helmfile, node.js, RedisGraph, and VueJs"
+      :asset="sidy"
+      color="1976D2"
+      )
+    project(
+      name="Umara.app"
+      description="A web app to upload and share high quality photoshoot, it uses Node.js, Graphql, S3, Docker, and Vue3"
+      :asset="umara"
+      color="5E35B1"
+      link="https://umara.app"
+      )
+    project(
+      name="PepeDefense.io"
+      description="A fully decentralized tower defense, using Solidity (diamond pattern), Canvas, and Vue3"
+      :asset="pepe"
+      color="43A047"
+      link="https://testnet.pepedefense.io"
+      )
+    project(
+      name="Utake"
+      description="A fully responsive food ordering web application, using VueJS"
+      iframe="https://player.vimeo.com/video/469034001"
+      color="7B1FA2"
+      )
+    project(
+      name="Kryzos"
+      description="An E-Learning platform for investing, using Vue3"
+      :asset="kryzos"
+      color="388E3C"
+      )
+    project(
+      name="Pizza Restaurant"
+      description="A fully responsive pizza restaurant website, using VueJS"
+      :asset="panorama"
+      color="d32f2f"
+      )
+    project(
+      name="Hydre.io"
+      description="An interractive page bouncing on David Guetta, using VueJS"
+      :asset="hydre"
+      color="388E3C"
+      link="https://hydre.io"
+      )
+    project(
+      name="XBL"
+      description="A swap page for a cryptocurrency, using VueJS"
+      iframe="https://player.vimeo.com/video/469023755"
+      color="F9A825"
+      )
+    project(
+      name="Mana Finance"
+      description="A DeFi yield farm to brew mana potions on BSC, using React and Solidity"
+      iframe="https://player.vimeo.com/video/523237645"
+      color="6A1B9A"
+      )
   .abstract
     .headlines
       h1 Minimal
       h1.outline & Fast
 </template>
 
-<script>
+<script setup>
+import sidy from '../assets/sidy.jpg'
+import hydre from '../assets/hydre.jpg'
+import panorama from '../assets/panorama.jpg'
+import kryzos from '../assets/kryzos.jpg'
+import umara from '../assets/umara.jpeg'
+import pepe from '../assets/pepedefense.jpeg'
+
 import github_card from './github_card.vue'
-import projects from './projects.js'
-import { onBeforeMount, onBeforeUnmount, ref } from 'vue'
-
-import hydre from './projects/hydre.vue'
-import panorama from './projects/panorama.vue'
-import sidy from './projects/sidy.vue'
-import utake from './projects/utake.vue'
-import xbl from './projects/xbl.vue'
-import mana from './projects/mana.vue'
-import kryzos from './projects/kryzos.vue'
-
-export default {
-  components: {
-    github_card,
-    hydre,
-    panorama,
-    sidy,
-    utake,
-    xbl,
-    mana,
-    kryzos,
-  },
-  setup() {
-    return {
-      projects,
-    }
-  },
-}
+import project from './project.vue'
+import libs from './libs.js'
 </script>
 
 <style lang="stylus" scoped>

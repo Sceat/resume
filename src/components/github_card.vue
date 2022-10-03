@@ -1,21 +1,21 @@
 <template lang="pug">
-.project(@click="open_link()" :class="{ starred: project.starred }")
+.project(@click="open_link()" :class="{ starred: lib.starred }")
   fa(icon="github" type="fab")
-  h1 {{ project.title }}
-  span.desc {{ project.desc }}
-  span.lang {{ project.lang }}
-  span.dot(:style="{ background: project.color }")
-  fa.crown(icon="crown" v-if="project.starred")
+  h1 {{ lib.title }}
+  span.desc {{ lib.desc }}
+  span.lang {{ lib.lang }}
+  span.dot(:style="{ background: lib.color }")
+  fa.crown(icon="crown" v-if="lib.starred")
 </template>
 
 <script>
 export default {
   props: {
-    project: Object,
+    lib: Object,
   },
-  setup({ project }) {
+  setup({ lib }) {
     return {
-      open_link: () => window.open(project.link, '_blank'),
+      open_link: () => window.open(lib.link, '_blank'),
     }
   },
 }

@@ -12,13 +12,14 @@ main.sm(v-else)
 </template>
 
 <script>
+import useBreakpoints from 'vue-next-breakpoints'
+
 import Snav from '../components/nav.vue'
 import Shero from '../components/hero.vue'
 import Smyself from '../components/myself.vue'
 import Smywork from '../components/mywork.vue'
 import Sfooter from '../components/footer.vue'
 
-import useBreakpoints from 'vue-next-breakpoints'
 export default {
   name: 'Home',
   components: {
