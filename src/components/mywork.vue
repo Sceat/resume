@@ -12,6 +12,12 @@ section.mywork
       color="1976D2"
       )
     project(
+      name="AresRpg app"
+      description="A fancy product showcase for a game, using Figma"
+      :asset="ares"
+      color="FFA000"
+      )
+    project(
       name="Umara.app"
       description="A web app to upload and share high quality photoshoot, it uses Node.js, Graphql, S3, Docker, and Vue3"
       :asset="umara"
@@ -75,6 +81,7 @@ import panorama from '../assets/panorama.jpg'
 import kryzos from '../assets/kryzos.jpg'
 import umara from '../assets/umara.jpeg'
 import pepe from '../assets/pepedefense.jpeg'
+import ares from '../assets/ares.png'
 
 import github_card from './github_card.vue'
 import project from './project.vue'
