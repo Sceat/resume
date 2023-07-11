@@ -14,6 +14,8 @@ nav.top
     span#enter.title Sceat.xyz
   +nav
   a#enter.contact(href="mailto:fetch@sceat.xyz") Hire me
+    img.cross(src="../assets/redcross.png")
+    .cursive.currently_working Currently working at #[.cursive Bitfinex]
 </template>
 
 <script setup>
@@ -52,6 +54,10 @@ const scroll_to_top = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 </script>
 
 <style lang="stylus" scoped>
+
+.cursive
+  font-family 'Indie Flower', cursive
+
 .top
   #enter
     opacity 0
@@ -152,7 +158,7 @@ nav.top
 
     &.contact
       grid-area contact
-      background #1565C0
+      background #9bb4d0
       color white
       border-radius 2px
       font-weight 400
@@ -160,6 +166,28 @@ nav.top
       box-shadow 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24)
       transition all .3s cubic-bezier(.25, .8, .25, 1)
 
-      &:hover
-        box-shadow 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22)
+      // &:hover
+      //   box-shadow 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22)
+
+      img.cross
+        position absolute
+        width 80px
+        top -25px
+        left 20px
+        object-fit contain
+        opacity .9
+        filter drop-shadow(1px 2px 3px #212121)
+
+      .currently_working
+        position absolute
+        top 41px
+        left -10px
+        transform rotate(-3deg)
+        display flex
+        flex-flow row nowrap
+        width max-content
+        color lighten(#212121, 20%)
+        >div
+          color #16B157
+          font-weight 900
 </style>
