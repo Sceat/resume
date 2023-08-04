@@ -12,10 +12,11 @@ section.mywork
       color="1976D2"
       )
     project(
-      name="AresRpg app"
+      name="AresRpg.world"
       description="A fancy product showcase for a game, using Figma"
       :asset="ares"
       color="FFA000"
+      link="https://aresrpg.world"
       )
     project(
       name="Umara.app"
