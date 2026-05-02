@@ -3,7 +3,7 @@
     v-reveal
     :id="`flagship-${id}`"
     :data-accent="accent"
-    class="flagship-hero relative w-full overflow-hidden"
+    class="flagship-shell relative w-full overflow-hidden"
   >
     <!-- Background image layer (with placeholder gradient fallback) -->
     <div class="bg-layer" aria-hidden="true">
@@ -142,7 +142,7 @@ defineProps({
 /* ============================================================
  * Section shell
  * ============================================================ */
-.flagship-hero {
+.flagship-shell {
   position: relative;
   isolation: isolate;
   /* Section drops from ~1400px to ~600-700px target */
@@ -582,7 +582,7 @@ defineProps({
  * Mobile refinements
  * ============================================================ */
 @media (max-width: 600px) {
-  .flagship-hero {
+  .flagship-shell {
     padding-block: clamp(2.5rem, 6vh, 4rem);
     min-height: auto;
   }

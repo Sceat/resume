@@ -1,6 +1,6 @@
 <template>
   <div class="aresrpg-shell">
-    <FlagshipHero
+    <FlagshipShell
     :id="data.id"
     :accent="data.accent"
     :eyebrow="data.eyebrow"
@@ -74,12 +74,12 @@
     <template #dates>
       <p class="dates">{{ data.dates }}</p>
     </template>
-    </FlagshipHero>
+    </FlagshipShell>
   </div>
 </template>
 
 <script setup>
-import FlagshipHero from '../components/flagship-hero.vue'
+import FlagshipShell from '../components/flagship-shell.vue'
 import SuiscanScreenshot from '../components/suiscan-screenshot.vue'
 import { flagships } from '../content/flagships.js'
 
@@ -103,7 +103,7 @@ const data = flagships.find((f) => f.id === 'aresrpg')
 <style scoped>
 /* ============================================================
  * Shell — inject Sui-themed hex grid + film grain INSIDE the
- * FlagshipHero's bg-layer (which is z-index:0, below content
+ * FlagshipShell's bg-layer (which is z-index:0, below content
  * at z-index:2). Using :deep() so we sit above the bg image but
  * under the .bg-vignette/.bg-bottom-fade.
  * ============================================================ */

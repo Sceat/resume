@@ -7,7 +7,7 @@
       <div class="tl-bg__sweep" />
     </div>
 
-    <FlagshipHero
+    <FlagshipShell
       :id="data.id"
       :accent="data.accent"
       :eyebrow="data.eyebrow"
@@ -74,12 +74,12 @@
       <template #dates>
         <p class="dates">{{ data.dates }}</p>
       </template>
-    </FlagshipHero>
+    </FlagshipShell>
   </div>
 </template>
 
 <script setup>
-import FlagshipHero from '../components/flagship-hero.vue'
+import FlagshipShell from '../components/flagship-shell.vue'
 import K9sPane from '../components/k9s-pane.vue'
 import { flagships } from '../content/flagships.js'
 
@@ -106,7 +106,7 @@ const data = flagships.find((f) => f.id === 'talos')
   overflow: hidden;
 }
 
-.talos-shell :deep(.flagship-hero) {
+.talos-shell :deep(.flagship-shell) {
   background: transparent;
 }
 

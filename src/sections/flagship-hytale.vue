@@ -8,7 +8,7 @@
       <div class="hy-bg__vignette" />
     </div>
 
-    <FlagshipHero
+    <FlagshipShell
       :id="data.id"
       :accent="data.accent"
       :eyebrow="data.eyebrow"
@@ -150,13 +150,13 @@
       <template #dates>
         <p class="dates">{{ data.dates }}</p>
       </template>
-    </FlagshipHero>
+    </FlagshipShell>
   </div>
 </template>
 
 <script setup>
 import { ref, watch } from 'vue'
-import FlagshipHero from '../components/flagship-hero.vue'
+import FlagshipShell from '../components/flagship-shell.vue'
 import { flagships } from '../content/flagships.js'
 import { useInView } from '../composables/use-in-view.js'
 
@@ -224,7 +224,7 @@ watch(
   overflow: hidden;
 }
 
-.hytale-shell :deep(.flagship-hero) {
+.hytale-shell :deep(.flagship-shell) {
   background: transparent;
 }
 

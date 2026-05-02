@@ -2,6 +2,8 @@ node_modules
 .DS_Store
 dist
 *.local
+# Generated PDF (mirrored to public/ by scripts/render-pdf.mjs for the dev server)
+public/001-CYRIL-MORLET-RESUME.pdf
 # Debug screenshots from agents/playwright (root only)
 /*.png
 /.playwright-mcp/

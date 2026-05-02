@@ -39,7 +39,6 @@
     "pdf-parse": "^1.1.1",
     "pdfmake": "^0.2.0",
     "prettier": "2.7.1",
-    "qrcode": "^1.5.0",
     "tailwindcss": "^4.0.0",
     "vite": "^8.0.0",
     "vue-eslint-parser": "^9.0.3"

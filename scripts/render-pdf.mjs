@@ -32,7 +32,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
 const FONT_DIR = path.join(ROOT, 'src/assets/fonts')
 const OUT_DIR = path.join(ROOT, 'dist')
-const OUT_FILE = path.join(OUT_DIR, '001-CYRIL-MORLET-RESUME.pdf')
+const PUBLIC_DIR = path.join(ROOT, 'public')
+const PDF_NAME = '001-CYRIL-MORLET-RESUME.pdf'
+const OUT_FILE = path.join(OUT_DIR, PDF_NAME)
+// Also written to public/ so the dev server can serve /001-... at root
+// without needing a full `npm run build` first.
+const PUBLIC_FILE = path.join(PUBLIC_DIR, PDF_NAME)
 
 const COLOR = {
   fg: '#0b1220',
@@ -44,56 +49,43 @@ const COLOR = {
 }
 
 // ─── Font resolution ─────────────────────────────────────────────────────
+// pdfmake/fontkit needs static TTFs to embed (woff2 trips a known
+// subsetting bug in @foliojs-fork/fontkit). The browser uses the woff2 copies
+// from public/fonts/; these TTFs are PDF-only. The latin subsets don't ship
+// italic variants — italics map to regular, bold-italics to bold. The few
+// `italics: true` styles in this doc are decorative and read fine upright.
+// Web fonts include a 600 weight (used by some headings); the PDF only loads
+// regular + 700 because no PDF text renders at 600.
 function resolveFonts() {
-  const candidates = {
-    SpaceGrotesk: {
-      normal: ['SpaceGrotesk-Regular.ttf', 'SpaceGrotesk-Regular.otf'],
-      bold: ['SpaceGrotesk-Bold.ttf', 'SpaceGrotesk-Bold.otf'],
-      italics: ['SpaceGrotesk-Regular.ttf'],
-      bolditalics: ['SpaceGrotesk-Bold.ttf'],
-    },
-    JetBrainsMono: {
-      normal: ['JetBrainsMono-Regular.ttf', 'JetBrainsMono-Regular.otf'],
-      bold: ['JetBrainsMono-Bold.ttf', 'JetBrainsMono-Bold.otf'],
-      italics: ['JetBrainsMono-Italic.ttf'],
-      bolditalics: ['JetBrainsMono-BoldItalic.ttf'],
-    },
-  }
-
-  const pickFirstExisting = (files) => {
-    for (const f of files) {
-      const p = path.join(FONT_DIR, f)
-      if (fs.existsSync(p)) return p
+  const file = (name) => {
+    const p = path.join(FONT_DIR, name)
+    if (!fs.existsSync(p)) {
+      throw new Error(`[render-pdf] missing font file: ${p}`)
     }
-    return null
+    return p
   }
 
-  const sansPaths = {
-    normal: pickFirstExisting(candidates.SpaceGrotesk.normal),
-    bold: pickFirstExisting(candidates.SpaceGrotesk.bold),
-    italics: pickFirstExisting(candidates.SpaceGrotesk.italics),
-    bolditalics: pickFirstExisting(candidates.SpaceGrotesk.bolditalics),
-  }
-  const monoPaths = {
-    normal: pickFirstExisting(candidates.JetBrainsMono.normal),
-    bold: pickFirstExisting(candidates.JetBrainsMono.bold),
-    italics: pickFirstExisting(candidates.JetBrainsMono.italics),
-    bolditalics: pickFirstExisting(candidates.JetBrainsMono.bolditalics),
-  }
+  const sansRegular = file('space-grotesk-v22-latin-regular.ttf')
+  const sansBold = file('space-grotesk-v22-latin-700.ttf')
+  const monoRegular = file('jetbrains-mono-v24-latin-regular.ttf')
+  const monoBold = file('jetbrains-mono-v24-latin-700.ttf')
 
-  if (!sansPaths.normal || !monoPaths.normal) {
-    console.log(
-      '[render-pdf] Self-hosted fonts not found in src/assets/fonts/, falling back to Helvetica + Courier.',
-    )
-    return {
-      defs: {
-        Sans: { normal: 'Helvetica', bold: 'Helvetica-Bold' },
-        Mono: { normal: 'Courier', bold: 'Courier-Bold' },
+  return {
+    defs: {
+      Sans: {
+        normal: sansRegular,
+        bold: sansBold,
+        italics: sansRegular,
+        bolditalics: sansBold,
       },
-      embedded: false,
-    }
+      Mono: {
+        normal: monoRegular,
+        bold: monoBold,
+        italics: monoRegular,
+        bolditalics: monoBold,
+      },
+    },
   }
-  return { defs: { Sans: sansPaths, Mono: monoPaths }, embedded: true }
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────
@@ -112,13 +104,13 @@ const hr = () => ({
   canvas: [
     { type: 'line', x1: 0, y1: 0, x2: 515, y2: 0, lineWidth: 0.5, lineColor: COLOR.rule },
   ],
-  margin: [0, 2, 0, 4],
+  margin: [0, 1, 0, 2],
 })
 
 const sectionHeading = (label) => ({
   text: label.toUpperCase(),
   style: 'h2',
-  margin: [0, 8, 0, 2],
+  margin: [0, 6, 0, 1],
 })
 
 function formatPeriod(period) {
@@ -203,13 +195,13 @@ function buildExperience() {
           ],
         },
       ],
-      margin: [0, 4, 0, 2],
+      margin: [0, 3, 0, 1],
     })
     const bullets = w.bullets.slice(0, 1)
     out.push({
       ul: bullets,
       style: 'bullet',
-      margin: [4, 0, 0, 2],
+      margin: [4, 0, 0, 1],
     })
   }
   return out
@@ -242,7 +234,7 @@ function buildHighlightedProjects() {
             }
           : { text: '', margin: [0, 0, 0, 0] },
       ],
-      margin: [0, 0, 0, 3],
+      margin: [0, 0, 0, 2],
     })
   }
   return out
@@ -258,28 +250,32 @@ function buildSkills() {
       { text: skills.alsoFluent.join(', '), color: COLOR.fg },
     ],
     style: 'body',
-    margin: [0, 0, 0, 6],
+    margin: [0, 0, 0, 2],
   })
-  out.push({
-    columns: skills.groups.map((g) => ({
-      width: '*',
-      stack: [
+  for (const g of skills.groups) {
+    out.push({
+      text: [
         {
-          text: g.name.toUpperCase(),
+          text: `${g.name.toUpperCase()}  `,
           style: 'h3',
           color: COLOR.accent,
-          margin: [0, 0, 0, 2],
         },
-        ...g.items.map((it) => ({
-          text: it.name,
-          style: 'body',
-          color: it.primary ? COLOR.fg : COLOR.fgDim,
-          bold: !!it.primary,
-        })),
+        ...g.items.flatMap((it, i) => {
+          const sep = i === 0 ? [] : [{ text: ', ', color: COLOR.fgMute }]
+          return [
+            ...sep,
+            {
+              text: it.name,
+              color: it.primary ? COLOR.fg : COLOR.fgDim,
+              bold: !!it.primary,
+            },
+          ]
+        }),
       ],
-    })),
-    columnGap: 12,
-  })
+      style: 'body',
+      margin: [0, 0, 0, 1],
+    })
+  }
   return out
 }
 
@@ -295,7 +291,7 @@ function buildMoreProjects() {
         { text: p.status, color: COLOR.fgMute, italics: true },
       ],
       style: 'body',
-      margin: [0, 0, 0, 2],
+      margin: [0, 0, 0, 1],
     })
   }
   return out
@@ -322,26 +318,26 @@ async function buildDocDefinition() {
       producer: 'pdfmake',
     },
     pageSize: 'A4',
-    pageMargins: [36, 32, 36, 32],
+    pageMargins: [32, 22, 32, 22],
     defaultStyle: {
       font: 'Sans',
-      fontSize: 9.5,
+      fontSize: 9,
       color: COLOR.fg,
-      lineHeight: 1.22,
+      lineHeight: 1.14,
     },
     styles: {
-      h1: { font: 'Sans', fontSize: 22, bold: true, color: COLOR.fg },
+      h1: { font: 'Sans', fontSize: 20, bold: true, color: COLOR.fg },
       h2: {
         font: 'Sans',
-        fontSize: 10,
+        fontSize: 9.5,
         bold: true,
         color: COLOR.accent,
         characterSpacing: 1,
       },
-      h3: { font: 'Sans', fontSize: 9, bold: true, characterSpacing: 0.5 },
-      mono: { font: 'Mono', fontSize: 8.5 },
-      body: { font: 'Sans', fontSize: 9.5 },
-      bullet: { font: 'Sans', fontSize: 9.5, color: COLOR.fgDim },
+      h3: { font: 'Sans', fontSize: 8.5, bold: true, characterSpacing: 0.5 },
+      mono: { font: 'Mono', fontSize: 8 },
+      body: { font: 'Sans', fontSize: 9 },
+      bullet: { font: 'Sans', fontSize: 9, color: COLOR.fgDim },
     },
     content,
     footer: (currentPage, pageCount) => ({
@@ -378,6 +374,8 @@ async function main() {
   const pdfDoc = printer.createPdfKitDocument(doc)
 
   if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true })
+  if (!fs.existsSync(PUBLIC_DIR)) fs.mkdirSync(PUBLIC_DIR, { recursive: true })
+
   const stream = fs.createWriteStream(OUT_FILE)
   pdfDoc.pipe(stream)
   pdfDoc.end()
@@ -387,11 +385,16 @@ async function main() {
     stream.on('error', reject)
   })
 
+  // Mirror the PDF into public/ so the dev server (which only serves
+  // public/ + the built dist) can resolve `/001-CYRIL-MORLET-RESUME.pdf`
+  // at the root without a full Vite build.
+  fs.copyFileSync(OUT_FILE, PUBLIC_FILE)
+
   const sizeKB = (fs.statSync(OUT_FILE).size / 1024).toFixed(1)
-  const fontTag = fonts.embedded
-    ? 'fonts=embedded(SpaceGrotesk+JetBrainsMono)'
-    : 'fonts=fallback(Helvetica+Courier)'
-  console.log(`[render-pdf] OK · ${OUT_FILE} · ${sizeKB} KB · ${fontTag}`)
+  console.log(
+    `[render-pdf] OK · ${OUT_FILE} · ${sizeKB} KB · fonts=embedded(SpaceGrotesk+JetBrainsMono)`,
+  )
+  console.log(`[render-pdf] mirrored to ${PUBLIC_FILE}`)
 }
 
 main().catch((err) => {

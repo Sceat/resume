@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <FlagshipHero
+    <FlagshipShell
       :id="data.id"
       :accent="data.accent"
       :eyebrow="data.eyebrow"
@@ -84,12 +84,12 @@
       <template #dates>
         <p class="dates">{{ data.dates }}</p>
       </template>
-    </FlagshipHero>
+    </FlagshipShell>
   </div>
 </template>
 
 <script setup>
-import FlagshipHero from '../components/flagship-hero.vue'
+import FlagshipShell from '../components/flagship-shell.vue'
 import SuiCallout from '../components/sui-callout.vue'
 import { flagships } from '../content/flagships.js'
 
@@ -123,7 +123,7 @@ const sparkles = Array.from({ length: 22 }, () => ({
 }))
 </script>
 
-<!-- Global accent override (cascades into FlagshipHero) -->
+<!-- Global accent override (cascades into FlagshipShell) -->
 <style>
 [data-accent='bitfinex'] {
   --accent: #10b981;
@@ -140,7 +140,7 @@ const sparkles = Array.from({ length: 22 }, () => ({
 
 <style scoped>
 /* ============================================================
- * Shell wraps FlagshipHero so we can layer carbon + gradient
+ * Shell wraps FlagshipShell so we can layer carbon + gradient
  * + hairlines + grain BEHIND it.
  * ============================================================ */
 .bitfinex-shell {
@@ -149,7 +149,7 @@ const sparkles = Array.from({ length: 22 }, () => ({
   overflow: hidden;
 }
 
-.bitfinex-shell :deep(.flagship-hero) {
+.bitfinex-shell :deep(.flagship-shell) {
   background: transparent;
 }
 

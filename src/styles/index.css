@@ -4,7 +4,6 @@
 
 /* ────────────────────────────────────────────────────────────────────────────
  * Theme tokens — cyberpunk light-blue family
- * Locked per /Users/sceatstudio/.claude/plans/sharded-jumping-deer.md
  * ──────────────────────────────────────────────────────────────────────────── */
 @theme {
   /* base — dark cyberpunk */
@@ -418,4 +417,15 @@
 
 [id] {
   scroll-margin-top: calc(var(--chrome-top-h) + 12px);
+}
+
+/* ─── Print ─── */
+/* The shipped PDF is generated programmatically via scripts/render-pdf.mjs
+ * (pdfmake). This block is just a defensive override for ad-hoc browser
+ * printing of the live site. */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
 }
