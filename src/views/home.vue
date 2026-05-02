@@ -1,81 +1,43 @@
-<template lang="pug">
-main(v-if="breakpoints.desktop.matches")
-  Snav
-  Shero
-  Smyself
-  Smywork
-  Sfooter
-main.sm(v-else)
-  section.soon
-    h1 The mobile app will #[b soon] be available&nbsp;!
-    span Use the desktop version instead
+<template>
+  <NavSection />
+  <main>
+    <HeroSection />
+    <StatsStrip />
+    <div id="about">
+      <HowIWorkSection />
+    </div>
+    <div id="flagships">
+      <FlagshipBitfinex />
+      <FlagshipHytale />
+      <FlagshipAresrpg />
+      <FlagshipTalos />
+    </div>
+    <div id="more">
+      <MoreProjects />
+    </div>
+    <div id="skills">
+      <SkillsMatrix />
+    </div>
+    <GithubCommits />
+    <div id="contact">
+      <Contact />
+    </div>
+  </main>
+  <FooterSection />
 </template>
 
-<script>
-import useBreakpoints from 'vue-next-breakpoints'
-
-import Snav from '../components/nav.vue'
-import Shero from '../components/hero.vue'
-import Smyself from '../components/myself.vue'
-import Smywork from '../components/mywork.vue'
-import Sfooter from '../components/footer.vue'
-
-export default {
-  name: 'Home',
-  components: {
-    Snav,
-    Shero,
-    Smyself,
-    Smywork,
-    Sfooter,
-  },
-  setup() {
-    const breakpoints = useBreakpoints({
-      mobile: 1050, // max-width: 600px
-      desktop: [1051], // min-width: 601px
-    })
-
-    return {
-      breakpoints,
-    }
-  },
-}
+<script setup>
+import NavSection from '../sections/nav.vue'
+import HeroSection from '../sections/hero.vue'
+import StatsStrip from '../sections/stats-strip.vue'
+import HowIWorkSection from '../sections/how-i-work.vue'
+import FlagshipBitfinex from '../sections/flagship-bitfinex.vue'
+import FlagshipHytale from '../sections/flagship-hytale.vue'
+import FlagshipAresrpg from '../sections/flagship-aresrpg.vue'
+import FlagshipTalos from '../sections/flagship-talos.vue'
+import MoreProjects from '../sections/more-projects.vue'
+import SkillsMatrix from '../sections/skills-matrix.vue'
+import GithubCommits from '../sections/github-commits.vue'
+import Contact from '../sections/contact.vue'
+import FooterSection from '../sections/footer.vue'
 </script>
-
-<style lang="stylus">
-
-main.sm
-  section.soon
-    width 100vw
-    height 100vh
-    min-height 500px
-    overflow hidden
-    background #212121
-    display flex
-    justify-content center
-    align-items center
-    font-size 2em
-    color #eee
-    padding 0 1em
-    position relative
-    flex-flow column nowrap
-    h1
-      width 300px
-      transform translateY(-100px)
-      &::after
-        content ''
-        position absolute
-        bottom -.2em
-        left 0
-        background crimson
-        width 80px
-        height 8px
-      b
-        color crimson
-    span
-      color #eee
-      opacity .7
-      font-weight 300
-      font-size .6em
-      align-self flex-start
-</style>

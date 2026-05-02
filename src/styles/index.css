@@ -1,0 +1,421 @@
+@import 'tailwindcss';
+@import './fonts.css';
+@import './system.css';
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Theme tokens — cyberpunk light-blue family
+ * Locked per /Users/sceatstudio/.claude/plans/sharded-jumping-deer.md
+ * ──────────────────────────────────────────────────────────────────────────── */
+@theme {
+  /* base — dark cyberpunk */
+  --color-bg: #06080f;
+  --color-surface: #0c1018;
+  --color-surface-2: #131826;
+  --color-line: #1e2638;
+
+  /* foreground — slight blue tint */
+  --color-fg: #e2e8f0;
+  --color-fg-dim: #94a3b8;
+  --color-fg-mute: #475569;
+
+  /* primary — light blue family */
+  --color-primary: #60a5fa;
+  --color-primary-glow: #93c5fd;
+  --color-primary-deep: #3b82f6;
+  --color-secondary: #818cf8;
+
+  /* gradient stops */
+  --gradient-aurora: linear-gradient(
+    135deg,
+    #60a5fa 0%,
+    #818cf8 50%,
+    #38bdf8 100%
+  );
+  --gradient-phase: linear-gradient(
+    135deg,
+    #93c5fd 0%,
+    #60a5fa 50%,
+    #3b82f6 100%
+  );
+
+  /* Discord-style title gradients (per v3 plan, point 13) */
+  --gradient-bitfinex: linear-gradient(
+    115deg,
+    #0fb87a 0%,
+    #34d399 35%,
+    #6ee7b7 65%,
+    #10b981 100%
+  );
+  --gradient-hytale: linear-gradient(
+    125deg,
+    #ec4899 0%,
+    #a855f7 30%,
+    #6366f1 60%,
+    #3b82f6 100%
+  );
+  --gradient-cyan-sky: linear-gradient(
+    135deg,
+    #22d3ee 0%,
+    #60a5fa 40%,
+    #a78bfa 75%,
+    #f0abfc 100%
+  );
+
+  /* Discord-style animated brand swirl (hero H1 only) */
+  --gradient-discord-shimmer: linear-gradient(
+    90deg,
+    #5865f2,
+    #eb459e,
+    #fee75c,
+    #57f287,
+    #5865f2
+  );
+
+  /* Hero v5: ONE static blue gradient — replaces multi-stop cyan-sky and the
+     animated discord shimmer that read as "circus" in v4. */
+  --gradient-hero: linear-gradient(
+    135deg,
+    #93c5fd 0%,
+    #60a5fa 50%,
+    #93c5fd 100%
+  );
+
+  /* status — terminal-coded */
+  --color-success: #34d399;
+  --color-warn: #fbbf24;
+  --color-danger: #f87171;
+  --color-orange: #d97757;
+
+  /* fonts */
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+  /* glow / phasing effects */
+  --shadow-glow: 0 0 24px -4px
+    color-mix(in oklab, var(--color-primary) 50%, transparent);
+  --shadow-glow-strong: 0 0 40px -8px
+    color-mix(in oklab, var(--color-primary-glow) 60%, transparent);
+
+  /* extra breakpoint */
+  --breakpoint-xs: 360px;
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Terminal chrome — wrapping window heights consumed by body padding and by
+ * the fixed nav so it sits below the chrome top bar. Mobile shrinks both.
+ * ──────────────────────────────────────────────────────────────────────────── */
+:root {
+  --chrome-top-h: 44px;
+  --chrome-bottom-h: 28px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --chrome-top-h: 36px;
+    --chrome-bottom-h: 24px;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Per-flagship accent overrides
+ * ──────────────────────────────────────────────────────────────────────────── */
+[data-accent='bitfinex'] {
+  --accent: #fbbf24;
+  --accent-2: #60a5fa;
+  --accent-gradient: linear-gradient(135deg, #fbbf24 0%, #60a5fa 100%);
+}
+[data-accent='hytale'] {
+  --accent: #818cf8;
+  --accent-2: #60a5fa;
+  --accent-gradient: linear-gradient(135deg, #818cf8 0%, #60a5fa 100%);
+}
+[data-accent='aresrpg'] {
+  --accent: #38bdf8;
+  --accent-2: #60a5fa;
+  --accent-gradient: linear-gradient(
+    135deg,
+    #38bdf8 0%,
+    #60a5fa 50%,
+    #93c5fd 100%
+  );
+}
+[data-accent='talos'] {
+  --accent: #34d399;
+  --accent-2: #60a5fa;
+  --accent-gradient: linear-gradient(135deg, #34d399 0%, #60a5fa 100%);
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Base layer
+ * ──────────────────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    color-scheme: dark;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-mono);
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    min-height: 100vh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    /* Reserve space for the fixed terminal chrome bars so content never
+       sits under them. Also exposed as CSS vars for component-level offsets. */
+    padding-top: var(--chrome-top-h);
+    padding-bottom: var(--chrome-bottom-h);
+  }
+
+  /* Print route renders without chrome — strip the body offsets so the
+     printed PDF doesn't carry phantom whitespace at top/bottom. */
+  body:has(.print-root) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 35%, transparent);
+    color: var(--color-fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
+    font-feature-settings: 'ss01', 'ss02', 'cv11';
+  }
+
+  h1 {
+    letter-spacing: var(--track-display);
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Phase-shifting keyframes
+ * ──────────────────────────────────────────────────────────────────────────── */
+@keyframes phase-drift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes border-rotate {
+  from {
+    --gradient-angle: 0deg;
+  }
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px -6px
+      color-mix(in oklab, var(--color-primary) 30%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 28px -2px
+      color-mix(in oklab, var(--color-primary) 70%, transparent);
+  }
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Components
+ * ──────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .surface {
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+  }
+
+  .surface-2 {
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-line);
+  }
+
+  .text-gradient {
+    background: var(--gradient-aurora);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: text-shimmer 4s linear infinite;
+  }
+
+  .phase-bg {
+    background: var(--gradient-phase);
+    background-size: 200% 200%;
+    animation: phase-drift 12s linear infinite;
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 1.5s ease-in-out infinite alternate;
+  }
+
+  .border-rotate {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+      conic-gradient(
+          from var(--gradient-angle),
+          var(--color-primary),
+          var(--color-secondary),
+          var(--color-primary-glow),
+          var(--color-primary)
+        )
+        border-box;
+    animation: border-rotate 8s linear infinite;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Utilities
+ * ──────────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .scanlines {
+    position: relative;
+    isolation: isolate;
+  }
+  .scanlines::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    z-index: 1;
+  }
+
+  .caret::after {
+    content: '▍';
+    margin-left: 1px;
+    animation: caret-blink 1s steps(2) infinite;
+  }
+
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Reduced motion — disable phase/border/glow animations
+ * ──────────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .phase-bg,
+  .border-rotate,
+  .glow-pulse,
+  .text-gradient {
+    animation: none !important;
+  }
+}
+
+/* Mobile: kill scanlines below md */
+@media (max-width: 767px) {
+  .scanlines::after {
+    display: none;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Scroll-triggered reveal (v-reveal directive)
+ * ──────────────────────────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-revealed {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Hero scroll hint moved to .scroll-explore in styles/system.css */
+
+/* ────────────────────────────────────────────────────────────────────────────
+ * Terminal-chrome compensation — keep the existing fixed nav and any anchor
+ * jumps clear of the chrome top bar. The chrome itself is rendered by
+ * <TerminalChrome/> at z-index: 60.
+ * ──────────────────────────────────────────────────────────────────────────── */
+.site-nav {
+  top: var(--chrome-top-h) !important;
+}
+
+[id] {
+  scroll-margin-top: calc(var(--chrome-top-h) + 12px);
+}

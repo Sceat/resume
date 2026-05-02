@@ -2,3 +2,8 @@ node_modules
 .DS_Store
 dist
 *.local
+# Debug screenshots from agents/playwright (root only)
+/*.png
+/.playwright-mcp/
+# Working folder for agent file drops (SVG extractions, drafts, sprites)
+/.tmp/

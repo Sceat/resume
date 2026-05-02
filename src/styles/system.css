@@ -1,0 +1,939 @@
+/* ============================================================================
+ * system.css — design system tokens & primitives
+ * ----------------------------------------------------------------------------
+ * Imported from index.css. Houses the motion language, type scale, button
+ * vocabulary, and shared chrome primitives. Awwards-grade refinement,
+ * haute-horlogerie precision. Every value has a reason.
+ *
+ * References:
+ *  - Linear (gradient borders, mono labels, tight tracking)
+ *  - Vercel (sharp display type, restrained accents)
+ *  - Resend (typography-first, hairline separators)
+ *  - Stripe (micro-motion timings, easing)
+ *  - Cursor (terminal-coded surfaces, mono buttons)
+ * ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+ * Motion language — the "feel"
+ * Eases lifted from native iOS / Apple HIG and Stripe's design vocabulary.
+ * Durations follow a 1.5x ratio so layered transitions never feel uniform.
+ * -------------------------------------------------------------------------- */
+:root {
+  /* eases */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* durations */
+  --dur-instant: 80ms;
+  --dur-fast: 160ms;
+  --dur-normal: 240ms;
+  --dur-slow: 360ms;
+  --dur-slower: 540ms;
+  --dur-glacial: 800ms;
+
+  /* type scale — fluid, clamped, swiss-precise */
+  --text-display: clamp(2.75rem, 7.2vw, 5.25rem);
+  --text-h1: clamp(2rem, 5vw, 3.5rem);
+  --text-h2: clamp(1.5rem, 3.4vw, 2.25rem);
+  --text-h3: clamp(1.125rem, 2vw, 1.5rem);
+  --text-body-lg: clamp(1rem, 1.4vw, 1.125rem);
+  --text-body: 0.9375rem;
+  --text-caption: 0.8125rem;
+  --text-mono-sm: 0.8125rem;
+  --text-mono-xs: 0.6875rem;
+  --text-mono-2xs: 0.625rem;
+
+  /* tracking */
+  --track-display: -0.03em;
+  --track-h1: -0.025em;
+  --track-h2: -0.02em;
+  --track-h3: -0.015em;
+  --track-body: -0.005em;
+  --track-mono-tight: -0.01em;
+  --track-mono-wide: 0.08em;
+  --track-mono-widest: 0.18em;
+
+  /* hairlines — resend / linear inspired */
+  --hairline: color-mix(in oklab, var(--color-fg) 8%, transparent);
+  --hairline-strong: color-mix(in oklab, var(--color-fg) 14%, transparent);
+  --hairline-accent: color-mix(in oklab, var(--color-primary) 30%, transparent);
+}
+
+/* ----------------------------------------------------------------------------
+ * Body refinements — ligatures, tabular nums in mono context
+ * -------------------------------------------------------------------------- */
+body {
+  text-rendering: optimizeLegibility;
+  font-feature-settings:
+    'cv02', 'cv03', 'cv04', 'cv11', /* JetBrains Mono stylistic alternates */
+    'ss01', 'ss02';
+}
+
+.font-mono,
+[class*='font-mono'] {
+  font-feature-settings: 'tnum' on, 'lnum' on, 'zero' on, 'cv02', 'cv03';
+  font-variant-numeric: tabular-nums;
+}
+
+/* ----------------------------------------------------------------------------
+ * Keyframes specific to the system layer
+ * -------------------------------------------------------------------------- */
+@keyframes terminal-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes cursor-pulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scaleY(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes scan-sweep {
+  0% { transform: translateX(-110%); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateX(110%); opacity: 0; }
+}
+
+@keyframes scan-line-fade {
+  0%, 100% {
+    opacity: 0.18;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scaleX(1.04);
+  }
+}
+
+@keyframes dots-stagger {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scroll-tick {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+  35% {
+    transform: translateY(4px);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 0.55;
+  }
+}
+
+@keyframes nav-prompt-blink {
+  0%, 65% { opacity: 1; }
+  66%, 100% { opacity: 0.35; }
+}
+
+@keyframes glow-trail {
+  from { opacity: 0; transform: translateX(-100%); }
+  60% { opacity: 1; }
+  to { opacity: 0; transform: translateX(100%); }
+}
+
+/* ----------------------------------------------------------------------------
+ * Typography utilities — composable, used by hero/sections
+ * -------------------------------------------------------------------------- */
+.t-display {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-display);
+  letter-spacing: var(--track-display);
+  line-height: 0.98;
+}
+
+.t-h1 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-h1);
+  letter-spacing: var(--track-h1);
+  line-height: 1.05;
+}
+
+.t-h2 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-h2);
+  letter-spacing: var(--track-h2);
+  line-height: 1.1;
+}
+
+.t-mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-2xs);
+  letter-spacing: var(--track-mono-widest);
+  text-transform: uppercase;
+  color: var(--color-fg-mute);
+}
+
+.t-mono-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-xs);
+  letter-spacing: var(--track-mono-wide);
+  text-transform: uppercase;
+}
+
+/* Hairline gradient text-mask — for H1 phasing */
+.text-shimmer-fine {
+  background: linear-gradient(
+    100deg,
+    var(--color-fg) 0%,
+    var(--color-fg) 35%,
+    var(--color-primary-glow) 50%,
+    var(--color-fg) 65%,
+    var(--color-fg) 100%
+  );
+  background-size: 220% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: text-shimmer 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-shimmer-fine {
+    animation: none;
+    background: var(--color-fg);
+    -webkit-text-fill-color: var(--color-fg);
+    color: var(--color-fg);
+  }
+}
+
+/* ============================================================================
+ * BUTTON SYSTEM
+ * Four canonical variants. Every interactive surface on the site lands in one.
+ *
+ * — .btn-terminal-primary  (filled CTA, magnetic, blink cursor, glow trail)
+ * — .btn-terminal-ghost    (border, conic gradient on hover, mono uppercase)
+ * — .btn-terminal-link     (inline, "> label_" prefix + animated underline)
+ * — .btn-terminal-icon     (icon-only, ring-on-hover)
+ *
+ * All variants:
+ *   • respect prefers-reduced-motion
+ *   • use focus-visible rings (custom, never browser default)
+ *   • stack consistent timings via --dur-* / --ease-*
+ * ============================================================================ */
+
+.btn-terminal {
+  --btn-bg: var(--color-surface);
+  --btn-fg: var(--color-fg);
+  --btn-border: var(--color-line);
+  --btn-glow: color-mix(in oklab, var(--color-primary) 50%, transparent);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.125rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-sm);
+  font-weight: 500;
+  letter-spacing: var(--track-mono-tight);
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 0;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  isolation: isolate;
+  transform: translate3d(var(--btn-mx, 0px), var(--btn-my, 0px), 0);
+  transition:
+    transform var(--dur-fast) var(--ease-out-expo),
+    border-color var(--dur-normal) var(--ease-standard),
+    background-color var(--dur-normal) var(--ease-standard),
+    color var(--dur-normal) var(--ease-standard),
+    box-shadow var(--dur-normal) var(--ease-standard);
+}
+
+.btn-terminal:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 1px var(--color-bg),
+    0 0 0 3px color-mix(in oklab, var(--color-primary) 70%, transparent);
+}
+
+.btn-terminal:active {
+  transform: translate3d(var(--btn-mx, 0px), calc(var(--btn-my, 0px) + 1px), 0);
+  transition-duration: var(--dur-instant);
+}
+
+/* ---- Variant: PRIMARY ----
+ * Dark-filled accent button. The bright-fill version read as a loud "white"
+ * block against the dark terminal page; this variant keeps the call-to-action
+ * weight via cyan-glow text + tight border + inset highlight, but stays in
+ * the page's colour space instead of dominating it. */
+.btn-terminal-primary {
+  --btn-bg: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--color-primary) 14%, var(--color-surface)) 0%,
+    color-mix(in oklab, var(--color-primary-deep) 8%, var(--color-bg)) 100%
+  );
+  --btn-fg: var(--color-primary-glow);
+  --btn-border: color-mix(in oklab, var(--color-primary) 48%, transparent);
+
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-weight: 500;
+  letter-spacing: var(--track-mono-tight);
+  box-shadow:
+    inset 0 1px 0 0 color-mix(in oklab, var(--color-primary-glow) 22%, transparent),
+    inset 0 -1px 0 0 color-mix(in oklab, var(--color-primary-deep) 28%, transparent),
+    0 1px 0 0 rgba(0, 0, 0, 0.5),
+    0 8px 22px -12px color-mix(in oklab, var(--color-primary) 45%, transparent);
+}
+
+.btn-terminal-primary:hover {
+  --btn-fg: #ffffff;
+  --btn-border: color-mix(in oklab, var(--color-primary) 80%, transparent);
+  box-shadow:
+    inset 0 1px 0 0 color-mix(in oklab, var(--color-primary-glow) 35%, transparent),
+    inset 0 -1px 0 0 color-mix(in oklab, var(--color-primary-deep) 38%, transparent),
+    0 1px 0 0 rgba(0, 0, 0, 0.55),
+    0 14px 32px -12px color-mix(in oklab, var(--color-primary-glow) 55%, transparent),
+    0 0 0 4px color-mix(in oklab, var(--color-primary) 14%, transparent);
+}
+
+/* ---- Variant: GHOST ---- */
+.btn-terminal-ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--color-fg-dim);
+  --btn-border: var(--color-line);
+  text-transform: uppercase;
+  letter-spacing: var(--track-mono-wide);
+  font-size: var(--text-mono-xs);
+  padding: 0.8125rem 1.125rem;
+}
+
+.btn-terminal-ghost:hover {
+  --btn-fg: var(--color-fg);
+  --btn-border: color-mix(in oklab, var(--color-primary) 50%, transparent);
+  background: color-mix(in oklab, var(--color-primary) 6%, transparent);
+}
+
+/* ---- Variant: LINK (inline) ---- */
+.btn-terminal-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.375rem;
+  position: relative;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-sm);
+  color: var(--color-primary);
+  background: transparent;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-standard);
+}
+
+.btn-terminal-link:hover {
+  color: var(--color-primary-glow);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.btn-terminal-link:focus-visible {
+  outline: none;
+  color: var(--color-primary-glow);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---- Variant: ICON ---- */
+.btn-terminal-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: var(--color-fg-dim);
+  cursor: pointer;
+  transition:
+    color var(--dur-fast) var(--ease-standard),
+    background-color var(--dur-fast) var(--ease-standard),
+    border-color var(--dur-fast) var(--ease-standard),
+    box-shadow var(--dur-fast) var(--ease-standard);
+}
+
+.btn-terminal-icon:hover {
+  color: var(--color-fg);
+  background: color-mix(in oklab, var(--color-primary) 8%, transparent);
+  border-color: color-mix(in oklab, var(--color-primary) 30%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-primary) 6%, transparent);
+}
+
+.btn-terminal-icon:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 1px var(--color-bg),
+    0 0 0 3px color-mix(in oklab, var(--color-primary) 70%, transparent);
+}
+
+/* Reduce motion: kill animation, keep state transitions snappy */
+@media (prefers-reduced-motion: reduce) {
+  .btn-terminal {
+    animation: none !important;
+    transition-duration: var(--dur-instant) !important;
+  }
+}
+
+/* ============================================================================
+ * STATUS PILL — refined, mono uppercase, subtle inner border
+ * ============================================================================ */
+.pill-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3125rem 0.6875rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-2xs);
+  letter-spacing: var(--track-mono-wide);
+  text-transform: uppercase;
+  color: var(--color-success);
+  background: color-mix(in oklab, var(--color-success) 6%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-success) 28%, transparent);
+  border-radius: 0;
+  position: relative;
+}
+
+.pill-status__dot {
+  display: block;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  animation: terminal-blink 2.4s steps(2) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill-status__dot {
+    animation: none !important;
+  }
+}
+
+/* ============================================================================
+ * SEPARATOR PRIMITIVES (consumed by <Separator/> component)
+ * Four variants. Each owes nothing to <hr>.
+ * ============================================================================ */
+.sep {
+  --sep-fade-from: color-mix(in oklab, var(--color-fg) 0%, transparent);
+  --sep-fade-via: color-mix(in oklab, var(--color-primary) 35%, transparent);
+  --sep-fade-to: color-mix(in oklab, var(--color-fg) 0%, transparent);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-block: 2.5rem;
+  user-select: none;
+}
+
+/* ---- Variant: comment ---- */
+/* `// section name —` mono label + thin gradient line that fades outward */
+.sep--comment {
+  gap: 1rem;
+}
+
+.sep--comment .sep__label {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-xs);
+  letter-spacing: var(--track-mono-wide);
+  color: var(--color-fg-mute);
+  white-space: nowrap;
+}
+
+.sep--comment .sep__line {
+  flex: 1 1 auto;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    var(--sep-fade-via) 0%,
+    var(--sep-fade-to) 60%,
+    transparent 100%
+  );
+  position: relative;
+}
+
+.sep--comment .sep__line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 8px;
+  height: 3px;
+  background: var(--color-primary);
+  box-shadow: 0 0 12px var(--color-primary-glow);
+  border-radius: 1px;
+}
+
+/* ---- Variant: scan ---- */
+/* Animated horizontal scan line; pulses gently */
+.sep--scan {
+  height: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sep--scan::before {
+  content: '';
+  position: absolute;
+  inset: 50% 0 0 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--hairline-strong) 20%,
+    var(--hairline-accent) 50%,
+    var(--hairline-strong) 80%,
+    transparent 100%
+  );
+  transform-origin: center;
+  animation: scan-line-fade 4s var(--ease-in-out-quart) infinite;
+}
+
+.sep--scan::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 35%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-primary-glow) 50%,
+    transparent 100%
+  );
+  filter: blur(0.5px);
+  opacity: 0.7;
+  animation: scan-sweep 6s var(--ease-in-out-quart) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sep--scan::before,
+  .sep--scan::after {
+    animation: none;
+  }
+  .sep--scan::after {
+    display: none;
+  }
+}
+
+/* ---- Variant: dots ---- */
+.sep--dots {
+  gap: 4px;
+  justify-content: center;
+}
+
+.sep--dots .sep__dot {
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--color-fg-mute);
+  opacity: 0;
+  animation: dots-stagger 600ms var(--ease-out-expo) forwards;
+}
+
+.sep--dots .sep__dot:nth-child(odd) {
+  background: color-mix(in oklab, var(--color-primary) 60%, var(--color-fg-mute));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sep--dots .sep__dot {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* ---- Variant: frame (corner brackets) ---- */
+.sep--frame {
+  position: relative;
+  height: 24px;
+  margin-block: 3rem;
+}
+
+.sep--frame .sep__corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  color: var(--color-fg-mute);
+  opacity: 0.6;
+}
+
+.sep--frame .sep__corner::before,
+.sep--frame .sep__corner::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+}
+
+.sep--frame .sep__corner--tl {
+  top: 0;
+  left: 0;
+}
+.sep--frame .sep__corner--tl::before { top: 0; left: 0; width: 14px; height: 1px; }
+.sep--frame .sep__corner--tl::after  { top: 0; left: 0; width: 1px; height: 14px; }
+
+.sep--frame .sep__corner--tr {
+  top: 0;
+  right: 0;
+}
+.sep--frame .sep__corner--tr::before { top: 0; right: 0; width: 14px; height: 1px; }
+.sep--frame .sep__corner--tr::after  { top: 0; right: 0; width: 1px; height: 14px; }
+
+.sep--frame .sep__corner--bl {
+  bottom: 0;
+  left: 0;
+}
+.sep--frame .sep__corner--bl::before { bottom: 0; left: 0; width: 14px; height: 1px; }
+.sep--frame .sep__corner--bl::after  { bottom: 0; left: 0; width: 1px; height: 14px; }
+
+.sep--frame .sep__corner--br {
+  bottom: 0;
+  right: 0;
+}
+.sep--frame .sep__corner--br::before { bottom: 0; right: 0; width: 14px; height: 1px; }
+.sep--frame .sep__corner--br::after  { bottom: 0; right: 0; width: 1px; height: 14px; }
+
+.sep--frame .sep__line-h {
+  position: absolute;
+  inset: 50% 24px 0 24px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--hairline) 50%,
+    transparent 100%
+  );
+}
+
+/* ============================================================================
+ * NAV PROMPT — `[~/sceat]` with blinking bracket
+ * ============================================================================ */
+.nav-prompt {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-sm);
+  letter-spacing: var(--track-mono-tight);
+  color: var(--color-fg);
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-prompt__bracket {
+  color: var(--color-primary);
+}
+
+.nav-prompt__bracket--right {
+  animation: nav-prompt-blink 2.4s steps(2) infinite;
+}
+
+.nav-prompt__path {
+  color: var(--color-fg);
+  margin-inline: 0.0625rem;
+}
+
+.nav-prompt:hover .nav-prompt__path {
+  color: var(--color-primary-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-prompt__bracket--right {
+    animation: none;
+  }
+}
+
+/* ============================================================================
+ * NAV LINK — terminal cursor `_` morphs to underline on hover
+ * ============================================================================ */
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-sm);
+  letter-spacing: var(--track-mono-tight);
+  color: var(--color-fg-dim);
+  text-decoration: none;
+  padding: 0.375rem 0;
+  transition: color var(--dur-fast) var(--ease-standard);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-primary-glow) 100%
+  );
+  transition: right var(--dur-normal) var(--ease-out-expo);
+}
+
+.nav-link:hover {
+  color: var(--color-fg);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link.is-active::after {
+  right: 0;
+}
+
+.nav-link.is-active {
+  color: var(--color-fg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link::after {
+    transition-duration: var(--dur-instant);
+  }
+}
+
+/* ============================================================================
+ * SCROLL HINT — refined explore badge
+ * ============================================================================ */
+.scroll-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.4375rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-2xs);
+  letter-spacing: var(--track-mono-widest);
+  text-transform: uppercase;
+  color: var(--color-fg-mute);
+  background: color-mix(in oklab, var(--color-bg) 85%, transparent);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  transition:
+    color var(--dur-normal) var(--ease-standard),
+    border-color var(--dur-normal) var(--ease-standard),
+    transform var(--dur-normal) var(--ease-out-expo);
+}
+
+.scroll-explore:hover,
+.scroll-explore:focus-visible {
+  color: var(--color-fg-dim);
+  border-color: var(--hairline-accent);
+}
+
+.scroll-explore__arrow {
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: var(--color-primary);
+  animation: scroll-tick 2.4s var(--ease-in-out-quart) infinite;
+}
+
+.scroll-explore__cursor {
+  display: inline-block;
+  width: 0.5ch;
+  height: 0.875em;
+  margin-left: 0.125rem;
+  background: currentColor;
+  vertical-align: middle;
+  animation: terminal-blink 1.05s steps(2) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-explore__arrow,
+  .scroll-explore__cursor {
+    animation: none;
+  }
+}
+
+/* ============================================================================
+ * DISCORD-STYLE TITLE GRADIENTS — three named utilities
+ * Applied to flagship H1s and section accents. background-clip: text trick.
+ * Each ships with a 30% glow text-shadow so the type sits in its halo.
+ * ============================================================================ */
+.text-gradient-bitfinex,
+.text-gradient-hytale,
+.text-gradient-cyan-sky {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  /* keep crisp on retina; gradient subpixel rendering is finicky */
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-gradient-bitfinex {
+  background-image: var(--gradient-bitfinex);
+  text-shadow: 0 0 24px color-mix(in oklab, #34d399 30%, transparent);
+}
+
+.text-gradient-hytale {
+  background-image: var(--gradient-hytale);
+  text-shadow: 0 0 24px color-mix(in oklab, #a855f7 30%, transparent);
+}
+
+.text-gradient-cyan-sky {
+  background-image: var(--gradient-cyan-sky);
+  text-shadow: 0 0 24px color-mix(in oklab, #60a5fa 30%, transparent);
+}
+
+/* Hero v5 — single static blue gradient, no animation, no glow */
+.text-gradient-hero {
+  background: var(--gradient-hero);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-contrast: more) {
+  .text-gradient-hero {
+    background: none;
+    color: var(--color-primary-glow);
+    -webkit-text-fill-color: var(--color-primary-glow);
+  }
+}
+
+/* a11y: high-contrast users get a solid fill, no glow */
+@media (prefers-contrast: more) {
+  .text-gradient-bitfinex,
+  .text-gradient-hytale,
+  .text-gradient-cyan-sky {
+    background-image: none;
+    color: var(--color-fg);
+    -webkit-text-fill-color: var(--color-fg);
+    text-shadow: none;
+  }
+}
+
+/* ============================================================================
+ * DISCORD ANIMATED SHIMMER — hero H1 only
+ * Five-stop loop, infinite linear pan. ~8s per cycle, lazy.
+ * ============================================================================ */
+.text-shimmer-discord {
+  background-image: var(--gradient-discord-shimmer);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 8s linear infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 0; }
+  100% { background-position: 300% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-shimmer-discord {
+    animation: none;
+    background-position: 0 0;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .text-shimmer-discord {
+    background-image: none;
+    color: var(--color-fg);
+    -webkit-text-fill-color: var(--color-fg);
+    animation: none;
+  }
+}
+
+/* ============================================================================
+ * GRADIENT BORDER — replaces flat 1px hairlines on cards / surfaces.
+ * Usage:
+ *   <div class="gradient-border" style="--gradient-border: var(--gradient-cyan-sky)">…</div>
+ * Or scope per-section by setting --gradient-border on a parent.
+ * Implementation: ::before mask-composite trick (no layout impact).
+ * ============================================================================ */
+.gradient-border {
+  --gradient-border: var(--gradient-aurora);
+  --gradient-border-width: 1px;
+  position: relative;
+  isolation: isolate;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: var(--gradient-border-width);
+  border-radius: inherit;
+  background: var(--gradient-border);
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+          mask-composite: exclude;
+}
+
+@media (prefers-contrast: more) {
+  .gradient-border::before {
+    background: var(--color-fg);
+  }
+}
+
+/* ============================================================================
+ * Refined separator — comment variant (cleaner mono label, thinner gradient)
+ * Override pre-existing `.sep--comment .sep__line::after` decorative chip
+ * so it reads less 2005-blog and more terminal-readout.
+ * ============================================================================ */
+.sep--comment {
+  margin-block: 3rem;
+}
+
+.sep--comment .sep__label {
+  font-size: var(--text-mono-2xs);
+  letter-spacing: var(--track-mono-widest);
+  text-transform: uppercase;
+}
+
+.sep--comment .sep__line {
+  background: linear-gradient(
+    to right,
+    color-mix(in oklab, var(--color-primary) 28%, transparent) 0%,
+    color-mix(in oklab, var(--color-primary) 8%, transparent) 40%,
+    transparent 100%
+  );
+}
+
+/* hide the chunky pixel chip; HUD readouts don't get jewelry */
+.sep--comment .sep__line::after {
+  display: none;
+}

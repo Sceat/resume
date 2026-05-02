@@ -1,8 +1,21 @@
 [build]
-	publish = "dist"
-	command = "npm run build"
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[headers]]
+  for = "/001-CYRIL-MORLET-RESUME.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+[[headers]]
+  for = "/print"
+  [headers.values]
+    X-Robots-Tag = "noindex"
 
 [[redirects]]
-	from = "/*"
-	to = "index.html"
-	status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
