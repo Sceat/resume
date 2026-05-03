@@ -127,7 +127,7 @@ function template() {
       el('span', null, '·'),
       el('span', null, `github.com/${profile.github.replace(/^@/, '')}`),
       el('span', null, '·'),
-      el('span', null, `${profile.location.city}, ${profile.location.country}`),
+      el('span', null, profile.location),
     ),
   )
 }

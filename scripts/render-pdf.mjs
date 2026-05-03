@@ -43,10 +43,24 @@ const COLOR = {
   fg: '#0b1220',
   fgDim: '#475569',
   fgMute: '#64748b',
-  link: '#2563eb',
-  accent: '#1d4ed8',
-  rule: '#cbd5e1',
+  link: '#3b82f6',
+  accent: '#3b82f6',
+  accentLight: '#60a5fa',
+  accentGlow: '#93c5fd',
+  rule: '#dbeafe',
 }
+
+// Per-flagship accent — mirrors the site's [data-accent] overrides.
+// Falls back to COLOR.accent if a flagship lacks an entry.
+const FLAGSHIP_COLOR = {
+  bitfinex: '#fbbf24',
+  hytale: '#818cf8',
+  aresrpg: '#38bdf8',
+  talos: '#34d399',
+}
+
+// Brand gradient for the top stripe — site primary-deep → sky.
+const BRAND_GRADIENT = ['#3b82f6', '#38bdf8']
 
 // ─── Font resolution ─────────────────────────────────────────────────────
 // pdfmake/fontkit needs static TTFs to embed (woff2 trips a known
@@ -108,9 +122,12 @@ const hr = () => ({
 })
 
 const sectionHeading = (label) => ({
-  text: label.toUpperCase(),
+  text: [
+    { text: '▸ ', color: COLOR.accentLight },
+    { text: label.toUpperCase() },
+  ],
   style: 'h2',
-  margin: [0, 6, 0, 1],
+  margin: [0, 5, 0, 1],
 })
 
 function formatPeriod(period) {
@@ -120,6 +137,22 @@ function formatPeriod(period) {
 
 // ─── Document sections ───────────────────────────────────────────────────
 function buildHeader() {
+  // Drive language emphasis from the data: native/fluent → bold accent,
+  // anything else → muted. Survives content edits without touching layout.
+  const HIGHLIGHT_LEVELS = new Set(['native', 'fluent'])
+  const languageNodes = []
+  profile.languages.forEach((l, i) => {
+    if (i > 0) {
+      languageNodes.push({ text: '  ·  ', color: COLOR.fgMute })
+    }
+    const isHighlight = HIGHLIGHT_LEVELS.has(l.level)
+    languageNodes.push({
+      text: `${l.name} (${l.level})`,
+      color: isHighlight ? COLOR.accent : COLOR.fgMute,
+      bold: isHighlight,
+    })
+  })
+
   return {
     stack: [
       {
@@ -131,7 +164,7 @@ function buildHeader() {
         text: `${profile.title} · Sui Move · Web3`,
         style: 'mono',
         color: COLOR.fgDim,
-        margin: [0, 0, 0, 4],
+        margin: [0, 0, 0, 2],
       },
       {
         text: [
@@ -149,10 +182,15 @@ function buildHeader() {
         margin: [0, 0, 0, 2],
       },
       {
+        text: dim(profile.location),
+        style: 'mono',
+        fontSize: 9,
+        margin: [0, 0, 0, 1],
+      },
+      {
         text: [
-          dim(`${profile.location.city}, ${profile.location.country}`),
-          dim('  ·  '),
-          dim(profile.languages.map((l) => `${l.name} (${l.level})`).join(', ')),
+          { text: 'Languages   ', color: COLOR.fgDim, fontSize: 8.5 },
+          ...languageNodes,
         ],
         style: 'mono',
         fontSize: 9,
@@ -214,6 +252,10 @@ function buildHighlightedProjects() {
       stack: [
         {
           text: [
+            {
+              text: '■ ',
+              color: FLAGSHIP_COLOR[f.id] || COLOR.accent,
+            },
             { text: f.title, bold: true, color: COLOR.fg },
             { text: '  —  ', color: COLOR.fgMute },
             { text: f.oneLiner, color: COLOR.fgDim },
@@ -258,7 +300,7 @@ function buildSkills() {
         {
           text: `${g.name.toUpperCase()}  `,
           style: 'h3',
-          color: COLOR.accent,
+          color: COLOR.accentLight,
         },
         ...g.items.flatMap((it, i) => {
           const sep = i === 0 ? [] : [{ text: ', ', color: COLOR.fgMute }]
@@ -299,7 +341,35 @@ function buildMoreProjects() {
 
 // ─── Doc definition ─────────────────────────────────────────────────────
 async function buildDocDefinition() {
+  // Brand stripe: thin gradient bar spanning the content width
+  // (A4 595 − pageMargins 32+32 = 531). Mirrors the site's primary→sky
+  // signature without committing to SVG-embedded font shenanigans.
+  const brandStripe = {
+    canvas: [
+      {
+        type: 'rect',
+        x: 0,
+        y: 0,
+        w: 531,
+        h: 3,
+        linearGradient: BRAND_GRADIENT,
+      },
+    ],
+    margin: [0, 0, 0, 4],
+  }
+
+  // Terminal preamble — ties the doc to the site's terminal aesthetic.
+  const terminalPreamble = {
+    text: '~ %  cat cyril-morlet.cv',
+    style: 'mono',
+    fontSize: 8.5,
+    color: COLOR.fgDim,
+    margin: [0, 0, 0, 1],
+  }
+
   const content = [
+    brandStripe,
+    terminalPreamble,
     buildHeader(),
     ...buildExperience(),
     ...buildHighlightedProjects(),
@@ -323,10 +393,10 @@ async function buildDocDefinition() {
       font: 'Sans',
       fontSize: 9,
       color: COLOR.fg,
-      lineHeight: 1.14,
+      lineHeight: 1.1,
     },
     styles: {
-      h1: { font: 'Sans', fontSize: 20, bold: true, color: COLOR.fg },
+      h1: { font: 'Sans', fontSize: 20, bold: true, color: COLOR.accent },
       h2: {
         font: 'Sans',
         fontSize: 9.5,

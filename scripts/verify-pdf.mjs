@@ -65,7 +65,6 @@ const SOFT = [
   'Node.js',
   'Solidity',
   'remote',
-  'Bali',
   'French',
   'English',
   'Experience',

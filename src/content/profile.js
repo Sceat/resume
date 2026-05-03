@@ -6,7 +6,7 @@ export const profile = {
   site: 'sceat.xyz',
   github: '@sceat',
   // Phone intentionally omitted — share on a call.
-  location: { city: 'Bali', country: 'Indonesia' },
+  location: 'Remote (asian time)',
   languages: [
     { name: 'French', level: 'native' },
     { name: 'English', level: 'fluent' },

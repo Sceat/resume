@@ -12,7 +12,7 @@ export interface Profile {
   github: string
   /** PDF only — privacy: not rendered on web */
   phone?: string
-  location: { city: string; country: string }
+  location: string
   languages: { name: string; level: string }[]
   status: { availability: string; remote: boolean; ecosystem: string }
 }

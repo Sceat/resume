@@ -4,7 +4,7 @@ export const work = [
     company: 'Claude Code Enjoyer',
     role: 'Solo · multi-agent orchestrator',
     period: { from: '2025-01', to: null },
-    location: 'Bali, Indonesia',
+    location: 'Remote (asian time)',
     remote: true,
     bullets: [
       'Spent an unhealthy amount of time breaking my teeth shipping production systems through Claude Code — including the live Hytale MMORPG, the Talos cluster, and on-chain Sui work.',
@@ -15,7 +15,7 @@ export const work = [
     company: 'Hytale MMORPG',
     role: 'Solo · architect · dev · sysadmin · on-call',
     period: { from: '2026-01', to: null },
-    location: 'Bali, Indonesia',
+    location: 'Remote (asian time)',
     remote: true,
     bullets: [
       'Live solo-run MMORPG with 1,300+ unique players and 1k MRR — Java 25 + FalkorDB + Kubernetes on the Talos cluster.',
@@ -26,7 +26,7 @@ export const work = [
     company: 'AresRPG',
     role: 'Solo · founder · onchain MMORPG',
     period: { from: '2024-02', to: null },
-    location: 'Bali, Indonesia',
+    location: 'Remote (asian time)',
     remote: true,
     bullets: [
       'Fully on-chain MMORPG on Sui — characters and their equipment are Sui objects, true ownership instead of database rows.',
