@@ -18,6 +18,6 @@ export const profile = {
     ecosystem: 'sui ecosystem',
   },
   summary:
-    '12y senior fullstack · ex-Bitfinex (chain integration, incl. Sui) · lead 3 devs on AresRPG (onchain MMORPG on Sui) · run a 1,300-player Hytale MMORPG server.',
+    '12y building production fullstack systems · Web3-native since 2018 · open to senior Sui-ecosystem and crypto-exchange roles.',
   education: 'Self-taught · shipping production code since 2014',
 }

@@ -42,6 +42,9 @@ const REQUIRED = [
 // ─── Soft keywords (counted, never fail) ────────────────────────────────
 const SOFT = [
   'ex-Bitfinex',
+  'Noxant',
+  'agentic',
+  'Docker-in-Docker',
   'onchain',
   'indexer',
   'integration',

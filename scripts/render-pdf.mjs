@@ -56,6 +56,7 @@ const FLAGSHIP_COLOR = {
   bitfinex: '#fbbf24',
   hytale: '#818cf8',
   aresrpg: '#38bdf8',
+  noxant: '#a855f7',
   talos: '#34d399',
 }
 
@@ -133,6 +134,12 @@ const sectionHeading = (label) => ({
 function formatPeriod(period) {
   const to = period.to || 'present'
   return `${period.from} — ${to}`
+}
+
+// If the location already says "Remote", the " · remote" suffix is noise.
+function formatLocation(w) {
+  if (/^remote\b/i.test(w.location)) return w.location
+  return `${w.location}${w.remote ? ' · remote' : ' · in-office'}`
 }
 
 // ─── Document sections ───────────────────────────────────────────────────
@@ -252,7 +259,7 @@ function buildExperience() {
               alignment: 'right',
             },
             {
-              text: `${w.location}${w.remote ? ' · remote' : ' · in-office'}`,
+              text: formatLocation(w),
               style: 'mono',
               fontSize: 8,
               color: COLOR.fgMute,

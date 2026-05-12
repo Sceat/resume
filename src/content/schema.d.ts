@@ -32,7 +32,7 @@ export interface WorkEntry {
   url?: string
 }
 
-export type FlagshipId = 'bitfinex' | 'hytale' | 'aresrpg' | 'talos'
+export type FlagshipId = 'bitfinex' | 'hytale' | 'aresrpg' | 'talos' | 'noxant'
 export type FlagshipStatus = 'live' | 'production' | 'testnet' | 'past'
 
 export interface FlagshipProof {

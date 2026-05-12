@@ -6,7 +6,7 @@ export const flagships = [
     eyebrow: 'flagship/01 · exchange backend · 2022—2024 · 1.5y',
     title: 'Bitfinex',
     oneLiner:
-      'Owned chain integration and crypto listing stability for production deposit/withdrawal pipelines at a top-tier crypto exchange — including Sui.',
+      'Chain integration backend at a top-tier crypto exchange — including the Sui ship.',
     problem:
       'Major cryptocurrency exchange needed new chain integrations and ongoing maintenance for production blockchain infrastructure.',
     scale: [
@@ -97,6 +97,33 @@ export const flagships = [
     ],
     dates: 'feb 2024 — present',
     accent: 'aresrpg',
+  },
+  {
+    id: 'noxant',
+    order: 5,
+    eyebrow: 'flagship/05 · agentic CI/CD on Kubernetes · live',
+    title: 'Noxant',
+    oneLiner:
+      'Agentic CI/CD on Kubernetes — AI agents execute, verify, and publish their own tasks inside Docker-in-Docker sandboxes.',
+    problem:
+      "Engineers shouldn't babysit pipelines. Build infrastructure where agents take a task, run it in isolation, validate the result, and publish — autonomously.",
+    scale: [
+      'agentic pipelines',
+      'DinD isolation',
+      'autonomous publish',
+      'k8s-hosted',
+    ],
+    stack: ['Kubernetes', 'Docker-in-Docker', 'TypeScript', 'AI agents'],
+    role: 'solo · architect · dev · ops',
+    status: 'live',
+    outcome: [
+      'AI agents execute, verify, and publish their own tasks inside Docker-in-Docker sandboxes — no human in the loop.',
+      'Self-hosted on the Talos cluster alongside AresRPG and the Hytale server.',
+      'Built winter 2025.',
+    ],
+    proof: [{ label: 'noxant.io', href: 'https://noxant.io' }],
+    dates: 'dec 2025 — present',
+    accent: 'noxant',
   },
   {
     id: 'talos',

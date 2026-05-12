@@ -10,6 +10,7 @@
       <FlagshipBitfinex />
       <FlagshipHytale />
       <FlagshipAresrpg />
+      <FlagshipNoxant />
       <FlagshipTalos />
     </div>
     <div id="more">
@@ -34,6 +35,7 @@ import HowIWorkSection from '../sections/how-i-work.vue'
 import FlagshipBitfinex from '../sections/flagship-bitfinex.vue'
 import FlagshipHytale from '../sections/flagship-hytale.vue'
 import FlagshipAresrpg from '../sections/flagship-aresrpg.vue'
+import FlagshipNoxant from '../sections/flagship-noxant.vue'
 import FlagshipTalos from '../sections/flagship-talos.vue'
 import MoreProjects from '../sections/more-projects.vue'
 import SkillsMatrix from '../sections/skills-matrix.vue'

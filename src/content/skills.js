@@ -40,6 +40,7 @@ export const skills = {
       name: 'ops',
       items: [
         { name: 'Kubernetes', primary: true },
+        { name: 'agentic CI/CD (DinD)', primary: true },
         { name: 'Talos' },
         { name: 'Helm' },
         { name: 'Helmfile' },

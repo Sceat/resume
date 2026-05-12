@@ -7,7 +7,7 @@ export const work = [
     location: 'Remote',
     remote: true,
     bullets: [
-      'Building onchain side projects: AresRPG (onchain MMORPG on Sui · lead 3 devs · testnet) and a custom MMORPG server on top of Hytale (1,300+ unique players · Java 25 / Kubernetes on Talos). Open to senior Sui-ecosystem and crypto-exchange roles.',
+      'Solo founder & engineer on AresRPG, the Hytale MMORPG server, Noxant, and the Talos cluster.',
     ],
   },
   {
@@ -17,7 +17,7 @@ export const work = [
     location: 'Remote',
     remote: true,
     bullets: [
-      'Owned chain integration and crypto listing stability at a top-tier crypto exchange. Maintained chain backends for production deposit/withdrawal pipelines across multiple L1/L2s — including Sui.',
+      'Owned chain integration and listing stability across multiple L1/L2s — including Sui — for production deposit/withdrawal pipelines at a top-tier crypto exchange.',
     ],
     url: 'https://www.bitfinex.com',
   },
