@@ -15,6 +15,10 @@ export interface Profile {
   location: string
   languages: { name: string; level: string }[]
   status: { availability: string; remote: boolean; ecosystem: string }
+  /** PDF only — elevator pitch shown under the tagline */
+  summary?: string
+  /** PDF only — credentials line shown in the header */
+  education?: string
 }
 
 export interface WorkEntry {
@@ -88,5 +92,7 @@ export interface SkillGroup {
 export interface Skills {
   primary: string
   alsoFluent: string[]
+  /** Optional one-liner about workflow / methodology */
+  method?: string
   groups: SkillGroup[]
 }

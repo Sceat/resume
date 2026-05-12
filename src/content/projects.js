@@ -14,27 +14,15 @@ export const projects = [
     link: 'https://github.com/HydreIO',
   },
   {
-    name: 'Sidy',
-    tagline: 'real estate management platform · CTO chapter 2019—2021',
-    stack: ['Vue', 'Kubernetes', 'Helmfile', 'RedisGraph'],
-    status: 'past',
-  },
-  {
     name: 'Mana Finance',
-    tagline: 'DeFi yield farm',
+    tagline: 'DeFi yield aggregator · Solidity',
     stack: ['React', 'Solidity'],
     status: 'past',
   },
   {
     name: 'PepeDefense',
-    tagline: 'decentralized tower defense',
+    tagline: 'onchain tower defense · Solidity smart contracts',
     stack: ['Solidity', 'Canvas', 'Vue 3'],
     status: 'past',
-  },
-  {
-    name: 'Affinidi',
-    tagline: 'SSI + credentials verification',
-    stack: ['React', 'Node.js', 'Docker', 'AWS'],
-    status: 'past · employer',
   },
 ]

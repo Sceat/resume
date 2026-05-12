@@ -127,7 +127,7 @@ const sectionHeading = (label) => ({
     { text: label.toUpperCase() },
   ],
   style: 'h2',
-  margin: [0, 5, 0, 1],
+  margin: [0, 4, 0, 1],
 })
 
 function formatPeriod(period) {
@@ -153,50 +153,78 @@ function buildHeader() {
     })
   })
 
-  return {
-    stack: [
-      {
-        text: profile.name.toUpperCase(),
-        style: 'h1',
-        margin: [0, 0, 0, 2],
-      },
-      {
-        text: `${profile.title} · Sui Move · Web3`,
-        style: 'mono',
-        color: COLOR.fgDim,
-        margin: [0, 0, 0, 2],
-      },
-      {
-        text: [
-          link(profile.email, `mailto:${profile.email}`),
-          dim('  ·  '),
-          link(profile.site, `https://${profile.site}`),
-          dim('  ·  '),
-          link(
-            `github.com/${profile.github.replace(/^@/, '')}`,
-            `https://github.com/${profile.github.replace(/^@/, '')}`,
-          ),
-        ],
-        style: 'mono',
-        fontSize: 9,
-        margin: [0, 0, 0, 2],
-      },
-      {
-        text: dim(profile.location),
-        style: 'mono',
-        fontSize: 9,
-        margin: [0, 0, 0, 1],
-      },
-      {
-        text: [
-          { text: 'Languages   ', color: COLOR.fgDim, fontSize: 8.5 },
-          ...languageNodes,
-        ],
-        style: 'mono',
-        fontSize: 9,
-      },
-    ],
+  const headerStack = [
+    {
+      text: profile.name.toUpperCase(),
+      style: 'h1',
+      margin: [0, 0, 0, 2],
+    },
+    {
+      text: [
+        { text: profile.title, color: COLOR.fgDim },
+        { text: '  ·  ', color: COLOR.fgMute },
+        { text: 'ex-Bitfinex', color: COLOR.accent, bold: true },
+        { text: '  ·  ', color: COLOR.fgMute },
+        { text: 'Sui Move · Onchain', color: COLOR.fgDim },
+      ],
+      style: 'mono',
+      margin: [0, 0, 0, 2],
+    },
+  ]
+
+  if (profile.summary) {
+    headerStack.push({
+      text: profile.summary,
+      style: 'body',
+      color: COLOR.fgDim,
+      margin: [0, 0, 0, 3],
+    })
   }
+
+  headerStack.push(
+    {
+      text: [
+        link(profile.email, `mailto:${profile.email}`),
+        dim('  ·  '),
+        link(profile.site, `https://${profile.site}`),
+        dim('  ·  '),
+        link(
+          `github.com/${profile.github.replace(/^@/, '')}`,
+          `https://github.com/${profile.github.replace(/^@/, '')}`,
+        ),
+      ],
+      style: 'mono',
+      fontSize: 9,
+      margin: [0, 0, 0, 2],
+    },
+    {
+      text: dim(profile.location),
+      style: 'mono',
+      fontSize: 9,
+      margin: [0, 0, 0, 1],
+    },
+    {
+      text: [
+        { text: 'Languages   ', color: COLOR.fgDim, fontSize: 8.5 },
+        ...languageNodes,
+      ],
+      style: 'mono',
+      fontSize: 9,
+      margin: [0, 0, 0, 1],
+    },
+  )
+
+  if (profile.education) {
+    headerStack.push({
+      text: [
+        { text: 'Education   ', color: COLOR.fgDim, fontSize: 8.5 },
+        { text: profile.education, color: COLOR.fg, fontSize: 9 },
+      ],
+      style: 'mono',
+    })
+  }
+
+  return { stack: headerStack }
 }
 
 function buildExperience() {
@@ -393,10 +421,10 @@ async function buildDocDefinition() {
       font: 'Sans',
       fontSize: 9,
       color: COLOR.fg,
-      lineHeight: 1.1,
+      lineHeight: 1.08,
     },
     styles: {
-      h1: { font: 'Sans', fontSize: 20, bold: true, color: COLOR.accent },
+      h1: { font: 'Sans', fontSize: 18, bold: true, color: COLOR.accent },
       h2: {
         font: 'Sans',
         fontSize: 9.5,

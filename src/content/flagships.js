@@ -6,7 +6,7 @@ export const flagships = [
     eyebrow: 'flagship/01 · exchange backend · 2022—2024 · 1.5y',
     title: 'Bitfinex',
     oneLiner:
-      'Integrated and maintained blockchain backends — including Sui — for a major cryptocurrency exchange.',
+      'Owned chain integration and crypto listing stability for production deposit/withdrawal pipelines at a top-tier crypto exchange — including Sui.',
     problem:
       'Major cryptocurrency exchange needed new chain integrations and ongoing maintenance for production blockchain infrastructure.',
     scale: [
@@ -31,8 +31,9 @@ export const flagships = [
     id: 'hytale',
     order: 2,
     eyebrow: 'flagship/02 · live · 1,300+ unique players · solo',
-    title: 'Hytale MMORPG',
-    oneLiner: '1,300+ unique players. 1k MRR. One person.',
+    title: 'Hytale MMORPG server',
+    oneLiner:
+      'Custom MMORPG server on top of Hytale · 1,300+ unique players · Java 25 / FalkorDB / Kubernetes on Talos.',
     problem:
       '1k-MRR live multiplayer game, fully solo, AI-augmented dev workflow.',
     scale: ['1,300+ unique players', '1k MRR', 'solo-operated', '~370K LOC'],
@@ -64,7 +65,7 @@ export const flagships = [
     eyebrow: 'flagship/03 · onchain mmorpg · since 2024',
     title: 'AresRPG',
     oneLiner:
-      'Characters and equipment are Sui objects. All canonical state lives on chain.',
+      'Onchain MMORPG on Sui (testnet) — lead a team of 3 · custom Sui→FalkorDB indexer for sub-second gameplay queries against onchain state.',
     problem:
       'Build a real on-chain MMORPG where every character, item, and trade is a Sui object — true ownership, not a database row.',
     scale: [
@@ -103,7 +104,7 @@ export const flagships = [
     eyebrow: 'flagship/04 · self-hosted prod · 33 helm releases',
     title: 'Talos cluster',
     oneLiner:
-      'GitOps, zero-trust ingress, SOPS secrets, Longhorn storage. Boring, by design.',
+      'Self-hosted production K8s on Talos OS · GitOps via Helmfile · zero-trust ingress · SOPS secrets · Longhorn storage. Powers all side projects.',
     problem:
       'Run all my production workloads on hardware I control, with zero cloud lock-in.',
     scale: [

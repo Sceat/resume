@@ -9,6 +9,7 @@ export const skills = {
       name: 'onchain',
       items: [
         { name: 'Sui Move', primary: true },
+        { name: 'Sui RPC / indexers' },
         { name: 'zkLogin' },
         { name: 'Walrus' },
         { name: 'Solidity (legacy)' },

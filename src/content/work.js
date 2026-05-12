@@ -1,38 +1,14 @@
 /** @type {import('./schema').WorkEntry[]} */
 export const work = [
   {
-    company: 'Claude Code Enjoyer',
-    role: 'Solo · multi-agent orchestrator',
-    period: { from: '2025-01', to: null },
-    location: 'Remote (asian time)',
+    company: 'Independent · Side Projects',
+    role: 'Senior Fullstack Engineer',
+    period: { from: '2024-10', to: null },
+    location: 'Remote',
     remote: true,
     bullets: [
-      'Spent an unhealthy amount of time breaking my teeth shipping production systems through Claude Code — including the live Hytale MMORPG, the Talos cluster, and on-chain Sui work.',
-      'Plan-by-default · parallel agent consensus · critique loops on every plan before a single line gets written.',
+      'Building onchain side projects: AresRPG (onchain MMORPG on Sui · lead 3 devs · testnet) and a custom MMORPG server on top of Hytale (1,300+ unique players · Java 25 / Kubernetes on Talos). Open to senior Sui-ecosystem and crypto-exchange roles.',
     ],
-  },
-  {
-    company: 'Hytale MMORPG',
-    role: 'Solo · architect · dev · sysadmin · on-call',
-    period: { from: '2026-01', to: null },
-    location: 'Remote (asian time)',
-    remote: true,
-    bullets: [
-      'Live solo-run MMORPG with 1,300+ unique players and 1k MRR — Java 25 + FalkorDB + Kubernetes on the Talos cluster.',
-      'Behavior-tree mob AI, anticheat, marketplace, crafting (16 jobs), instance system. Architect to on-call, one human.',
-    ],
-  },
-  {
-    company: 'AresRPG',
-    role: 'Solo · founder · onchain MMORPG',
-    period: { from: '2024-02', to: null },
-    location: 'Remote (asian time)',
-    remote: true,
-    bullets: [
-      'Fully on-chain MMORPG on Sui — characters and their equipment are Sui objects, true ownership instead of database rows.',
-      'Sui Move marketplace · React 19 + Bun WebSocket · zkLogin auth · FalkorDB graph as cache · 6-locale i18n.',
-    ],
-    url: 'https://aresrpg.world',
   },
   {
     company: 'Bitfinex',
@@ -41,8 +17,7 @@ export const work = [
     location: 'Remote',
     remote: true,
     bullets: [
-      'Integrated multiple blockchains into a major cryptocurrency exchange.',
-      'Coordinated cross-team rollouts with custody, security, and customer-facing teams.',
+      'Owned chain integration and crypto listing stability at a top-tier crypto exchange. Maintained chain backends for production deposit/withdrawal pipelines across multiple L1/L2s — including Sui.',
     ],
     url: 'https://www.bitfinex.com',
   },
@@ -53,8 +28,7 @@ export const work = [
     location: 'Kyiv, Ukraine',
     remote: true,
     bullets: [
-      'Worked in big teams across multiple timezones on major and diverse React/Node/Docker API & App projects, including SSI and credentials verification.',
-      'Hosted on AWS with advanced CI pipelines.',
+      'Shipped React + Node microservices for self-sovereign identity (SSI) and credential verification, working across distributed teams (EU/SG/IN). REST APIs, Docker, AWS.',
     ],
     url: 'https://www.affinidi.com',
   },
@@ -65,8 +39,7 @@ export const work = [
     location: 'Montpellier, France',
     remote: false,
     bullets: [
-      'Co-founder and CTO. Wrote and led the development of every technology inside the company.',
-      'Managed the developers team and owned the full technical direction.',
+      'Co-founder and CTO. Led a 4-engineer team building a real-estate management platform from zero to production. Owned architecture, infra, and hiring.',
     ],
   },
   {
@@ -76,8 +49,7 @@ export const work = [
     location: 'France',
     remote: true,
     bullets: [
-      'Contributed, created, and maintained many open-source libraries (see GitHub for details).',
-      'Delivered freelance missions across various clients.',
+      'Created and maintained 18+ npm OSS libraries (auth, real-time graphs, transport, storage primitives — org: hydre.io). Freelance fullstack delivery alongside.',
     ],
     url: 'https://github.com/sceat',
   },

@@ -41,9 +41,11 @@ const REQUIRED = [
 
 // ─── Soft keywords (counted, never fail) ────────────────────────────────
 const SOFT = [
-  'Solo',
-  'multi-chain',
-  'on-chain',
+  'ex-Bitfinex',
+  'onchain',
+  'indexer',
+  'integration',
+  'listing',
   'Helm',
   'FalkorDB',
   'Java',
@@ -64,6 +66,8 @@ const SOFT = [
   'Hydre',
   'Node.js',
   'Solidity',
+  'CTO',
+  'self-taught',
   'remote',
   'French',
   'English',
