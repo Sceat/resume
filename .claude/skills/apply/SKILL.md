@@ -7,6 +7,12 @@ description: Tailor Cyril's CV to a specific job offer — fetch the JD, run an 
 
 Input: a job offer URL or pasted JD text.
 
+REPORT FORMAT LAW (owner 2026-07-29): the reply to Cyril is ALWAYS a bullet list
+in the exact order he sent the offers, one bullet per offer, starting with the
+exact offer title, then the verdict: **APPLY** (folder path + key caveats) or
+**SKIPPED** (the reason). Detail beyond that goes after the list, never instead
+of it.
+
 ## Process
 
 0. **Dedup check FIRST.** Canonicalize the URL (strip `?query` and `#fragment`) and
