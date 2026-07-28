@@ -10,9 +10,9 @@ Cyril instead (he may have unlisted experience to add here).
 - **Name:** Cyril Morlet
 - **Email:** fetch@sceat.xyz
 - **Site:** sceat.xyz · **GitHub:** github.com/sceat (orgs: HydreIO, aresrpg)
-- **Phone:** intentionally not listed (shared on call) — NOTE: some ATS forms score
-  blank phone fields down; ask Cyril per application if he wants it on that CV.
-- **LinkedIn:** none known — gap worth flagging; many recruiters filter on it.
+- **Phone:** +380 68 978 1786 (owner-confirmed 2026-07-28 — include on CVs and ATS forms)
+- **LinkedIn:** none (owner-confirmed 2026-07-28) — leave the field blank, never invent one.
+- **Salary expectation:** 100k+ (USD, annual) — the default when a form demands a number.
 - **Location:** Remote · UTC+8 · overlaps EU and APAC working hours (US-East partial)
 - **Languages:** French (native), English (fluent), Ukrainian (beginner)
 - **Education:** self-taught, no degree, shipping production code since 2014.
@@ -26,23 +26,38 @@ Cyril instead (he may have unlisted experience to add here).
 
 Portfolio of live products, all designed, built, deployed, and operated solo:
 
-- **Hytale MMORPG server** (Jan 2026 – present, live): custom MMORPG server on top of
-  Hytale. Java 25, ~370K LOC, 1,300+ unique players, ~1k MRR, solo-operated.
-  Behavior-tree mob AI, anticheat, marketplace, crafting (16 jobs), instance system.
-  FalkorDB + Redis Stack, deployed on own Kubernetes cluster, on-call solo.
+- **AresRPG monorepo** (Feb 2024 – present, testnet, aresrpg.world ·
+  github.com/aresrpg — full survey: corpus/aresrpg.md): fully on-chain browser
+  voxel MMORPG on Sui — **~600K LOC, 12 workspaces**: 9 Sui Move packages (~60K
+  LOC Move), deterministic combat sim with a Move on-chain twin (replay-verified
+  parity), **Rust chain indexer** (~10.5K LOC; axum, tokio,
+  sui-indexer-alt-framework → Redis 8 JSON/search → Bun REST API), gas
+  sponsorship service (gasless play, fail-closed), zkLogin/Enoki onboarding, Sui
+  kiosk marketplace, Three.js voxel engine with LOD streaming, PTB SDK. Leads a
+  team of 3. ⚠ SUPERSEDES the site's old "Sui→FalkorDB indexer" description.
+- **Hytale MMORPG server** (Jan 2026 – present, live): custom MMORPG server on top
+  of Hytale. Java 25, **83K+ LOC measured** (site's older ~370K figure
+  unverified — use 80K+ until Cyril justifies the larger count), 1,300+ unique
+  players, ~1k MRR, solo-operated. Behavior-tree mob AI, anticheat, marketplace,
+  crafting (16 jobs), instance system. FalkorDB + Redis Stack, deployed on own
+  Kubernetes cluster, on-call solo.
 - **Noxant** (Dec 2025 – present, live, noxant.io): agentic CI/CD on Kubernetes — AI
   agents execute, verify, and publish their own tasks inside Docker-in-Docker
   sandboxes, no human in the loop. TypeScript.
-- **AresRPG** (Feb 2024 – present, testnet, aresrpg.world · github.com/aresrpg):
-  onchain MMORPG on Sui — leads a team of 3. Characters/items/trades are Sui objects;
-  custom Sui→FalkorDB indexer for sub-second gameplay queries against onchain state.
-  Sui Move, React 19, Bun, zkLogin, Walrus, Tailwind v4.
 - **Talos cluster** (Dec 2025 – present, production): self-hosted Kubernetes on Talos
   OS. 33 Helm releases, 4 domains, GitOps via Helmfile, Cilium, Longhorn, SOPS
-  secrets, Cloudflare Tunnels zero-trust ingress. Runs everything above.
+  secrets, Cloudflare Tunnels zero-trust ingress. Runs everything above; infra
+  repo active daily.
+- **suize / x402** (2026, active): websites on Walrus shipped by AI agents, gasless
+  USDC publishing on Sui, **open-source x402 payment facilitator** + Sui
+  facilitator contributions to the upstream x402 standard.
 - **VersUI**: decentralized Vercel on Sui + Walrus (testnet).
+- **Koshi** (through Jun 2026): turn-based isometric tactical MMORPG — 140K LOC
+  JavaScript/React; combat VFX, spell decks, marketplace. Unreleased; strong
+  evidence, not yet a headline claim.
 - **AI workflow:** Claude Code daily with multi-agent orchestration — spawns N agents
-  per task for implementation/review consensus; built his own agentic infra (Noxant).
+  per task for implementation/review consensus; built his own agentic infra (Noxant)
+  and published MCP servers (sui-graphql-mcp, semantic-memory-mcp, agent-pool).
 
 ### Blockchain Integration Specialist — Bitfinex · Apr 2022 – Oct 2024 · Remote
 
@@ -75,29 +90,49 @@ Portfolio of live products, all designed, built, deployed, and operated solo:
 - **Mana Finance** — DeFi yield aggregator (React, Solidity), past.
 - **PepeDefense** — onchain tower defense (Solidity, Canvas, Vue 3), past.
 
-## Skills (only claim what's here)
+## Skills (only claim what's here — evidence tiers: corpus/tech-inventory.md)
 
 - **Backend:** Node.js (primary, ~10y), TypeScript/JavaScript (primary), Java 25
-  (370K-LOC production server), Bun, REST APIs, WebSocket, microservices
-- **Frontend:** React 19, Vue 3, Tailwind CSS v4, Three.js, i18n
-- **Databases:** FalkorDB (graph), Redis / Redis Stack / Redis TimeSeries, schema &
-  database design, custom blockchain indexers
+  (80K+ LOC production server), Rust (working — 10K+ LOC indexer: axum, tokio),
+  Bun, GraphQL (authored server/client libraries), REST APIs, WebSocket,
+  microservices
+- **Frontend:** React 19, Vue 3, Tailwind CSS v4, Three.js, Zustand, PWA, i18n
+- **Databases:** Redis (8 JSON/search, Stack, TimeSeries, RedisGraph client
+  authorship), FalkorDB (graph), schema & database design, custom blockchain
+  indexers
 - **Infra/Ops:** Kubernetes, Docker, Docker-in-Docker, Talos OS, Helm, Helmfile,
   Cilium, Longhorn, SOPS, Cloudflare Tunnels, GitOps, CI/CD, AWS, MinIO
-- **AI tooling:** Claude Code (daily driver, multi-agent orchestration), agentic
-  CI/CD pipelines (built Noxant), context engineering, AI-orchestrated code review.
-  Do NOT claim Cursor/Copilot unless Cyril confirms.
-- **Web3:** Sui Move, Sui RPC/indexers, zkLogin, Walrus, Solidity, EVM tooling,
-  exchange chain integration (deposits/withdrawals/listings)
-- Does NOT do (never claim): Golang, Python (unconfirmed), Rust (unconfirmed),
-  C++ (unconfirmed), mobile native (unconfirmed) — ask before adding anything.
+- **AI tooling:** Claude Code (daily driver, multi-agent orchestration), OpenAI
+  Codex (cross-vendor review lanes), agentic CI/CD pipelines (built Noxant),
+  authored MCP servers (sui-graphql-mcp, semantic-memory-mcp, agent-pool),
+  context engineering, AI-orchestrated code review. Owner-confirmed 2026-07-28:
+  Claude Code + Codex ONLY — never claim Cursor or Copilot.
+- **Web3:** Sui Move, Sui RPC/indexers (checkpoint streaming, BCS codegen),
+  zkLogin, sponsored transactions / gas stations, Walrus, x402 (open-source Sui
+  facilitator), Solidity, EVM tooling, exchange chain integration
+  (deposits/withdrawals/listings)
+- **Game engineering:** deterministic simulation with on-chain twin, procedural
+  voxel worlds + LOD streaming, behavior-tree AI, anticheat, marketplace
+  economies, protocol design & reverse-engineering (Wireshark Minecraft
+  dissector ★70, Dofus 1.29 protocol libs)
+- **Open source:** 174 repos across 3 orgs, 335 stars total; 18+ published npm
+  libs (HydreIO); notable: aresrpg-mc ★78, minecraft-dissector ★70, rgraph ★46.
+- Does NOT do (never claim): Golang, C++ (unconfirmed), mobile native
+  (unconfirmed); Python and Lua are tooling-tier only (T3) — ask before
+  upgrading anything.
 
 ## Positioning notes
 
 - For exchanges/crypto: lead with Bitfinex + Sui listing + "code where bugs lose funds".
-- For AI-flavored roles: lead with Noxant + Claude Code multi-agent workflow — very
-  few candidates have BUILT agentic infra rather than just used Copilot.
-- For backend roles: lead with Hytale server scale (370K LOC, 1,300+ players, solo).
+- For AI-flavored roles: lead with Noxant + authored MCP servers + Claude Code
+  multi-agent workflow — very few candidates have BUILT agentic infra rather than
+  just used Copilot.
+- For backend roles: lead with the aresrpg monorepo (~600K LOC, Rust indexer) and
+  Hytale server (83K+ LOC Java, 1,300+ players, solo).
+- For game studios: 10+ years of the AresRPG IP (Minecraft ★78 → Hytale → onchain),
+  deterministic sim, voxel engines, protocol reverse-engineering (dissector ★70).
+- For payments/fintech: Bitfinex pipelines + x402 open-source Sui facilitator +
+  gasless USDC publishing (suize).
 - For teams/leadership: Sidy (led 4), AresRPG (leads 3), Affinidi (distributed teams).
 - "Independent since Oct 2024" must read as _founder shipping live revenue-generating
   products_, never as a gap.

@@ -23,6 +23,9 @@ Input: a job offer URL or pasted JD text.
    - Facts ONLY from `applications/master.md` — never invent skills, dates, metrics,
      titles, tools, or degrees. A JD keyword with no supporting fact = flag the gap
      to Cyril, don't fake it.
+   - Mine `applications/corpus/` (per-project evidence: subsystems, metrics, full
+     tech inventory) for JD-relevant depth; promote any newly-claimed fact to
+     master.md in the same change.
    - Mirror the JD title in the CV `title` line; reorder skills groups and pick
      bullets by JD priority; lead the summary with what the JD leads with.
    - `meta.keywords` = the JD terms this CV targets. Each must genuinely appear in
