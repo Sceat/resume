@@ -24,7 +24,8 @@
       "TypeScript",
       "Node.js",
       "Claude Code",
-      "Bitfinex"
+      "Bitfinex",
+      "JavaScript"
     ]
   },
   "name": "Cyril Morlet",
@@ -43,7 +44,7 @@
     },
     {
       "label": "Backend",
-      "items": "Node.js, TypeScript, Java 25, Bun, Rust (working), GraphQL, REST APIs, WebSocket"
+      "items": "Node.js, JavaScript, TypeScript, Java 25, Bun, Rust (working), GraphQL, REST APIs, WebSocket"
     },
     {
       "label": "Trading & Web3",

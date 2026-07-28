@@ -1,62 +1,57 @@
 {
   "meta": {
-    "company": "DV Trading",
-    "role": "Senior AI Engineer",
-    "url": "https://job-boards.greenhouse.io/dvtrading/jobs/4709436005",
+    "company": "Duvo",
+    "role": "AI Platform Engineer (EU/UK Based - Remote)",
+    "url": "https://jobs.ashbyhq.com/duvo/a1e5cdbc-6159-4895-8dae-cf71196550fa",
     "date": "2026-07-29",
     "keywords": [
-      "LLM",
-      "agent",
-      "production",
-      "MCP",
-      "tool-calling",
-      "Kubernetes",
-      "CI/CD",
-      "observability",
-      "security",
-      "regulated",
-      "databases",
-      "APIs",
-      "Claude",
-      "GPT",
+      "AI infrastructure",
+      "agent runtime",
       "evaluation",
+      "context management",
+      "tool orchestration",
+      "observability",
       "TypeScript",
-      "Node",
-      "Python",
-      "financial",
-      "Bitfinex",
+      "production",
+      "agents",
+      "LLM",
+      "debugging",
+      "Kubernetes",
+      "Node.js",
+      "multi-agent",
+      "MCP",
       "JavaScript"
     ]
   },
   "name": "Cyril Morlet",
-  "title": "Senior AI Engineer — Production LLM Agent Systems · ex-Bitfinex",
+  "title": "AI Platform Engineer — Agent Runtimes · TypeScript · ex-Bitfinex",
   "contact": {
     "email": "fetch@sceat.xyz",
     "phone": "+380 68 978 1786",
     "location": "Fully Remote · UTC+8",
     "links": ["sceat.xyz", "github.com/sceat"]
   },
-  "summary": "Senior engineer (12 years) shipping production LLM agent systems — not demos: an agentic development harness (Claude Code multi-agent orchestration + OpenAI Codex (GPT) cross-vendor review, with mechanical evaluation gates) shipping a ~600K-line platform; agentic CI/CD (Noxant) where agents execute, verify, and publish autonomously on Kubernetes; authored MCP servers for production tool-calling against databases and APIs (Redis, GraphQL, blockchain). Regulated financial background: exchange deposit/withdrawal pipelines at Bitfinex — security-critical, sensitive-data systems where bugs lose customer funds. TypeScript/Node.js primary; Python at tooling level; strong observability and CI/CD discipline.",
+  "summary": "Engineer (12 years) building AI infrastructure in production: a TypeScript-centered agent runtime — multi-agent orchestration (Claude Code), tool orchestration via MCP servers I authored, context management, evaluation gates, and full observability (Prometheus, Sentry) — that ships my ~600K-line platform. Built Noxant, agentic CI/CD with autonomous agents on Kubernetes. Comfortable debugging non-deterministic agent behavior with evidence-first discipline: reproduce, bisect, gate. Ex-Bitfinex exchange backend; my own live products fund my obsession with reliability.",
   "skills": [
     {
-      "label": "AI Engineering",
-      "items": "LLM agent systems in production, multi-agent orchestration (Claude Code, OpenAI Codex/GPT), MCP + tool-calling, agent evaluation gates, context engineering, agent memory (Redis + embeddings)"
+      "label": "AI Platform",
+      "items": "agent runtimes, multi-agent orchestration (Claude Code, OpenAI Codex, LLM provider routing), tool orchestration (MCP authorship), context management, evaluation pipelines, debugging non-deterministic systems"
     },
     {
       "label": "Backend",
-      "items": "JavaScript, TypeScript, Node.js, Java 25, Bun, Rust (working), GraphQL, REST APIs, WebSocket; Python (tooling)"
-    },
-    {
-      "label": "Security & Regulated",
-      "items": "exchange money paths at Bitfinex (deposits/withdrawals), fail-closed design, sandbox isolation (DinD), zero-trust infra (SOPS, Cilium)"
+      "items": "JavaScript, TypeScript, Node.js, Java 25, Bun, Rust (working), GraphQL, REST APIs, WebSocket"
     },
     {
       "label": "Infrastructure",
-      "items": "Kubernetes, CI/CD, observability (Prometheus, Sentry), Docker, GitOps"
+      "items": "Kubernetes (self-hosted production), Docker, GitOps, CI/CD, observability (Prometheus, Sentry)"
     },
     {
-      "label": "Databases",
-      "items": "Redis 8 (JSON/search), FalkorDB graph, schema design, custom indexers"
+      "label": "Data",
+      "items": "Redis 8 (JSON/search), embeddings retrieval, FalkorDB graph, schema design"
+    },
+    {
+      "label": "Web3",
+      "items": "exchange integration at Bitfinex, Sui, EVM tooling"
     }
   ],
   "experience": [
@@ -67,10 +62,10 @@
       "from": "2024-10",
       "to": null,
       "bullets": [
-        "Engineered a production agent harness: Claude Code multi-agent orchestration with OpenAI Codex cross-vendor review — mechanical evaluation gates (gold/anchor/unit tests, CodeQL, semgrep) verify every agent-produced change before merge.",
-        "Built Noxant, agentic CI/CD on Kubernetes: agents execute, verify, and publish tasks autonomously inside Docker-in-Docker sandboxes — isolation and fail-closed design.",
-        "Authored production MCP servers for agent tool-calling against databases and APIs: sui-graphql-mcp, semantic-memory-mcp (Redis + embeddings), agent-pool (multi-agent orchestration).",
-        "Lead a team of 3 on a ~600K-line platform (TypeScript/Rust/Move) with full observability (Prometheus, Sentry) and a Rust indexer serving sub-second reads."
+        "Built and operate a production agent runtime: Claude Code multi-agent orchestration with model routing, context management, and mechanical evaluation gates (tests, CodeQL, semgrep) — every agent change verified before merge.",
+        "Built Noxant, agentic CI/CD on Kubernetes: autonomous agents execute, verify, and publish in Docker-in-Docker sandboxes — fail-closed, observable, cost-bounded.",
+        "Authored MCP servers for tool orchestration and agent memory: sui-graphql-mcp, semantic-memory-mcp (Redis + embeddings), agent-pool (persistent multi-agent pooling).",
+        "Lead a team of 3 on a ~600K-line TypeScript platform with Prometheus/Sentry observability and a Rust indexer serving sub-second reads."
       ]
     },
     {

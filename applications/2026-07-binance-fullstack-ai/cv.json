@@ -23,7 +23,8 @@
       "open-source",
       "microservices",
       "REST APIs",
-      "product"
+      "product",
+      "JavaScript"
     ]
   },
   "name": "Cyril Morlet",
@@ -38,7 +39,7 @@
   "skills": [
     {
       "label": "Backend",
-      "items": "Node.js, Java 25, TypeScript, Bun, REST APIs, WebSocket, microservices"
+      "items": "Node.js, Java 25, JavaScript, TypeScript, Bun, REST APIs, WebSocket, microservices"
     },
     {
       "label": "AI Tooling",

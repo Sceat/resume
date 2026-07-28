@@ -21,7 +21,8 @@
       "agentic",
       "production",
       "Claude",
-      "structured outputs"
+      "structured outputs",
+      "JavaScript"
     ]
   },
   "name": "Cyril Morlet",
@@ -44,7 +45,7 @@
     },
     {
       "label": "Backend",
-      "items": "TypeScript, Node.js, Java 25, Rust (working), GraphQL, REST APIs"
+      "items": "JavaScript, TypeScript, Node.js, Java 25, Rust (working), GraphQL, REST APIs"
     },
     {
       "label": "Money-Path Security",

@@ -132,6 +132,12 @@ Portfolio of live products, all designed, built, deployed, and operated solo:
 
 ## Positioning notes
 
+- **JavaScript is the deepest expertise (owner 2026-07-29: "don't forget my
+  deepest expertise is javascript")** — ~15 years: HydreIO's 18+ libs are pure
+  JS, aresrpg-mc is 301k JS, koshi is 140K JS. EVERY CV lists the literal word
+  "JavaScript" alongside TypeScript (recruiters keyword-search both), and
+  JS-heavy roles lead with it.
+
 - For exchanges/crypto: lead with Bitfinex + Sui listing + "code where bugs lose funds".
 - For AI-flavored roles: lead with the AresRPG agentic harness — a ~600K-LOC
   production system engineered and shipped through Claude Code multi-agent

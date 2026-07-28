@@ -21,7 +21,8 @@
       "security",
       "Node.js",
       "TypeScript",
-      "blockchain"
+      "blockchain",
+      "JavaScript"
     ]
   },
   "name": "Cyril Morlet",
@@ -36,7 +37,7 @@
   "skills": [
     {
       "label": "Backend",
-      "items": "Java 25, Node.js, TypeScript, Bun, Rust (working), WebSocket, REST APIs, GraphQL, microservices"
+      "items": "Java 25, Node.js, JavaScript, TypeScript, Bun, Rust (working), WebSocket, REST APIs, GraphQL, microservices"
     },
     {
       "label": "Distributed Systems",

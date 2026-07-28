@@ -1,36 +1,37 @@
 {
   "meta": {
-    "company": "OP Labs",
-    "role": "Senior Software Engineer, Protocol (Rust)",
-    "url": "https://jobs.ashbyhq.com/oplabs/46fea241-959b-470c-9676-5573c059fc56",
+    "company": "Offchain Labs",
+    "role": "Senior Backend Engineer, Rust",
+    "url": "https://jobs.lever.co/offchainlabs/163e72c9-cf90-406a-9311-6ee1d743ae84",
     "date": "2026-07-29",
     "keywords": [
       "Rust",
-      "Ethereum",
       "EVM",
-      "JSON-RPC",
       "distributed systems",
       "production",
-      "Solidity",
-      "tokio",
-      "indexer",
+      "performance",
+      "reliability",
+      "state management",
       "blockchain",
+      "indexer",
+      "tokio",
+      "smart contracts",
+      "open source",
+      "TypeScript",
       "finality",
       "reorg",
-      "TypeScript",
-      "Node.js",
       "JavaScript"
     ]
   },
   "name": "Cyril Morlet",
-  "title": "Senior Software Engineer — Rust & Distributed Systems · ex-Bitfinex",
+  "title": "Senior Backend Engineer — Rust & EVM Systems · ex-Bitfinex",
   "contact": {
     "email": "fetch@sceat.xyz",
     "phone": "+380 68 978 1786",
     "location": "Fully Remote · UTC+8",
     "links": ["sceat.xyz", "github.com/sceat"]
   },
-  "summary": "Engineer with 12 years shipping production distributed systems. Rust in production: built and operate a chain indexer (~10.5K lines — axum, tokio, sui-indexer-alt-framework) streaming blockchain checkpoints into Redis-backed sub-second reads, and maintain a Rust gas-sponsorship service. Client-side Ethereum depth from Bitfinex: owned EVM chain integrations for deposit/withdrawal pipelines — JSON-RPC clients, reorg handling, finality thresholds, fee accounting — code where bugs lose customer funds. Solidity background; TypeScript/Node.js and Java across live game servers and exchange infrastructure.",
+  "summary": "Backend engineer with 12 years shipping production distributed systems. Rust in production: built and operate a chain indexer (~10.5K lines — axum, tokio, sui-indexer-alt-framework) streaming blockchain checkpoints into Redis-backed sub-second, performance-critical reads, and maintain a Rust gas-sponsorship service. Honest Rust depth: one production system, not a decade. Beside it: deep EVM client-side experience from Bitfinex — JSON-RPC clients, reorg handling, finality thresholds, fee accounting on deposit/withdrawal pipelines where bugs lose customer funds — plus state management between chain and clients, smart contracts (Solidity, Sui Move), and a decade of open source (110+ public repos). Reliability is the whole job when the money is real.",
   "skills": [
     {
       "label": "Rust",
