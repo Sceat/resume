@@ -12,7 +12,12 @@ Input: a job offer URL or pasted JD text.
 1. **Extract the JD.** WebFetch the URL (ask for a paste if blocked). Capture: exact
    job title, company, hard requirements (degree, location, visa, seniority,
    must-have tech), keywords, and the JD's own phrasing — mirror exact spellings
-   ("Node.js" vs "NodeJS", "CI/CD" vs "CICD").
+   ("Node.js" vs "NodeJS", "CI/CD" vs "CICD"). Identify the ATS from the apply
+   URL (myworkdayjobs.com = Workday · boards.greenhouse.io = Greenhouse ·
+   jobs.lever.co = Lever · taleo.net = Taleo) and note it in the report — Taleo
+   recruiters lean on literal Boolean keyword search (exact JD terms critical);
+   Greenhouse has no algorithmic scoring (humans + scorecards); Workday is
+   structured-fields-first (the form data matters as much as the PDF).
 2. **Fit check FIRST.** Compare hard requirements against `applications/master.md`.
    Report knockouts honestly (degree gates, student-only programs, required tech he
    lacks) BEFORE polishing prose — a tailored CV cannot beat a knockout filter, and
@@ -30,6 +35,16 @@ Input: a job offer URL or pasted JD text.
      bullets by JD priority; lead the summary with what the JD leads with.
    - `meta.keywords` = the JD terms this CV targets. Each must genuinely appear in
      the CV content — the renderer hard-fails otherwise (anti-fabrication gate).
+   - Keyword placement (researched 2026-07-28): primary JD terms appear 2–3× in
+     DIFFERENT contexts (summary + an achievement bullet + skills line); secondary
+     terms ≥1×; never stuff (repetition without context triggers manipulation
+     flags in modern semantic ATS). Spell out acronym + short form once for key
+     terms when the JD uses either ("Kubernetes (K8s)"). Role titles must stay
+     recruiter-searchable standard ("Senior Full Stack Engineer", not creative
+     variants) — recruiters find candidates by SEARCHING parsed titles/skills,
+     not by scrolling.
+   - Aim to honestly cover ~75% of the JD's requirement terms; list the uncovered
+     ones in the report as gaps.
    - 3–4 bullets for recent roles, fewer for older ones; aim for 1 page.
 4. **Render + verify:** `node scripts/render-application.mjs applications/<dir>` —
    produces `Cyril-Morlet-Resume.pdf` and hard-fails unless every keyword extracts
@@ -39,9 +54,23 @@ Input: a job offer URL or pasted JD text.
 5. **Log it.** Add a row to `applications/log.md`. Update `Status` when Cyril
    reports back (sent / interview / rejected / ghosted).
 6. **Commit + push** (git law), then report to Cyril: PDF path, fit verdict,
-   keyword coverage, and suggested answers for common ATS form fields (why-company
-   pitch in 2 sentences, notice period: immediately available, location: remote
-   UTC+8, salary expectation: ask Cyril — never guess one).
+   keyword coverage + gaps, detected ATS platform, and suggested answers for the
+   FORM questions — the knockout questions (work authorization, location, years
+   of experience, salary, notice) are the single biggest auto-reject filter,
+   bigger than anything on the resume. Defaults from master.md: immediately
+   available · remote UTC+8 · salary 100k+ USD. Answers must be truthful; a
+   gamed knockout answer detonates at offer stage.
+
+## Cyril's applying checklist (paste into the report when relevant)
+
+- Apply EARLY — recruiters work pools on a rolling basis; some roles close once
+  enough strong candidates are in.
+- On Workday: it will autofill from the PDF and often garble it — manually verify
+  every field (titles, dates, employers); the parsed structured fields are what
+  recruiters query, not the PDF.
+- Fill ALL optional structured fields (skills, links); blank fields lose searches.
+- If a portal explicitly prefers DOC/DOCX (common on Taleo): tell Claude — we'll
+  add a DOCX render target that day, not speculatively before.
 
 ## Template rules (enforced by scripts/render-application.mjs — don't bypass)
 
