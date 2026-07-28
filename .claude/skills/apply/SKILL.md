@@ -33,6 +33,13 @@ of it.
    office/hybrid presence ("X days in office", "onsite", "relocation required") =
    skip, log as `skipped` with the reason, no CV. Unstated policy: proceed, but
    note in the report that Cyril aborts at the form if it demands onsite.
+   TIMEZONE (owner 2026-07-29 v2: "pacific overlap is ok"): NO timezone-based
+   skips — overlap requirements of any region are acceptable and answered
+   affirmatively. Only residence/employment-region restrictions (e.g. "US
+   residents only") still knock out. SALARY (owner 2026-07-29: "even from 70k
+   up to 300k+"): never skip on salary within that range; form answers: within
+   the posted band when one exists, else "USD 100,000+" (true floor 70k — don't
+   volunteer it).
    Then compare hard requirements against `applications/master.md`.
    Report knockouts honestly (degree gates, student-only programs, required tech he
    lacks) BEFORE polishing prose — a tailored CV cannot beat a knockout filter, and

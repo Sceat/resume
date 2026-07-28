@@ -12,7 +12,11 @@ Cyril instead (he may have unlisted experience to add here).
 - **Site:** sceat.xyz · **GitHub:** github.com/sceat (orgs: HydreIO, aresrpg)
 - **Phone:** +380 68 978 1786 (owner-confirmed 2026-07-28 — include on CVs and ATS forms)
 - **LinkedIn:** none (owner-confirmed 2026-07-28) — leave the field blank, never invent one.
-- **Salary expectation:** 100k+ (USD, annual) — the default when a form demands a number.
+- **Salary expectation (owner 2026-07-29):** acceptable range 70k–300k+ USD —
+  never skip an offer on salary in that range. Form answers: within the posted
+  band when one exists, else "USD 100,000+"; the 70k floor exists but is never
+  volunteered. Onsite remains the only absolute deal breaker; timezone-overlap
+  asks (incl. US-Pacific) are acceptable.
 - **Location:** Remote · UTC+8 · overlaps EU and APAC working hours (US-East partial)
 - **Languages:** French (native), English (fluent), Ukrainian (beginner)
 - **Education:** self-taught, no degree, shipping production code since 2014.
