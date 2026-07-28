@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "company": "OP Labs",
+    "role": "Senior Software Engineer, Protocol (Rust)",
+    "url": "https://jobs.ashbyhq.com/oplabs/46fea241-959b-470c-9676-5573c059fc56",
+    "date": "2026-07-29",
+    "keywords": [
+      "Rust",
+      "Ethereum",
+      "EVM",
+      "JSON-RPC",
+      "distributed systems",
+      "production",
+      "Solidity",
+      "tokio",
+      "indexer",
+      "blockchain",
+      "finality",
+      "reorg",
+      "TypeScript",
+      "Node.js"
+    ]
+  },
+  "name": "Cyril Morlet",
+  "title": "Senior Software Engineer — Rust & Distributed Systems · ex-Bitfinex",
+  "contact": {
+    "email": "fetch@sceat.xyz",
+    "phone": "+380 68 978 1786",
+    "location": "Fully Remote · UTC+8",
+    "links": ["sceat.xyz", "github.com/sceat"]
+  },
+  "summary": "Engineer with 12 years shipping production distributed systems. Rust in production: built and operate a chain indexer (~10.5K lines — axum, tokio, sui-indexer-alt-framework) streaming blockchain checkpoints into Redis-backed sub-second reads, and maintain a Rust gas-sponsorship service. Client-side Ethereum depth from Bitfinex: owned EVM chain integrations for deposit/withdrawal pipelines — JSON-RPC clients, reorg handling, finality thresholds, fee accounting — code where bugs lose customer funds. Solidity background; TypeScript/Node.js and Java across live game servers and exchange infrastructure.",
+  "skills": [
+    {
+      "label": "Rust",
+      "items": "production chain indexer (axum, tokio, sui-indexer-alt-framework), gas-sponsorship service maintenance (MystenLabs sui-gas-pool fork), checkpoint streaming pipelines"
+    },
+    {
+      "label": "Ethereum & Chains",
+      "items": "EVM chain integrations at Bitfinex — JSON-RPC clients, reorgs, finality thresholds, fee accounting; Solidity; exchange listings; Sui Move"
+    },
+    {
+      "label": "Distributed Systems",
+      "items": "real-time game servers (Java 25, 1,300+ players live), event-driven services, low-latency reads (Redis 8 JSON/search), WebSocket, horizontal scaling on Kubernetes"
+    },
+    {
+      "label": "Backend",
+      "items": "TypeScript, Node.js, Java 25, Bun, GraphQL, REST APIs"
+    },
+    {
+      "label": "Infrastructure",
+      "items": "Kubernetes (self-hosted production), Docker, GitOps, CI/CD, Prometheus"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founder & Solo Engineer",
+      "company": "Independent Products",
+      "location": "Remote",
+      "from": "2024-10",
+      "to": null,
+      "bullets": [
+        "Built and operate a Rust chain indexer in production: streams blockchain checkpoints (sui-indexer-alt-framework, axum, tokio) into Redis 8 JSON/search indexes serving a sub-second public REST API — keyless and horizontally scalable.",
+        "Maintain a Rust gas-sponsorship service (fork of MystenLabs sui-gas-pool) powering gasless transactions, with a fail-closed sponsorship API built around it.",
+        "Lead a team of 3 building AresRPG (~600K lines): all canonical state on-chain, deterministic simulation with an on-chain twin verified by replay parity fixtures — client prediction equals chain resolution.",
+        "Built and operate a live distributed game server in Java 25 (83K+ lines, 1,300+ unique players) — solo, on self-hosted Kubernetes."
+      ]
+    },
+    {
+      "role": "Blockchain Integration Specialist",
+      "company": "Bitfinex",
+      "location": "Remote",
+      "from": "2022-04",
+      "to": "2024-10",
+      "bullets": [
+        "Owned end-to-end blockchain integrations for production deposit and withdrawal pipelines at a top-tier crypto exchange (Node.js, TypeScript, EVM tooling).",
+        "Operated Ethereum-family and other L1/L2 client integrations under production load — JSON-RPC client operation, reorg handling, finality thresholds, fee accounting — where a bug loses customer funds.",
+        "Shipped the exchange's Sui listing end-to-end."
+      ]
+    },
+    {
+      "role": "Fullstack Developer",
+      "company": "Affinidi",
+      "location": "Kyiv, Ukraine (remote)",
+      "from": "2021-01",
+      "to": "2022-04",
+      "bullets": [
+        "Shipped React + Node.js microservices for self-sovereign identity and credential verification — REST APIs, Docker, AWS.",
+        "Delivered across distributed teams spanning EU, Singapore, and India."
+      ]
+    },
+    {
+      "role": "CTO & Co-founder",
+      "company": "Sidy",
+      "location": "Montpellier, France",
+      "from": "2019-01",
+      "to": "2021-01",
+      "bullets": [
+        "Led a 4-engineer team building a real-estate platform from zero to production; owned architecture, infrastructure, and hiring."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Freelance & Open-Source",
+      "location": "France (remote)",
+      "from": "2015-01",
+      "to": "2021-01",
+      "bullets": [
+        "Created and maintain 18+ open-source npm libraries (auth, real-time graphs, transport, storage) — github.com/HydreIO."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AresRPG",
+      "desc": "fully on-chain MMORPG — 9 Move packages, Rust indexer, sim↔chain replay parity",
+      "link": "aresrpg.world"
+    },
+    {
+      "name": "sui-checkpoint-reader",
+      "desc": "open-source blockchain checkpoint-file processing library",
+      "link": "github.com/aresrpg/sui-checkpoint-reader"
+    },
+    {
+      "name": "Hydre.io",
+      "desc": "18+ open-source npm libraries",
+      "link": "github.com/HydreIO"
+    }
+  ],
+  "education": "Self-taught engineer — shipping production code since 2014; open-source maintainer since 2015.",
+  "languages": "French (native), English (fluent)"
+}
