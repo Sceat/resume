@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "company": "Binance",
+    "role": "Full Stack AI Engineer, Backend Oriented — Pioneer Talent Program",
+    "url": "https://web3.career/pioneer-talent-program-full-stack-ai-engineer-backend-oriented-fully-remote-binance/151743",
+    "date": "2026-07-28",
+    "keywords": [
+      "full stack",
+      "backend",
+      "Node.js",
+      "Java",
+      "TypeScript",
+      "React",
+      "Vue",
+      "end-to-end",
+      "AI-augmented",
+      "Claude Code",
+      "agentic",
+      "multi-agent",
+      "Kubernetes",
+      "database design",
+      "Bitfinex",
+      "open-source",
+      "microservices",
+      "REST APIs",
+      "product"
+    ]
+  },
+  "name": "Cyril Morlet",
+  "title": "Senior Full Stack Engineer — Backend-Oriented · AI-Augmented Development · ex-Bitfinex",
+  "contact": {
+    "email": "fetch@sceat.xyz",
+    "location": "Fully Remote · UTC+8",
+    "links": ["sceat.xyz", "github.com/sceat"]
+  },
+  "summary": "Full stack engineer with 12 years shipping production systems end-to-end, backend-oriented: Node.js, Java, TypeScript. At Bitfinex (top-tier crypto exchange) I owned blockchain deposit/withdrawal pipelines in production. AI-augmented development is my daily workflow — I drive Claude Code multi-agent pipelines on every task and built Noxant, an agentic CI/CD platform where AI agents ship their own work. Product mindset: I design, build, deploy, and operate my own live products, from database design to frontend.",
+  "skills": [
+    {
+      "label": "Backend",
+      "items": "Node.js, Java 25, TypeScript, Bun, REST APIs, WebSocket, microservices"
+    },
+    {
+      "label": "AI Tooling",
+      "items": "Claude Code (daily, multi-agent orchestration), agentic CI/CD (built Noxant), AI-orchestrated code review, context engineering"
+    },
+    {
+      "label": "Frontend",
+      "items": "React 19, Vue 3, Tailwind CSS v4, Three.js"
+    },
+    {
+      "label": "Databases",
+      "items": "FalkorDB (graph), Redis, schema & database design, custom blockchain indexers"
+    },
+    {
+      "label": "Infrastructure",
+      "items": "Kubernetes, Docker, GitOps, Helm, CI/CD, AWS"
+    },
+    {
+      "label": "Web3",
+      "items": "Sui Move, Solidity, EVM tooling, exchange chain integration"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founder & Solo Engineer",
+      "company": "Independent Products",
+      "location": "Remote",
+      "from": "2024-10",
+      "to": null,
+      "bullets": [
+        "Built and operate a live MMORPG server in Java 25 (~370K lines of code) serving 1,300+ unique players — solo, end-to-end: gameplay backend, database design (FalkorDB graph, Redis), Kubernetes deployment, on-call.",
+        "Built Noxant, an agentic CI/CD platform: AI agents execute, verify, and publish their own tasks in Docker-in-Docker sandboxes on Kubernetes.",
+        "Lead a team of 3 on AresRPG, an onchain MMORPG — React 19 frontend, Bun backend, custom blockchain indexer for sub-second queries.",
+        "AI-augmented workflow on every task: Claude Code with multi-agent orchestration for implementation, review, and verification."
+      ]
+    },
+    {
+      "role": "Blockchain Integration Specialist",
+      "company": "Bitfinex",
+      "location": "Remote",
+      "from": "2022-04",
+      "to": "2024-10",
+      "bullets": [
+        "Owned end-to-end blockchain integrations for production deposit and withdrawal pipelines at a top-tier crypto exchange (Node.js, TypeScript).",
+        "Integrated multiple L1/L2 chain backends into the exchange — including the Sui listing — and maintained them under production load.",
+        "Owned chain-specific edge cases — reorgs, finality thresholds, fee accounting — where a bug loses customer funds."
+      ]
+    },
+    {
+      "role": "Fullstack Developer",
+      "company": "Affinidi",
+      "location": "Kyiv, Ukraine (remote)",
+      "from": "2021-01",
+      "to": "2022-04",
+      "bullets": [
+        "Shipped React + Node.js microservices for self-sovereign identity and credential verification — REST APIs, Docker, AWS.",
+        "Delivered across distributed teams spanning EU, Singapore, and India."
+      ]
+    },
+    {
+      "role": "CTO & Co-founder",
+      "company": "Sidy",
+      "location": "Montpellier, France",
+      "from": "2019-01",
+      "to": "2021-01",
+      "bullets": [
+        "Led a 4-engineer team building a real-estate platform from zero to production; owned architecture, infrastructure, and hiring."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Freelance & Open-Source",
+      "location": "France (remote)",
+      "from": "2015-01",
+      "to": "2021-01",
+      "bullets": [
+        "Created and maintain 18+ open-source npm libraries (auth, real-time graphs, transport, storage) — github.com/HydreIO."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Noxant",
+      "desc": "agentic CI/CD on Kubernetes — AI agents autonomously execute, verify, and publish",
+      "link": "noxant.io"
+    },
+    {
+      "name": "AresRPG",
+      "desc": "onchain MMORPG on Sui, sub-second chain-indexed gameplay, team of 3",
+      "link": "aresrpg.world"
+    },
+    {
+      "name": "Hydre.io",
+      "desc": "18+ open-source npm libraries",
+      "link": "github.com/HydreIO"
+    }
+  ],
+  "education": "Self-taught engineer — shipping production code since 2014; open-source maintainer since 2015.",
+  "languages": "French (native), English (fluent)"
+}
