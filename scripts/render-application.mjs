@@ -64,7 +64,7 @@ function buildDoc(cv) {
   content.push({ text: cv.title, fontSize: 10.5, color: COLOR.dim, margin: [0, 0, 0, 2] })
   // Single text run: fragmentation-proof for every extractor.
   content.push({
-    text: [cv.contact.email, ...cv.contact.links, cv.contact.location]
+    text: [cv.contact.email, cv.contact.phone, ...cv.contact.links, cv.contact.location]
       .filter(Boolean)
       .join('  ·  '),
     fontSize: 9,

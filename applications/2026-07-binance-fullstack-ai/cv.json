@@ -30,10 +30,11 @@
   "title": "Senior Full Stack Engineer — Backend-Oriented · AI-Augmented Development · ex-Bitfinex",
   "contact": {
     "email": "fetch@sceat.xyz",
+    "phone": "+380 68 978 1786",
     "location": "Fully Remote · UTC+8",
     "links": ["sceat.xyz", "github.com/sceat"]
   },
-  "summary": "Full stack engineer with 12 years shipping production systems end-to-end, backend-oriented: Node.js, Java, TypeScript. At Bitfinex (top-tier crypto exchange) I owned blockchain deposit/withdrawal pipelines in production. AI-augmented development is my daily workflow — I drive Claude Code multi-agent pipelines on every task and built Noxant, an agentic CI/CD platform where AI agents ship their own work. Product mindset: I design, build, deploy, and operate my own live products, from database design to frontend.",
+  "summary": "Full stack engineer with 12 years shipping production systems end-to-end, backend-oriented: Node.js, Java, TypeScript. At Bitfinex (top-tier crypto exchange) I owned blockchain deposit/withdrawal pipelines in production. AI-augmented development is how I work: my flagship, a ~600K-line fully on-chain MMORPG, is built through a Claude Code multi-agent harness with mechanical quality gates — agents implement, review, and verify every task. Product mindset: I design, build, deploy, and operate my own live products, from database design to frontend.",
   "skills": [
     {
       "label": "Backend",
@@ -68,10 +69,10 @@
       "from": "2024-10",
       "to": null,
       "bullets": [
-        "Built and operate a live MMORPG server in Java 25 (~370K lines of code) serving 1,300+ unique players — solo, end-to-end: gameplay backend, database design (FalkorDB graph, Redis), Kubernetes deployment, on-call.",
-        "Built Noxant, an agentic CI/CD platform: AI agents execute, verify, and publish their own tasks in Docker-in-Docker sandboxes on Kubernetes.",
-        "Lead a team of 3 on AresRPG, an onchain MMORPG — React 19 frontend, Bun backend, custom blockchain indexer for sub-second queries.",
-        "AI-augmented workflow on every task: Claude Code with multi-agent orchestration for implementation, review, and verification."
+        "Lead a team of 3 building AresRPG, a fully on-chain MMORPG on Sui: ~600K lines across 12 workspaces — React 19 frontend, Bun backend, 9 Move packages, custom Rust blockchain indexer serving sub-second queries.",
+        "Engineered the agentic development harness that ships it: Claude Code multi-agent orchestration under mechanical quality gates — AI agents implement, review, and verify every task end-to-end.",
+        "Built and operate a live MMORPG server in Java 25 (83K+ lines of code) serving 1,300+ unique players — solo: gameplay backend, database design (FalkorDB graph, Redis), Kubernetes deployment, on-call.",
+        "Built Noxant, an agentic CI/CD platform where AI agents execute, verify, and publish tasks in Docker-in-Docker sandboxes on Kubernetes."
       ]
     },
     {
@@ -120,14 +121,14 @@
   ],
   "projects": [
     {
+      "name": "AresRPG",
+      "desc": "fully on-chain MMORPG on Sui — 9 Move packages, Rust indexer, agent-built",
+      "link": "aresrpg.world"
+    },
+    {
       "name": "Noxant",
       "desc": "agentic CI/CD on Kubernetes — AI agents autonomously execute, verify, and publish",
       "link": "noxant.io"
-    },
-    {
-      "name": "AresRPG",
-      "desc": "onchain MMORPG on Sui, sub-second chain-indexed gameplay, team of 3",
-      "link": "aresrpg.world"
     },
     {
       "name": "Hydre.io",

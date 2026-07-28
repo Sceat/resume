@@ -41,9 +41,10 @@ Portfolio of live products, all designed, built, deployed, and operated solo:
   players, ~1k MRR, solo-operated. Behavior-tree mob AI, anticheat, marketplace,
   crafting (16 jobs), instance system. FalkorDB + Redis Stack, deployed on own
   Kubernetes cluster, on-call solo.
-- **Noxant** (Dec 2025 – present, live, noxant.io): agentic CI/CD on Kubernetes — AI
-  agents execute, verify, and publish their own tasks inside Docker-in-Docker
-  sandboxes, no human in the loop. TypeScript.
+- **Noxant** (Dec 2025, noxant.io — DEPRECATED per owner 2026-07-28): agentic CI/CD
+  on Kubernetes — AI agents execute, verify, and publish tasks inside
+  Docker-in-Docker sandboxes. Prior art only; the live agentic-development story
+  is the AresRPG harness (see AI workflow below).
 - **Talos cluster** (Dec 2025 – present, production): self-hosted Kubernetes on Talos
   OS. 33 Helm releases, 4 domains, GitOps via Helmfile, Cilium, Longhorn, SOPS
   secrets, Cloudflare Tunnels zero-trust ingress. Runs everything above; infra
@@ -55,9 +56,17 @@ Portfolio of live products, all designed, built, deployed, and operated solo:
 - **Koshi** (through Jun 2026): turn-based isometric tactical MMORPG — 140K LOC
   JavaScript/React; combat VFX, spell decks, marketplace. Unreleased; strong
   evidence, not yet a headline claim.
-- **AI workflow:** Claude Code daily with multi-agent orchestration — spawns N agents
-  per task for implementation/review consensus; built his own agentic infra (Noxant)
-  and published MCP servers (sui-graphql-mcp, semantic-memory-mcp, agent-pool).
+- **AI workflow — THE headline achievement (owner 2026-07-28: "my biggest
+  achievement is AresRPG, everything I'm doing with it is top-notch agentic
+  development, the Claude harness and how we use it"):** AresRPG is built through
+  an agentic system Cyril engineered around Claude Code — multi-agent
+  orchestration (N-agent implementation/review consensus), a CODEOWNERS-gated
+  quality constitution (FROZEN.md) that neither humans nor agents may tune,
+  ratcheting mechanical gates (CodeQL, semgrep, dependency-cruiser,
+  gold/anchor/unit test gate), fast-forward-only edge→master promotion, and
+  automated audit loops that file issues autonomously. Also published MCP
+  servers (sui-graphql-mcp, semantic-memory-mcp, agent-pool); Noxant is
+  deprecated prior art.
 
 ### Blockchain Integration Specialist — Bitfinex · Apr 2022 – Oct 2024 · Remote
 
@@ -124,9 +133,10 @@ Portfolio of live products, all designed, built, deployed, and operated solo:
 ## Positioning notes
 
 - For exchanges/crypto: lead with Bitfinex + Sui listing + "code where bugs lose funds".
-- For AI-flavored roles: lead with Noxant + authored MCP servers + Claude Code
-  multi-agent workflow — very few candidates have BUILT agentic infra rather than
-  just used Copilot.
+- For AI-flavored roles: lead with the AresRPG agentic harness — a ~600K-LOC
+  production system engineered and shipped through Claude Code multi-agent
+  orchestration under mechanical quality gates; then MCP server authorship.
+  Noxant is deprecated — prior art, one line max.
 - For backend roles: lead with the aresrpg monorepo (~600K LOC, Rust indexer) and
   Hytale server (83K+ LOC Java, 1,300+ players, solo).
 - For game studios: 10+ years of the AresRPG IP (Minecraft ★78 → Hytale → onchain),
