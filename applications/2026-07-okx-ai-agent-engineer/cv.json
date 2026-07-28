@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "company": "OKX",
+    "role": "Principal AI Engineer, AI Agent Development",
+    "url": "https://job-boards.greenhouse.io/okx/jobs/7671555003",
+    "date": "2026-07-29",
+    "keywords": [
+      "AI agent",
+      "multi-agent",
+      "agentic",
+      "autonomous",
+      "LLM",
+      "tool use",
+      "context engineering",
+      "memory management",
+      "MCP",
+      "Model Context Protocol",
+      "end-to-end",
+      "production",
+      "crypto",
+      "trading",
+      "gaming",
+      "Kubernetes",
+      "TypeScript",
+      "Node.js",
+      "Claude Code",
+      "Bitfinex"
+    ]
+  },
+  "name": "Cyril Morlet",
+  "title": "Senior AI Engineer — Autonomous Agent Systems · ex-Bitfinex",
+  "contact": {
+    "email": "fetch@sceat.xyz",
+    "phone": "+380 68 978 1786",
+    "location": "Fully Remote · UTC+8",
+    "links": ["sceat.xyz", "github.com/sceat"]
+  },
+  "summary": "AI engineer with 12 years shipping production systems end-to-end — TypeScript, Node.js, Java. I build and operate autonomous AI agent systems in live environments: an agentic development harness (Claude Code multi-agent orchestration under mechanical quality gates) that ships my ~600K-line on-chain MMORPG; authored MCP (Model Context Protocol) servers for agent tool use and memory; and agentic CI/CD where LLM-powered agents execute, verify, and publish with no human in the loop. Domains: real-time gaming (live MMORPG, 1,300+ players) and crypto trading — ex-Bitfinex, production exchange pipelines.",
+  "skills": [
+    {
+      "label": "AI Agents",
+      "items": "multi-agent orchestration (Claude Code daily, OpenAI Codex), tool use via MCP (authored 3 servers), context engineering, agent memory management (Redis + embeddings), autonomous execution pipelines, LLM output verification gates"
+    },
+    {
+      "label": "Backend",
+      "items": "Node.js, TypeScript, Java 25, Bun, Rust (working), GraphQL, REST APIs, WebSocket"
+    },
+    {
+      "label": "Trading & Web3",
+      "items": "crypto exchange integration at Bitfinex (deposits/withdrawals/listings), Sui, zkLogin, gas sponsorship, EVM"
+    },
+    {
+      "label": "Infrastructure",
+      "items": "Kubernetes, Docker-in-Docker sandboxes, GitOps, CI/CD, Prometheus, Sentry"
+    },
+    {
+      "label": "Frontend",
+      "items": "React 19, Vue 3, Three.js, Tailwind CSS"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founder & Solo Engineer",
+      "company": "Independent Products",
+      "location": "Remote",
+      "from": "2024-10",
+      "to": null,
+      "bullets": [
+        "Engineered an agentic development harness: Claude Code multi-agent orchestration — N-agent implementation/review consensus under mechanical quality gates (gold/anchor/unit, CodeQL, semgrep); agents implement, review, and verify every task end-to-end.",
+        "Built Noxant, agentic CI/CD on Kubernetes: LLM-powered agents autonomously execute, verify, and publish tasks inside Docker-in-Docker sandboxes.",
+        "Authored MCP servers powering agent tool use and memory management: sui-graphql-mcp (blockchain queries), semantic-memory-mcp (Redis + embeddings, confidence decay, consolidation), agent-pool (persistent multi-agent orchestration).",
+        "Lead a team of 3 building AresRPG, a fully on-chain MMORPG on Sui: ~600K lines across 12 workspaces — React 19, Bun backend, 9 Move packages, Rust indexer with sub-second queries."
+      ]
+    },
+    {
+      "role": "Blockchain Integration Specialist",
+      "company": "Bitfinex",
+      "location": "Remote",
+      "from": "2022-04",
+      "to": "2024-10",
+      "bullets": [
+        "Owned end-to-end blockchain integrations for production deposit and withdrawal pipelines at a top-tier crypto exchange (Node.js, TypeScript).",
+        "Integrated multiple L1/L2 chain backends into the exchange — including the Sui listing — and maintained them under production load.",
+        "Owned chain-specific edge cases — reorgs, finality thresholds, fee accounting — where a bug loses customer funds."
+      ]
+    },
+    {
+      "role": "Fullstack Developer",
+      "company": "Affinidi",
+      "location": "Kyiv, Ukraine (remote)",
+      "from": "2021-01",
+      "to": "2022-04",
+      "bullets": [
+        "Shipped React + Node.js microservices for self-sovereign identity and credential verification — REST APIs, Docker, AWS.",
+        "Delivered across distributed teams spanning EU, Singapore, and India."
+      ]
+    },
+    {
+      "role": "CTO & Co-founder",
+      "company": "Sidy",
+      "location": "Montpellier, France",
+      "from": "2019-01",
+      "to": "2021-01",
+      "bullets": [
+        "Led a 4-engineer team building a real-estate platform from zero to production; owned architecture, infrastructure, and hiring."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Freelance & Open-Source",
+      "location": "France (remote)",
+      "from": "2015-01",
+      "to": "2021-01",
+      "bullets": [
+        "Created and maintain 18+ open-source npm libraries (auth, real-time graphs, transport, storage) — github.com/HydreIO."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AresRPG",
+      "desc": "fully on-chain MMORPG on Sui — built end-to-end by the agent harness",
+      "link": "aresrpg.world"
+    },
+    {
+      "name": "Noxant",
+      "desc": "agentic CI/CD — autonomous execute/verify/publish on Kubernetes",
+      "link": "noxant.io"
+    },
+    {
+      "name": "MCP servers",
+      "desc": "sui-graphql-mcp · semantic-memory-mcp · agent-pool",
+      "link": "github.com/sceat"
+    }
+  ],
+  "education": "Self-taught engineer — shipping production code since 2014; open-source maintainer since 2015.",
+  "languages": "French (native), English (fluent)"
+}

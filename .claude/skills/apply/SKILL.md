@@ -9,6 +9,11 @@ Input: a job offer URL or pasted JD text.
 
 ## Process
 
+0. **Dedup check FIRST.** Canonicalize the URL (strip `?query` and `#fragment`) and
+   search `applications/log.md` for it AND for the company+role combination. On a
+   hit: STOP and tell Cyril it was already handled (date + status + fit note) —
+   never double-apply. Every incoming offer gets a log row, even skipped ones, so
+   the dedup net catches everything ever sent.
 1. **Extract the JD.** WebFetch the URL (ask for a paste if blocked). Capture: exact
    job title, company, hard requirements (degree, location, visa, seniority,
    must-have tech), keywords, and the JD's own phrasing — mirror exact spellings
@@ -18,7 +23,11 @@ Input: a job offer URL or pasted JD text.
    recruiters lean on literal Boolean keyword search (exact JD terms critical);
    Greenhouse has no algorithmic scoring (humans + scorecards); Workday is
    structured-fields-first (the form data matters as much as the PDF).
-2. **Fit check FIRST.** Compare hard requirements against `applications/master.md`.
+2. **Fit check.** REMOTE-ONLY LAW (owner 2026-07-29): any stated mandatory
+   office/hybrid presence ("X days in office", "onsite", "relocation required") =
+   skip, log as `skipped` with the reason, no CV. Unstated policy: proceed, but
+   note in the report that Cyril aborts at the form if it demands onsite.
+   Then compare hard requirements against `applications/master.md`.
    Report knockouts honestly (degree gates, student-only programs, required tech he
    lacks) BEFORE polishing prose — a tailored CV cannot beat a knockout filter, and
    knowing the odds tells Cyril where to spend energy. Verdict: strong / stretch /

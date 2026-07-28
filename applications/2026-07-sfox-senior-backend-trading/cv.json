@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "company": "sFOX",
+    "role": "Senior Backend Engineer, Trading Infrastructure",
+    "url": "https://job-boards.greenhouse.io/sfox/jobs/8643328002",
+    "date": "2026-07-29",
+    "keywords": [
+      "backend",
+      "Java",
+      "distributed systems",
+      "exchange",
+      "trading",
+      "crypto",
+      "low-latency",
+      "production",
+      "scale",
+      "Kubernetes",
+      "Redis",
+      "WebSocket",
+      "testing",
+      "security",
+      "Node.js",
+      "TypeScript",
+      "blockchain"
+    ]
+  },
+  "name": "Cyril Morlet",
+  "title": "Senior Backend Engineer — Distributed Systems · Java & Node.js · ex-Bitfinex",
+  "contact": {
+    "email": "fetch@sceat.xyz",
+    "phone": "+380 68 978 1786",
+    "location": "Fully Remote · UTC+8",
+    "links": ["sceat.xyz", "github.com/sceat"]
+  },
+  "summary": "Backend engineer with 12 years building distributed systems in production: chain-integration infrastructure at Bitfinex, a top-tier crypto trading exchange (deposit/withdrawal pipelines across L1/L2s — code where bugs lose customer funds), and live real-time game servers — Java 25 (83K+ lines, 1,300+ unique players, solo-operated) plus a ~600K-line platform with a Rust blockchain indexer serving sub-second, low-latency reads at scale. Java across a decade (2016 protocol libraries → Java 25 production server); Node.js/TypeScript ~10 years. Testing and security discipline enforced by mechanical gates; self-hosted production Kubernetes.",
+  "skills": [
+    {
+      "label": "Backend",
+      "items": "Java 25, Node.js, TypeScript, Bun, Rust (working), WebSocket, REST APIs, GraphQL, microservices"
+    },
+    {
+      "label": "Distributed Systems",
+      "items": "event-driven services, real-time netcode, custom blockchain indexers, low-latency reads (Redis 8 JSON/search), horizontal scaling on Kubernetes"
+    },
+    {
+      "label": "Exchange & Crypto",
+      "items": "chain integration at Bitfinex — deposits/withdrawals/listings, reorgs, finality thresholds, fee accounting; Sui, EVM; security-critical money paths"
+    },
+    {
+      "label": "Quality",
+      "items": "testing discipline (gold/anchor/unit gates), CodeQL, semgrep, CI/CD, observability (Prometheus, Sentry)"
+    },
+    {
+      "label": "Infrastructure",
+      "items": "Kubernetes (self-hosted production), Docker, GitOps, Helm"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founder & Solo Engineer",
+      "company": "Independent Products",
+      "location": "Remote",
+      "from": "2024-10",
+      "to": null,
+      "bullets": [
+        "Built and operate a live MMORPG server in Java 25 (83K+ lines) serving 1,300+ unique players — solo: real-time gameplay backend, low-latency netcode, database design (FalkorDB graph, Redis), Kubernetes deployment, on-call.",
+        "Lead a team of 3 building AresRPG (~600K lines, 12 workspaces): distributed backend on Bun/Node.js with a custom Rust blockchain indexer serving sub-second queries under production load.",
+        "Engineered an agentic development harness (Claude Code multi-agent + mechanical test gates: gold/anchor/unit, CodeQL, semgrep) enforcing testing and code-quality discipline at scale."
+      ]
+    },
+    {
+      "role": "Blockchain Integration Specialist",
+      "company": "Bitfinex",
+      "location": "Remote",
+      "from": "2022-04",
+      "to": "2024-10",
+      "bullets": [
+        "Owned end-to-end blockchain integrations for production deposit and withdrawal pipelines at a top-tier crypto exchange (Node.js, TypeScript).",
+        "Integrated multiple L1/L2 chain backends into the exchange — including the Sui listing — and maintained them under production load.",
+        "Owned chain-specific edge cases — reorgs, finality thresholds, fee accounting — where a bug loses customer funds."
+      ]
+    },
+    {
+      "role": "Fullstack Developer",
+      "company": "Affinidi",
+      "location": "Kyiv, Ukraine (remote)",
+      "from": "2021-01",
+      "to": "2022-04",
+      "bullets": [
+        "Shipped React + Node.js microservices for self-sovereign identity and credential verification — REST APIs, Docker, AWS.",
+        "Delivered across distributed teams spanning EU, Singapore, and India."
+      ]
+    },
+    {
+      "role": "CTO & Co-founder",
+      "company": "Sidy",
+      "location": "Montpellier, France",
+      "from": "2019-01",
+      "to": "2021-01",
+      "bullets": [
+        "Led a 4-engineer team building a real-estate platform from zero to production; owned architecture, infrastructure, and hiring."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Freelance & Open-Source",
+      "location": "France (remote)",
+      "from": "2015-01",
+      "to": "2021-01",
+      "bullets": [
+        "Created and maintain 18+ open-source npm libraries (auth, real-time graphs, transport, storage) — github.com/HydreIO."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AresRPG",
+      "desc": "fully on-chain MMORPG on Sui — 9 Move packages, Rust indexer",
+      "link": "aresrpg.world"
+    },
+    {
+      "name": "Hytale MMORPG server",
+      "desc": "live Java 25 game server, 1,300+ players, solo-built and operated",
+      "link": ""
+    },
+    {
+      "name": "Hydre.io",
+      "desc": "18+ open-source npm libraries",
+      "link": "github.com/HydreIO"
+    }
+  ],
+  "education": "Self-taught engineer — shipping production code since 2014; open-source maintainer since 2015.",
+  "languages": "French (native), English (fluent)"
+}

@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "company": "Zscaler",
+    "role": "Security Architect, Agentic AI",
+    "url": "https://job-boards.greenhouse.io/zscaler/jobs/5132492007",
+    "date": "2026-07-29",
+    "keywords": [
+      "security",
+      "agent runtime",
+      "tool calling",
+      "memory",
+      "MCP server",
+      "Kubernetes",
+      "zero trust",
+      "sandbox",
+      "guardrail",
+      "multi-agent",
+      "TypeScript",
+      "Node",
+      "prompt injection",
+      "agentic",
+      "production",
+      "Claude",
+      "structured outputs"
+    ]
+  },
+  "name": "Cyril Morlet",
+  "title": "Senior Engineer — Secure Agent Runtimes · Zero Trust Infrastructure · ex-Bitfinex",
+  "contact": {
+    "email": "fetch@sceat.xyz",
+    "phone": "+380 68 978 1786",
+    "location": "Fully Remote · UTC+8",
+    "links": ["sceat.xyz", "github.com/sceat"]
+  },
+  "summary": "Engineer (12 years) building secure agent runtimes in production: multi-agent orchestration with planning, tool calling, and memory/state controls; authored MCP servers; Docker-in-Docker sandbox isolation for autonomous agents; and guardrail architectures — an immutable, CODEOWNERS-gated quality constitution plus filesystem locks (frozen-gates) that agents cannot bypass, holding even under prompt injection. Self-hosted zero trust production Kubernetes (Cilium, SOPS, Cloudflare Tunnels), operated solo. Ex-Bitfinex: security-critical exchange pipelines where bugs lose customer funds. TypeScript/Node primary; structured outputs and safety controls against Claude and GPT-family APIs daily; anticheat systems for a live game under adversarial load.",
+  "skills": [
+    {
+      "label": "Agent Security",
+      "items": "secure agent runtimes (planning, tool calling, memory/state controls), guardrail architectures, sandbox isolation (Docker-in-Docker), prompt injection resilience, MCP server authorship, structured outputs + safety controls (Claude, GPT/Codex)"
+    },
+    {
+      "label": "Infrastructure Security",
+      "items": "Kubernetes security (self-hosted production), zero trust ingress, Cilium network policy, SOPS secrets, least-privilege CI/CD, CodeQL, semgrep"
+    },
+    {
+      "label": "Backend",
+      "items": "TypeScript, Node.js, Java 25, Rust (working), GraphQL, REST APIs"
+    },
+    {
+      "label": "Money-Path Security",
+      "items": "Bitfinex exchange pipelines — deposits/withdrawals, reorgs, finality thresholds, fee accounting"
+    },
+    {
+      "label": "Adversarial Systems",
+      "items": "anticheat for a live MMORPG (1,300+ players), fail-closed gas sponsorship service"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founder & Solo Engineer",
+      "company": "Independent Products",
+      "location": "Remote",
+      "from": "2024-10",
+      "to": null,
+      "bullets": [
+        "Engineered guardrailed agent runtimes: multi-agent orchestration where every agent action passes mechanical gates (CodeQL, semgrep, immutable test anchors) — an architecture agents cannot self-modify (CODEOWNERS-locked constitution, frozen-gates filesystem locks), resilient to prompt injection.",
+        "Built Noxant, agentic CI/CD: autonomous agents execute, verify, and publish inside Docker-in-Docker sandboxes on Kubernetes — least-privilege, fail-closed isolation.",
+        "Authored MCP servers (tool calling + memory/state): sui-graphql-mcp, semantic-memory-mcp (Redis + embeddings), agent-pool — production Model Context Protocol implementations.",
+        "Operate a zero trust self-hosted Kubernetes production cluster: Cilium network policy, SOPS-encrypted secrets, Cloudflare Tunnels ingress, GitOps — running a live game with anticheat under adversarial load."
+      ]
+    },
+    {
+      "role": "Blockchain Integration Specialist",
+      "company": "Bitfinex",
+      "location": "Remote",
+      "from": "2022-04",
+      "to": "2024-10",
+      "bullets": [
+        "Owned end-to-end blockchain integrations for production deposit and withdrawal pipelines at a top-tier crypto exchange (Node.js, TypeScript).",
+        "Integrated multiple L1/L2 chain backends into the exchange — including the Sui listing — and maintained them under production load.",
+        "Owned chain-specific edge cases — reorgs, finality thresholds, fee accounting — where a bug loses customer funds."
+      ]
+    },
+    {
+      "role": "Fullstack Developer",
+      "company": "Affinidi",
+      "location": "Kyiv, Ukraine (remote)",
+      "from": "2021-01",
+      "to": "2022-04",
+      "bullets": [
+        "Shipped React + Node.js microservices for self-sovereign identity and credential verification — REST APIs, Docker, AWS.",
+        "Delivered across distributed teams spanning EU, Singapore, and India."
+      ]
+    },
+    {
+      "role": "CTO & Co-founder",
+      "company": "Sidy",
+      "location": "Montpellier, France",
+      "from": "2019-01",
+      "to": "2021-01",
+      "bullets": [
+        "Led a 4-engineer team building a real-estate platform from zero to production; owned architecture, infrastructure, and hiring."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Freelance & Open-Source",
+      "location": "France (remote)",
+      "from": "2015-01",
+      "to": "2021-01",
+      "bullets": [
+        "Created and maintain 18+ open-source npm libraries (auth, real-time graphs, transport, storage) — github.com/HydreIO."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AresRPG",
+      "desc": "~600K-line on-chain MMORPG shipped through the guardrailed agent harness",
+      "link": "aresrpg.world"
+    },
+    {
+      "name": "Noxant",
+      "desc": "agentic CI/CD — sandboxed autonomous agents on Kubernetes",
+      "link": "noxant.io"
+    },
+    {
+      "name": "MCP servers",
+      "desc": "sui-graphql-mcp · semantic-memory-mcp · agent-pool",
+      "link": "github.com/sceat"
+    }
+  ],
+  "education": "Self-taught engineer — shipping production code since 2014; open-source maintainer since 2015.",
+  "languages": "French (native), English (fluent)"
+}
