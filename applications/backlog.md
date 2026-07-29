@@ -84,6 +84,19 @@ skips (BiFinance flagged as probable scam — Bitfinex-clone name, mailto apply)
 NOTE: Playwright MCP disconnected during cycle 5 — submissions impossible until
 it returns; any APPLY builds park as CV-ready.
 
+## Cycle 6 results (2026-07-30 ~07:00)
+
+Zero submitted/built. IOG Midnight: DEAD confirmed (0 jobs on Workable account,
+iog.io/jobs 404, midnight.network offers email-only fallback — never re-source
+without a new ATS lead). LIVE LEAD FOR CYCLE 7 (browser required): **Binance
+"Java Backend Engineer – On-Chain Payment Integration" (Asia remote)** — strong
+title match (Java + chain payments + Asia), Binance careers SPA unverifiable
+via WebFetch/jina; job ID in scratchpad/hunt6-web3.md; verify + apply via
+Playwright the moment the browser MCP is back. Feed-sweep verdict: jobicy/
+arbeitnow/remotive/himalayas effectively exhausted for this profile — cycle 7+
+should lean on web3.career page-1 freshness + the Binance lead + browser-based
+verification of SPA-only boards.
+
 ## Sensor efficiency law (learned 2026-07-29)
 
 WebFetch cannot render Ashby/Lever/SPA-Greenhouse boards. Sourcing sensors MUST
