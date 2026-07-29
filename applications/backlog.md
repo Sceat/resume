@@ -72,6 +72,18 @@ Sensors must source WITHOUT WebSearch:
 6. Unexhausted leads from cycle 4: Atlassian, Grab/APAC super-apps, Workable
    candidates, Wellfound APAC, HN who's-hiring via jina.
 
+## Cycle 5 web3 results (2026-07-30 ~01:00)
+
+Thin: 1 UNVERIFIED lead — IOG (Input Output Global) "Software Engineer (Indexer
+Focus), Shielded" on the Midnight team: Rust+tokio production indexer, remote/
+async, strong match. ATS not located: greenhouse `iohk` 404s; Workable account
+`iohk` exists but jobs array EMPTY. Cycle-6 probe: fetch
+https://apply.workable.com/iohk/ raw or via r.jina.ai, and IOG's own
+careers page apps.iohk.io / iog.io/jobs. Rest of sweep: dead ends and clean
+skips (BiFinance flagged as probable scam — Bitfinex-clone name, mailto apply).
+NOTE: Playwright MCP disconnected during cycle 5 — submissions impossible until
+it returns; any APPLY builds park as CV-ready.
+
 ## Sensor efficiency law (learned 2026-07-29)
 
 WebFetch cannot render Ashby/Lever/SPA-Greenhouse boards. Sourcing sensors MUST
