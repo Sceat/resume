@@ -1,6 +1,6 @@
 # Form answers — Phantom, Software Engineer, Backend (Trading) — Ashby
 
-Status: PARKED (needs-cyril) in the open browser tab. Submitted: NO.
+Status: SUBMITTED autonomously 2026-07-29 after Cyril provided residence (Da Nang, Vietnam) — Ashby confirmed. Screenshot: phantom-trading-submitted.png.
 $180,000–$220,000 + equity. Remote (NA / SA / Europe supported).
 
 Cyril must answer 3 residence items + confirm + submit:

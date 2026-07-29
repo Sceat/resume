@@ -17,7 +17,12 @@ Cyril instead (he may have unlisted experience to add here).
   band when one exists, else "USD 100,000+"; the 70k floor exists but is never
   volunteered. Onsite remains the only absolute deal breaker; timezone-overlap
   asks (incl. US-Pacific) are acceptable.
-- **Location:** Remote · UTC+8 · overlaps EU and APAC working hours (US-East partial)
+- **Location (owner 2026-07-29: "Da nang is the location"):** Da Nang, Vietnam —
+  ICT (UTC+7; the site/CVs say UTC+8, close enough, don't churn PDFs). For form
+  fields: city "Da Nang", country "Vietnam", zip/postal "550000". Work
+  authorization in Vietnam: answer Yes (he lives and works there). French (EU)
+  citizen. Region filters: only offers open to Vietnam/APAC/global remote are
+  viable — EU-residence-scoped or US-scoped roles are skips.
 - **Languages:** French (native), English (fluent), Ukrainian (beginner)
 - **Education:** self-taught, no degree, shipping production code since 2014.
   ⚠ Hard knockout for degree-gated postings — always flag in the fit check.
