@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "company": "Phantom",
+    "role": "Staff Software Engineer (SRE)",
+    "url": "https://jobs.ashbyhq.com/phantom/d480082b-a446-40fb-be24-f364c07ef8a9",
+    "date": "2026-07-29",
+    "keywords": [
+      "Kubernetes",
+      "AWS",
+      "Docker",
+      "observability",
+      "reliability",
+      "infrastructure",
+      "GitOps",
+      "Prometheus",
+      "on-call",
+      "production",
+      "incident",
+      "SRE",
+      "Helm",
+      "monitoring",
+      "JavaScript",
+      "TypeScript"
+    ]
+  },
+  "name": "Cyril Morlet",
+  "title": "Staff-level Infrastructure Engineer — Kubernetes · Observability · ex-Bitfinex",
+  "contact": {
+    "email": "fetch@sceat.xyz",
+    "phone": "+380 68 978 1786",
+    "location": "Fully Remote · UTC+8",
+    "links": ["sceat.xyz", "github.com/sceat"]
+  },
+  "summary": "Engineer (12 years) doing hands-on SRE work end to end: a self-hosted production Kubernetes cluster (Talos OS) with 33 Helm releases, GitOps via Helmfile, Cilium network policy, SOPS secrets, Longhorn storage and zero trust ingress — designed and operated solo, on-call included, serving a live game with 1,300+ users. Observability and monitoring with Prometheus and Sentry; incident response where downtime costs my own revenue. AWS and Docker from years of microservices work. JavaScript/TypeScript and Java on the software side. Honest gaps versus your listed stack: my infrastructure-as-code is Helmfile/GitOps rather than Terraform, and my Kubernetes is self-hosted rather than EKS — the operational muscle transfers.",
+  "skills": [
+    {
+      "label": "Infrastructure",
+      "items": "Kubernetes (self-hosted production, Talos OS), Docker, Helm, Helmfile, GitOps, Cilium, Longhorn, SOPS, Cloudflare Tunnels, AWS, MinIO"
+    },
+    {
+      "label": "Observability & Reliability",
+      "items": "Prometheus, Sentry, monitoring and alerting, incident response, on-call ownership, fail-closed design"
+    },
+    {
+      "label": "Backend",
+      "items": "JavaScript, TypeScript, Node.js, Java 25, Bun, Rust (working), GraphQL, REST APIs"
+    },
+    {
+      "label": "Security",
+      "items": "zero trust ingress, SOPS secrets, sandbox isolation (DinD), exchange money paths at Bitfinex"
+    },
+    {
+      "label": "CI/CD",
+      "items": "GitHub Actions multi-workflow gates, CodeQL, semgrep, agentic pipelines"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founder & Solo Engineer",
+      "company": "Independent Products",
+      "location": "Remote",
+      "from": "2024-10",
+      "to": null,
+      "bullets": [
+        "Operate a self-hosted production Kubernetes cluster solo: Talos OS, 33 Helm releases across 4 namespaces, GitOps via Helmfile, Cilium, SOPS-encrypted secrets, Longhorn distributed storage, Cloudflare Tunnels zero trust ingress — infra repo active daily.",
+        "On-call for a live game serving 1,300+ unique players (Java 25 backend): monitoring, incident response, capacity, and reliability — downtime is my own lost revenue.",
+        "Built Noxant, agentic CI/CD on Kubernetes: Docker-in-Docker sandboxes, fail-closed pipelines, autonomous verification loops.",
+        "Full observability across a ~600K-line platform: Prometheus metrics, Sentry error tracking, sub-second read paths (Redis 8, Rust indexer)."
+      ]
+    },
+    {
+      "role": "Blockchain Integration Specialist",
+      "company": "Bitfinex",
+      "location": "Remote",
+      "from": "2022-04",
+      "to": "2024-10",
+      "bullets": [
+        "Owned end-to-end blockchain integrations for production deposit and withdrawal pipelines at a top-tier crypto exchange (Node.js, TypeScript).",
+        "Integrated multiple L1/L2 chain backends into the exchange — including the Sui listing — and maintained them under production load.",
+        "Owned chain-specific edge cases — reorgs, finality thresholds, fee accounting — where a bug loses customer funds."
+      ]
+    },
+    {
+      "role": "Fullstack Developer",
+      "company": "Affinidi",
+      "location": "Kyiv, Ukraine (remote)",
+      "from": "2021-01",
+      "to": "2022-04",
+      "bullets": [
+        "Shipped React + Node.js microservices for self-sovereign identity and credential verification — REST APIs, Docker, AWS.",
+        "Delivered across distributed teams spanning EU, Singapore, and India."
+      ]
+    },
+    {
+      "role": "CTO & Co-founder",
+      "company": "Sidy",
+      "location": "Montpellier, France",
+      "from": "2019-01",
+      "to": "2021-01",
+      "bullets": [
+        "Led a 4-engineer team building a real-estate platform from zero to production; owned architecture, infrastructure, and hiring."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Freelance & Open-Source",
+      "location": "France (remote)",
+      "from": "2015-01",
+      "to": "2021-01",
+      "bullets": [
+        "Created and maintain 18+ open-source npm libraries (auth, real-time graphs, transport, storage) — github.com/HydreIO."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AresRPG",
+      "desc": "~600K-line on-chain MMORPG shipped through the guardrailed agent harness",
+      "link": "aresrpg.world"
+    },
+    {
+      "name": "Noxant",
+      "desc": "agentic CI/CD — sandboxed autonomous agents on Kubernetes",
+      "link": "noxant.io"
+    },
+    {
+      "name": "MCP servers",
+      "desc": "sui-graphql-mcp · semantic-memory-mcp · agent-pool",
+      "link": "github.com/sceat"
+    }
+  ],
+  "education": "Self-taught engineer — shipping production code since 2014; open-source maintainer since 2015.",
+  "languages": "French (native), English (fluent)"
+}

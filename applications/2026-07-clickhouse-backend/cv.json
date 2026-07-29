@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "company": "ClickHouse",
+    "role": "Senior Backend Engineer - ClickStack",
+    "url": "https://job-boards.greenhouse.io/clickhouse/jobs/5838219004",
+    "date": "2026-07-29",
+    "keywords": [
+      "TypeScript",
+      "Node.js",
+      "JavaScript",
+      "backend",
+      "distributed systems",
+      "API",
+      "data pipelines",
+      "Docker",
+      "Kubernetes",
+      "observability",
+      "open-source",
+      "high-throughput",
+      "production",
+      "Redis"
+    ]
+  },
+  "name": "Cyril Morlet",
+  "title": "Senior Backend Engineer — TypeScript/Node.js · Distributed Systems · ex-Bitfinex",
+  "contact": {
+    "email": "fetch@sceat.xyz",
+    "phone": "+380 68 978 1786",
+    "location": "Fully Remote · UTC+8",
+    "links": ["sceat.xyz", "github.com/sceat"]
+  },
+  "summary": "Backend engineer, 12 years, JavaScript/TypeScript/Node.js at the core: exchange data pipelines at Bitfinex (deposit/withdrawal across L1/L2s — code where bugs lose customer funds), high-throughput real-time backends for live games, REST and GraphQL API design (authored GraphQL server and client libraries used in production), Redis 8 JSON/search, Docker and self-hosted Kubernetes. I operate a ~600K-line platform with full observability (Prometheus, Sentry) and a Rust indexer for sub-second reads. A decade of open-source: 18+ published npm libraries, 110+ public repos.",
+  "skills": [
+    {
+      "label": "AI Platform",
+      "items": "agent runtimes, multi-agent orchestration (Claude Code, OpenAI Codex, LLM provider routing), tool orchestration (MCP authorship), context management, evaluation pipelines, debugging non-deterministic systems"
+    },
+    {
+      "label": "Backend",
+      "items": "JavaScript, TypeScript, Node.js, Java 25, Bun, Rust (working), GraphQL, REST APIs, WebSocket"
+    },
+    {
+      "label": "Infrastructure",
+      "items": "Kubernetes (self-hosted production), Docker, GitOps, CI/CD, observability (Prometheus, Sentry)"
+    },
+    {
+      "label": "Data",
+      "items": "Redis 8 (JSON/search), embeddings retrieval, FalkorDB graph, schema design"
+    },
+    {
+      "label": "Web3",
+      "items": "exchange integration at Bitfinex, Sui, EVM tooling"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founder & Solo Engineer",
+      "company": "Independent Products",
+      "location": "Remote",
+      "from": "2024-10",
+      "to": null,
+      "bullets": [
+        "Lead a team of 3 on a ~600K-line TypeScript platform: high-throughput REST APIs (rate-limited, ETag'd), Redis 8 JSON/search data pipelines, custom Rust blockchain indexer serving sub-second reads under production load.",
+        "Built and operate a live real-time game backend in Java 25 (83K+ lines, 1,300+ unique players) — solo, on self-hosted Kubernetes with Prometheus/Sentry observability.",
+        "Authored 18+ open-source npm libraries (GraphQL servers/clients, WebSocket multiplexing, Redis clients — HydreIO org) plus MCP servers for AI tooling.",
+        "Engineered an agentic development harness (Claude Code multi-agent + mechanical gates) enforcing API design and testing discipline."
+      ]
+    },
+    {
+      "role": "Blockchain Integration Specialist",
+      "company": "Bitfinex",
+      "location": "Remote",
+      "from": "2022-04",
+      "to": "2024-10",
+      "bullets": [
+        "Owned end-to-end blockchain integrations for production deposit and withdrawal pipelines at a top-tier crypto exchange (Node.js, TypeScript).",
+        "Integrated multiple L1/L2 chain backends into the exchange — including the Sui listing — and maintained them under production load.",
+        "Owned chain-specific edge cases — reorgs, finality thresholds, fee accounting — where a bug loses customer funds."
+      ]
+    },
+    {
+      "role": "Fullstack Developer",
+      "company": "Affinidi",
+      "location": "Kyiv, Ukraine (remote)",
+      "from": "2021-01",
+      "to": "2022-04",
+      "bullets": [
+        "Shipped React + Node.js microservices for self-sovereign identity and credential verification — REST APIs, Docker, AWS.",
+        "Delivered across distributed teams spanning EU, Singapore, and India."
+      ]
+    },
+    {
+      "role": "CTO & Co-founder",
+      "company": "Sidy",
+      "location": "Montpellier, France",
+      "from": "2019-01",
+      "to": "2021-01",
+      "bullets": [
+        "Led a 4-engineer team building a real-estate platform from zero to production; owned architecture, infrastructure, and hiring."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Freelance & Open-Source",
+      "location": "France (remote)",
+      "from": "2015-01",
+      "to": "2021-01",
+      "bullets": [
+        "Created and maintain 18+ open-source npm libraries (auth, real-time graphs, transport, storage) — github.com/HydreIO."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AresRPG",
+      "desc": "~600K-line platform shipped through the agent harness",
+      "link": "aresrpg.world"
+    },
+    {
+      "name": "Noxant",
+      "desc": "agentic CI/CD — autonomous execute/verify/publish on Kubernetes",
+      "link": "noxant.io"
+    },
+    {
+      "name": "MCP servers",
+      "desc": "sui-graphql-mcp · semantic-memory-mcp · agent-pool",
+      "link": "github.com/sceat"
+    }
+  ],
+  "education": "Self-taught engineer — shipping production code since 2014; open-source maintainer since 2015.",
+  "languages": "French (native), English (fluent)"
+}

@@ -24,16 +24,28 @@ no Golang/mobile/sales roles).
 
 ## Web3 lane (sourced 2026-07-29)
 
-| Offer                                             | Company                  | URL                                                                          | Remote note                | Status                                                       |
-| ------------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------- | -------------------------- | ------------------------------------------------------------ |
-| Senior Software Engineer – AI Infrastructure      | Kraken                   | https://jobs.ashbyhq.com/kraken.com/d62250a9-363c-43b0-b3de-958e3cc9f97b     | global remote              | verify-at-apply (API-opaque; browser-verified live 07-29 AM) |
-| Senior Software Engineer - Rust, Payward Services | Kraken                   | https://jobs.ashbyhq.com/kraken.com/d6d4cda0-81c5-4b88-9af5-f3bc1d48e1bc     | UK/LatAm/EU remote (no US) | verify-at-apply (API-opaque; browser-verified live 07-29 AM) |
-| Senior Backend Engineer                           | Offchain Labs (Arbitrum) | https://jobs.lever.co/offchainlabs/82c41afd-b4be-40d2-8bc2-3f299ced3c4a      | global remote (not CA/CO)  | skipped (extensive Go/C++/Rust core req)                     |
-| Senior Backend Engineer, Rust                     | Offchain Labs (Arbitrum) | https://jobs.lever.co/offchainlabs/163e72c9-cf90-406a-9311-6ee1d743ae84      | global remote (not CA/CO)  | sent (2026-07-29)                                            |
-| Senior Software Engineer, Developer Platform      | Offchain Labs (Arbitrum) | https://jobs.lever.co/offchainlabs/ea44f500-981b-4d7e-9203-3ada1dc12365      | global remote (not CA/CO)  | skipped (Go-core KMS role)                                   |
-| Senior Software Engineer, Chainlink Runtime       | Chainlink Labs           | https://jobs.ashbyhq.com/chainlink-labs/c50cdb85-2ccd-40dd-9333-3958b2408c97 | EU-wide remote             | verify-at-apply (API-opaque; browser-verified live 07-29 AM) |
-| Member of Technical Staff, Custody (Backend)      | Anchorage Digital        | https://jobs.lever.co/anchorage/0853654f-cbaf-4cf0-82a5-16e7ef922b58         | US/BR/AR/PT/CA only        | skip-candidate (region)                                      |
-| Senior Software Engineer, Data Products           | Chainlink Labs           | https://jobs.ashbyhq.com/chainlink-labs/1be78220-f909-4d03-ac4c-cf7f3b62f236 | Americas-only              | skip-candidate (region)                                      |
+| Offer                                             | Company                  | URL                                                                          | Remote note                                | Status                                                              |
+| ------------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------- |
+| Senior Software Engineer – AI Infrastructure      | Kraken                   | https://jobs.ashbyhq.com/kraken.com/d62250a9-363c-43b0-b3de-958e3cc9f97b     | 21-country residence list (no FR, no Asia) | skipped 07-29 (region list excludes Cyril; also Rust-first)         |
+| Senior Software Engineer - Rust, Payward Services | Kraken                   | https://jobs.ashbyhq.com/kraken.com/d6d4cda0-81c5-4b88-9af5-f3bc1d48e1bc     | same residence-list class                  | skipped 07-29 (region, verified on sibling posting)                 |
+| Senior Backend Engineer                           | Offchain Labs (Arbitrum) | https://jobs.lever.co/offchainlabs/82c41afd-b4be-40d2-8bc2-3f299ced3c4a      | global remote (not CA/CO)                  | skipped (extensive Go/C++/Rust core req)                            |
+| Senior Backend Engineer, Rust                     | Offchain Labs (Arbitrum) | https://jobs.lever.co/offchainlabs/163e72c9-cf90-406a-9311-6ee1d743ae84      | global remote (not CA/CO)                  | sent (2026-07-29)                                                   |
+| Senior Software Engineer, Developer Platform      | Offchain Labs (Arbitrum) | https://jobs.lever.co/offchainlabs/ea44f500-981b-4d7e-9203-3ada1dc12365      | global remote (not CA/CO)                  | skipped (Go-core KMS role)                                          |
+| Senior Software Engineer, Chainlink Runtime       | Chainlink Labs           | https://jobs.ashbyhq.com/chainlink-labs/c50cdb85-2ccd-40dd-9333-3958b2408c97 | 9-region list (no FR)                      | skipped 07-29 (hard "Advanced proficiency in Go (Golang)" core req) |
+| Member of Technical Staff, Custody (Backend)      | Anchorage Digital        | https://jobs.lever.co/anchorage/0853654f-cbaf-4cf0-82a5-16e7ef922b58         | US/BR/AR/PT/CA only                        | skip-candidate (region)                                             |
+| Senior Software Engineer, Data Products           | Chainlink Labs           | https://jobs.ashbyhq.com/chainlink-labs/1be78220-f909-4d03-ac4c-cf7f3b62f236 | Americas-only                              | skip-candidate (region)                                             |
+
+## AI lane — cycle 2 (sourced 2026-07-29, full records in scratchpad/hunt2-ai.md)
+
+| Offer                                | Company      | URL             | Remote note                               | Status                                                                                                                                                  |
+| ------------------------------------ | ------------ | --------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Staff AI Engineer - 2nd Horizon      | Grafana Labs | see hunt2-ai.md | EU-remote (DE/IE/ES/SE/UK — no FR listed) | apply-candidate (residence-gated)                                                                                                                       |
+| AI Product Engineer - ClickStack     | ClickHouse   | see hunt2-ai.md | Germany-remote                            | apply-candidate (residence-gated) ⚠ posting embeds an AI prompt-injection trap ("red bicycle") — never include the marker, apply as a human application |
+| Senior Backend Engineer - ClickStack | ClickHouse   | see hunt2-ai.md | Germany-remote                            | apply-candidate (residence-gated)                                                                                                                       |
+
+12 further postings checked and skipped this cycle (Vercel ×3 hybrid, Chainguard
+×2 Go/US, GitLab US, Grafana ×3 US/Python/Go, Anthropic EM+office, Elastic
+US+degree, Langfuse Berlin-monthly) — reasons in hunt2-ai.md.
 
 ## Sensor efficiency law (learned 2026-07-29)
 
