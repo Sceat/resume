@@ -20,6 +20,12 @@ with reasons.
    EFFICIENCY LAW: verify liveness/JD via ATS JSON APIs (greenhouse boards-api,
    api.lever.co/v0/postings, api.ashbyhq.com/posting-api) — WebFetch cannot
    render these boards' SPAs and Playwright verification is 10x the cost.
+   REMOTE-AWARE LAW (owner 2026-07-29): sensors return ONLY offers that are
+   genuinely location-flexible — "remote global/anywhere", or region-scoped in
+   a way that includes Cyril. A posting with a country/residence list that
+   excludes him is not a find, it's noise; sensors drop it at their level.
+   Mysten Labs and SF-timezone Sui roles: permanent wall, never re-source
+   (jobs.sui.io is mostly Mysten-orbit — treat with the same suspicion).
 2. **Triage** every new offer with the `/apply` laws (dedup vs log.md AND
    backlog.md; office law; timezone law — no mandatory US-Pacific; never-claim
    stack walls; sales/presales shape; degree hard-gates flagged). Log skips
@@ -52,10 +58,13 @@ with reasons.
    A parked app keeps its filled-answers file so Cyril can finish in 2 minutes.
 6. **Housekeeping**: flag `sent` rows >10 days old as follow-up candidates in
    the report; commit + push everything (git law).
-7. **Report format** (the whole user-facing output of a cycle): "`N` submitted"
-   then an ordered bullet list of every non-submitted offer: exact title,
-   company, SKIPPED/PARKED, reason, and the dir path for parked ones. Nothing
-   else.
+7. **Report format** (owner correction 2026-07-29: "if jobs are not
+   remote-aware then why mention them to me"): the cycle report shows ONLY
+   actionable items — "`N` submitted" + the list of submissions, then any
+   PARKED item with its exact one-minute finish steps. Skipped/region-locked/
+   dead offers go to log.md and backlog.md silently, NEVER into the report.
+   (Exception: batches Cyril sends by hand still get the full ordered verdict
+   list per the /apply format law — he knows those offers exist.)
 
 ## Hard rules
 
