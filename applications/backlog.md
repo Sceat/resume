@@ -8,19 +8,19 @@ no Golang/mobile/sales roles).
 
 ## AI lane (sourced 2026-07-29)
 
-| Offer                               | Company               | URL                                                                        | Remote note                            | Status                        |
-| ----------------------------------- | --------------------- | -------------------------------------------------------------------------- | -------------------------------------- | ----------------------------- |
-| AI Engineer, Agent Infrastructure   | Zed                   | https://jobs.ashbyhq.com/zedfinancial/f6f294eb-5659-46d0-a9c6-480e6eb4852b | ONSITE SF (aggregator lied)            | skipped (office law)          |
-| Agent Engineer [IC4]                | Sourcegraph           | https://job-boards.greenhouse.io/sourcegraph91/jobs/6103567004             | remote, EU/NA pref, 20h/wk EST overlap | sent (Cyril, 2026-07-29)      |
-| Senior Applied AI Engineer          | Bolt.new (StackBlitz) | https://job-boards.greenhouse.io/stackblitz/jobs/4005254009                | fully remote, global                   | sent (2026-07-29)             |
-| AI Platform Engineer                | Duvo Inc              | https://jobs.ashbyhq.com/duvo/a1e5cdbc-6159-4895-8dae-cf71196550fa         | EU/UK remote                           | sent (2026-07-29)             |
-| Agent Platform Engineer             | Viktor                | https://jobs.ashbyhq.com/viktor/97fbbc0e-1e2f-4e7e-a8c0-8930c0cdc63d       | id not on board                        | dead                          |
-| Engineer, Applied AI                | Zapier                | https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8       | id not on board                        | dead                          |
-| Staff AI Engineer, Agentic Platform | ShiftKey              | https://jobs.ashbyhq.com/shiftkey/2d49484b-f266-4250-a24c-013d8e274559     | US-only                                | skip-candidate (US-only)      |
-| Staff SWE, Agent Engineering        | TRM Labs              | https://jobs.ashbyhq.com/trm-labs/eb560943-3adb-4839-bf64-4cbdeee9ae57     | US-only                                | skip-candidate (US-only)      |
-| Senior AI Engineer                  | SecurityScorecard     | https://job-boards.greenhouse.io/securityscorecard/jobs/7776439            | US-only + degree req                   | skip-candidate                |
-| AI Infrastructure Engineer          | Percepta              | https://jobs.ashbyhq.com/percepta/c6f9f5f0-0e66-4f1d-9f8e-87ca4de2bdad     | remote policy unverified               | new                           |
-| AI Engineer                         | Cresteo               | https://job-boards.greenhouse.io/cresteo/jobs/4696028005                   | LatAm remote, Python-lead              | skip-candidate (region+stack) |
+| Offer                               | Company               | URL                                                                        | Remote note                            | Status                         |
+| ----------------------------------- | --------------------- | -------------------------------------------------------------------------- | -------------------------------------- | ------------------------------ |
+| AI Engineer, Agent Infrastructure   | Zed                   | https://jobs.ashbyhq.com/zedfinancial/f6f294eb-5659-46d0-a9c6-480e6eb4852b | ONSITE SF (aggregator lied)            | skipped (office law)           |
+| Agent Engineer [IC4]                | Sourcegraph           | https://job-boards.greenhouse.io/sourcegraph91/jobs/6103567004             | remote, EU/NA pref, 20h/wk EST overlap | sent (Cyril, 2026-07-29)       |
+| Senior Applied AI Engineer          | Bolt.new (StackBlitz) | https://job-boards.greenhouse.io/stackblitz/jobs/4005254009                | fully remote, global                   | sent (2026-07-29)              |
+| AI Platform Engineer                | Duvo Inc              | https://jobs.ashbyhq.com/duvo/a1e5cdbc-6159-4895-8dae-cf71196550fa         | EU/UK remote                           | sent (2026-07-29)              |
+| Agent Platform Engineer             | Viktor                | https://jobs.ashbyhq.com/viktor/97fbbc0e-1e2f-4e7e-a8c0-8930c0cdc63d       | id not on board                        | dead                           |
+| Engineer, Applied AI                | Zapier                | https://jobs.ashbyhq.com/zapier/38434b88-086c-424b-8d18-8d006e0b71b8       | id not on board                        | dead                           |
+| Staff AI Engineer, Agentic Platform | ShiftKey              | https://jobs.ashbyhq.com/shiftkey/2d49484b-f266-4250-a24c-013d8e274559     | US-only                                | skip-candidate (US-only)       |
+| Staff SWE, Agent Engineering        | TRM Labs              | https://jobs.ashbyhq.com/trm-labs/eb560943-3adb-4839-bf64-4cbdeee9ae57     | US-only                                | skip-candidate (US-only)       |
+| Senior AI Engineer                  | SecurityScorecard     | https://job-boards.greenhouse.io/securityscorecard/jobs/7776439            | US-only + degree req                   | skip-candidate                 |
+| AI Infrastructure Engineer          | Percepta              | https://jobs.ashbyhq.com/percepta/c6f9f5f0-0e66-4f1d-9f8e-87ca4de2bdad     | remote policy unverified               | skipped (onsite NYC, SRE-core) |
+| AI Engineer                         | Cresteo               | https://job-boards.greenhouse.io/cresteo/jobs/4696028005                   | LatAm remote, Python-lead              | skip-candidate (region+stack)  |
 
 ## Web3 lane (sourced 2026-07-29)
 
