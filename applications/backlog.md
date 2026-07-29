@@ -47,6 +47,31 @@ no Golang/mobile/sales roles).
 ×2 Go/US, GitLab US, Grafana ×3 US/Python/Go, Anthropic EM+office, Elastic
 US+degree, Langfuse Berlin-monthly) — reasons in hunt2-ai.md.
 
+## Cycle 4 results (2026-07-29 evening — full records in scratchpad/hunt4-\*.md)
+
+Zero survivors. Automattic Applied AI: DEAD (pulled from Greenhouse board,
+confirmed via boards-api 404 + zero AI roles in the live 24-role listing).
+Backpack: PERMANENTLY DEAD (both Rust postings "no longer accepting",
+posting-api 404s while the endpoint format works for other orgs). ~25 companies
+checked and honestly ruled out (region locks, comp floor, on-site) — lists in
+the scratchpad files. The easily-verifiable remote-global pool is depleted:
+steady-state is now catching NEWLY POSTED roles each cycle.
+
+## Cycle 5+ sourcing strategy (session WebSearch budget EXHAUSTED — 200/200)
+
+Sensors must source WITHOUT WebSearch:
+
+1. Remotive public API: `remotive.com/api/remote-jobs?category=software-dev`
+   (JSON, no auth) — filter title/description for AI/web3/senior + location
+   "Worldwide"/APAC.
+2. web3.career newest pages (fetch raw HTML, links are parseable).
+3. weworkremotely.com RSS feeds (programming category — XML, fetchable).
+4. ATS JSON APIs over known org slugs (the approach that works: 2/6 blind slug
+   guesses hit even with zero search).
+5. r.jina.ai read-proxy for JS-rendered pages (worked in cycle 4).
+6. Unexhausted leads from cycle 4: Atlassian, Grab/APAC super-apps, Workable
+   candidates, Wellfound APAC, HN who's-hiring via jina.
+
 ## Sensor efficiency law (learned 2026-07-29)
 
 WebFetch cannot render Ashby/Lever/SPA-Greenhouse boards. Sourcing sensors MUST
