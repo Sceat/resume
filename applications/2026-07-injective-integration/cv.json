@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "company": "Injective Labs",
+    "role": "Growth Engineer / Integration Engineer",
+    "url": "https://jobs.ashbyhq.com/injective-labs/c0c8d39b-c750-4e65-a495-60580e5a7518",
+    "date": "2026-07-29",
+    "keywords": [
+      "integration",
+      "blockchain",
+      "JavaScript",
+      "TypeScript",
+      "Rust",
+      "smart contract",
+      "DeFi",
+      "cross-chain",
+      "indexer",
+      "tooling",
+      "SDK",
+      "EVM",
+      "production",
+      "Node.js",
+      "web3"
+    ]
+  },
+  "name": "Cyril Morlet",
+  "title": "Integration Engineer — Blockchain Ecosystems · JavaScript & Rust · ex-Bitfinex",
+  "contact": {
+    "email": "fetch@sceat.xyz",
+    "phone": "+380 68 978 1786",
+    "location": "Fully Remote · UTC+8",
+    "links": ["sceat.xyz", "github.com/sceat"]
+  },
+  "summary": "Engineer (12 years) who has lived on both sides of blockchain integration. At Bitfinex I integrated L1/L2 chains into a top-tier exchange: deposit/withdrawal pipelines, JSON-RPC clients, reorgs, finality, fee accounting. Since then I build the ecosystem tooling myself: a Rust chain indexer streaming checkpoints into sub-second APIs, a typed transaction SDK, smart contracts in production (Sui Move, ~60K lines across 9 packages; Solidity DeFi background), zkLogin onboarding and gas sponsorship. JavaScript/TypeScript primary for 15 years, working Rust, deep DeFi and cross-chain exposure. Based in Da Nang, Vietnam (ICT).",
+  "skills": [
+    {
+      "label": "Integration",
+      "items": "chain integration lifecycle at Bitfinex (listings, deposits/withdrawals), JSON-RPC clients, custom indexers, SDK design, EVM tooling, cross-chain flows"
+    },
+    {
+      "label": "Languages",
+      "items": "JavaScript, TypeScript, Node.js (15y), Rust (production indexer), Java, Sui Move, Solidity"
+    },
+    {
+      "label": "DeFi & Web3",
+      "items": "smart contract development (Sui Move, Solidity), DeFi mechanics, on-chain marketplaces, zkLogin, gas sponsorship, wallets"
+    },
+    {
+      "label": "Infrastructure",
+      "items": "Kubernetes (self-hosted production), Docker, GitOps, CI/CD, Prometheus, Sentry"
+    },
+    {
+      "label": "Quality",
+      "items": "testing gates (gold/anchor/unit), CodeQL, semgrep, observability, open-source discipline (110+ public repos)"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founder & Solo Engineer",
+      "company": "Independent Products",
+      "location": "Remote",
+      "from": "2024-10",
+      "to": null,
+      "bullets": [
+        "Built the full ecosystem tooling layer for AresRPG: typed transaction SDK, Rust chain indexer with sub-second reads, gas sponsorship service, zkLogin onboarding — the developer-facing surface of an on-chain product.",
+        "Shipped 9 production Move packages (~60K lines) including an on-chain marketplace; Solidity DeFi background (yield aggregator, on-chain games).",
+        "Lead a team of 3 on a ~600K-line platform (TypeScript, Rust, Move) developed in the open — docs, contribution guides, and integration examples for third-party developers.",
+        "Authored 18+ open-source npm libraries and 3 MCP servers; a decade of developer-tooling open source (110+ public repos)."
+      ]
+    },
+    {
+      "role": "Blockchain Integration Specialist",
+      "company": "Bitfinex",
+      "location": "Remote",
+      "from": "2022-04",
+      "to": "2024-10",
+      "bullets": [
+        "Owned end-to-end blockchain integrations for production deposit and withdrawal pipelines at a top-tier crypto exchange (Node.js, TypeScript).",
+        "Integrated multiple L1/L2 chain backends into the exchange — including the Sui listing — and maintained them under production load.",
+        "Owned chain-specific edge cases — reorgs, finality thresholds, fee accounting — where a bug loses customer funds."
+      ]
+    },
+    {
+      "role": "Fullstack Developer",
+      "company": "Affinidi",
+      "location": "Kyiv, Ukraine (remote)",
+      "from": "2021-01",
+      "to": "2022-04",
+      "bullets": [
+        "Shipped React + Node.js microservices for self-sovereign identity and credential verification — REST APIs, Docker, AWS.",
+        "Delivered across distributed teams spanning EU, Singapore, and India."
+      ]
+    },
+    {
+      "role": "CTO & Co-founder",
+      "company": "Sidy",
+      "location": "Montpellier, France",
+      "from": "2019-01",
+      "to": "2021-01",
+      "bullets": [
+        "Led a 4-engineer team building a real-estate platform from zero to production; owned architecture, infrastructure, and hiring."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "Freelance & Open-Source",
+      "location": "France (remote)",
+      "from": "2015-01",
+      "to": "2021-01",
+      "bullets": [
+        "Created and maintain 18+ open-source npm libraries (auth, real-time graphs, transport, storage) — github.com/HydreIO."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AresRPG",
+      "desc": "fully on-chain MMORPG on Sui — 9 Move packages, Rust indexer",
+      "link": "aresrpg.world"
+    },
+    {
+      "name": "Hytale MMORPG server",
+      "desc": "live Java 25 game server, 1,300+ players, solo-built and operated",
+      "link": ""
+    },
+    {
+      "name": "Hydre.io",
+      "desc": "18+ open-source npm libraries",
+      "link": "github.com/HydreIO"
+    }
+  ],
+  "education": "Self-taught engineer — shipping production code since 2014; open-source maintainer since 2015.",
+  "languages": "French (native), English (fluent)"
+}
