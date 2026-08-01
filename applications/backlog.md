@@ -97,6 +97,20 @@ arbeitnow/remotive/himalayas effectively exhausted for this profile — cycle 7+
 should lean on web3.career page-1 freshness + the Binance lead + browser-based
 verification of SPA-only boards.
 
+## Loop parked (2026-08-01) — RESTART CHECKLIST
+
+The 6h cron was deleted after 4+ browserless cycles with zero convertible
+yield. To resume full autopilot, Cyril restarts Claude Code (restores the
+Playwright browser AND the WebSearch budget), then runs: `/loop 6h /hunt`.
+FIRST ACTIONS of the next browser-capable cycle:
+
+1. Verify + apply: **Binance "Java Backend Engineer – On-Chain Payment
+   Integration" (Asia remote)** — job ID in scratchpad/hunt6-web3.md.
+2. Verify + apply: **Binance "Data/Java Engineer (AI/LLM Chatbot, Customer
+   Service)" (APAC remote)** — record in scratchpad/hunt9-sweep.md (8+ yrs
+   Java+LLM — strong fit, note possible degree gate per Binance pattern).
+3. Full two-lane sourcing sweep with restored WebSearch.
+
 ## Sensor efficiency law (learned 2026-07-29)
 
 WebFetch cannot render Ashby/Lever/SPA-Greenhouse boards. Sourcing sensors MUST
